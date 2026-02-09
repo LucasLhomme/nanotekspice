@@ -7,17 +7,17 @@
 
 PROJECT     =   ./src
 INCLUDE		=	./include
-COMPONENTS	=	./src/components
+COMPONENTS_SPECIAL	=	./src/components/Special
 
 SRC         =   $(PROJECT)/main.cpp \
 				$(PROJECT)/Parser.cpp \
 				$(PROJECT)/Factory.cpp \
 				$(PROJECT)/Circuit.cpp \
-				$(COMPONENTS)/Clock.cpp \
-				$(COMPONENTS)/Input.cpp \
-				$(COMPONENTS)/Output.cpp \
-				$(COMPONENTS)/True.cpp \
-				$(COMPONENTS)/False.cpp \
+				$(COMPONENTS_SPECIAL)/Clock.cpp \
+				$(COMPONENTS_SPECIAL)/Input.cpp \
+				$(COMPONENTS_SPECIAL)/Output.cpp \
+				$(COMPONENTS_SPECIAL)/True.cpp \
+				$(COMPONENTS_SPECIAL)/False.cpp \
 
 OBJ			=	$(SRC:.cpp=.o)
 EXEC        =   nanotekspice

@@ -9,9 +9,10 @@
 #define OUTPUT_HPP
 
 #include "IComponent.hpp"
+#include "Special.hpp"
 
 namespace nts {
-    class Output : public IComponent {
+    class Output : public Special {
         private:
             nts::IComponent *_link;
             std::size_t _linkPin;
@@ -21,7 +22,6 @@ namespace nts {
             void simulate(std::size_t tick) override;
             nts::Tristate compute(std::size_t pin) override;
             void setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin) override;
-            ComponentType getType() const override;
     };
 }
 #endif
