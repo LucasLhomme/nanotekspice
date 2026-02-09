@@ -11,6 +11,10 @@
 #include "components/Special/Clock.hpp"
 #include "components/Special/True.hpp"
 #include "components/Special/False.hpp"
+#include "components/elementary_components/and.hpp"
+#include "components/elementary_components/not.hpp"
+#include "components/elementary_components/or.hpp"
+#include "components/elementary_components/xor.hpp"
 
 namespace nts {
 
@@ -21,6 +25,10 @@ namespace nts {
         _creators["clock"] = []() { return std::make_unique<Clock>(); };
         _creators["true"] = []() { return std::make_unique<class True>(); };
 		_creators["false"] = []() { return std::make_unique<class False>(); };
+        _creators["and"] = []() { return std::make_unique<And>(); };
+        _creators["xor"] = []() { return std::make_unique<Xor>(); };
+        _creators["Or"] = []() { return std::make_unique<Or>(); };
+        _creators["Not"] = []() { return std::make_unique<Not>(); };
     }
 
     std::unique_ptr<nts::IComponent> Factory::createComponent(const std::string &type)

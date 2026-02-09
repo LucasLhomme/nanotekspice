@@ -9,7 +9,7 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
-#include <stdexcept>
+#include "../include/Exception.hpp"
 
 std::string nts::Parser::trimLine(const std::string &line)
 {
@@ -35,11 +35,11 @@ void nts::Parser::parseChipset(const std::string &line)
     std::string extra;
 
 	if (!(ss >> type >> name))
-    	throw std::invalid_argument("Incomplete chipset definition: " + line);
+    	throw Exception("Incomplete chipset definition: " + line);
     if (ss >> extra)
-        throw std::invalid_argument("Too many arguments in chipset definition: " + line);
+        throw Exception("Too many arguments in chipset definition: " + line);
     if (_components.find(name) != _components.end())
-        throw std::invalid_argument("Component name already exists: " + name);
+        throw Exception("Component name already exists: " + name);
     _components[name] = _factory.createComponent(type);
 }
 
@@ -51,26 +51,26 @@ void nts::Parser::parseLink(const std::string &line)
     std::string extra;
 
     if (!(ss >> str_link_a >> str_link_b))
-        throw std::invalid_argument("Invalid link line format: " + line);
+        throw Exception("Invalid link line format: " + line);
     if (ss >> extra)
-        throw std::invalid_argument("Too many arguments in link definition: " + line);
+        throw Exception("Too many arguments in link definition: " + line);
 
     size_t pos_a = str_link_a.find(':');
     if (pos_a == std::string::npos)
-        throw std::invalid_argument("Invalid link format (missing :) in: " + str_link_a);
+        throw Exception("Invalid link format (missing :) in: " + str_link_a);
     std::string name_a = str_link_a.substr(0, pos_a);
     std::string pin_str_a = str_link_a.substr(pos_a + 1);
     size_t pin_a = std::stoul(pin_str_a);
 
     size_t pos_b = str_link_b.find(':');
     if (pos_b == std::string::npos)
-        throw std::invalid_argument("Invalid link format (missing :) in: " + str_link_b);
+        throw Exception("Invalid link format (missing :) in: " + str_link_b);
     std::string name_b = str_link_b.substr(0, pos_b);
     std::string pin_str_b = str_link_b.substr(pos_b + 1);
     size_t pin_b = std::stoul(pin_str_b);
 
     if (_components.find(name_a) == _components.end() || _components.find(name_b) == _components.end())
-        throw std::runtime_error("Unknown component name in links");
+        throw Exception("Unknown component name in links");
     _components[name_a]->setLink(pin_a, *_components[name_b], pin_b);
     _components[name_b]->setLink(pin_b, *_components[name_a], pin_a);
 }
@@ -79,13 +79,13 @@ void nts::Parser::parse(const std::string &filename)
 {
     std::ifstream fs(filename);
     if (!fs.is_open())
-        throw std::runtime_error("Could not open file: " + filename);
+        throw Exception("Could not open file: " + filename);
     std::string line;
     int state = 0;
     while (std::getline(fs, line)) {
         line = trimLine(line);
         if (line.empty())
-			continue;
+		continue;
         if (line == ".chipsets:") {
             state = 1;
             continue;
@@ -99,7 +99,7 @@ void nts::Parser::parse(const std::string &filename)
         } else if (state == 2) {
             parseLink(line);
         } else {
-            throw std::invalid_argument("Instruction found outside of a section: " + line);
+            throw Exception("Instruction found outside of a section: " + line);
         }
     }
 }
