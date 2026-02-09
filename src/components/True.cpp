@@ -5,21 +5,21 @@
 #include "../../include/components/True.hpp"
 
 namespace nts {
-    void simulate(std::size_t tick) {
+    void True::simulate(std::size_t tick) {
         (void)tick;
     }
 
-    nts::Tristate compute(std::size_t pin) {
+    nts::Tristate True::compute(std::size_t pin) {
         if (pin != 1)
             return nts::Undefined;
         return nts::True;
     }
 
-    void setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin) {
+    void True::setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin) {
         (void)pin; (void)other; (void)otherPin;
     }
 
-    ComponentType getType() {
+    ComponentType True::getType() {
         return nts::ComponentType::TRUE;
     }
 

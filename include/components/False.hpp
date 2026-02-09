@@ -12,9 +12,12 @@ namespace nts {
     public:
         False() = default;
         ~False() override = default;
-        void simulate(std::size_t tick);
-        Tristate compute(std::size_t pin);
-        void setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin);
+        void simulate(std::size_t tick) override;
+        Tristate compute(std::size_t pin) override;
+        void setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin) override;
+
+        ComponentType getType();
+
         void setValue(nts::Tristate value);
     };
 }

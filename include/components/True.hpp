@@ -15,6 +15,9 @@ namespace nts {
         void simulate(std::size_t tick);
         Tristate compute(std::size_t pin);
         void setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin);
+
+        ComponentType getType();
+
         void setValue(nts::Tristate value);
     };
 }
