@@ -17,6 +17,7 @@ SRC         =   $(PROJECT)/main.cpp \
 				$(COMPONENTS)/Input.cpp \
 				$(COMPONENTS)/Output.cpp \
 				$(COMPONENTS)/True.cpp \
+				$(COMPONENTS)/False.cpp \
 
 OBJ			=	$(SRC:.cpp=.o)
 EXEC        =   nanotekspice
