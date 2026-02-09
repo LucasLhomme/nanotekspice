@@ -77,6 +77,8 @@ void nts::Parser::parseLink(const std::string &line)
 
 void nts::Parser::parse(const std::string &filename)
 {
+    if (!filename.ends_with(".nts"))
+        throw Exception("filename not ending with .nts");
     std::ifstream fs(filename);
     if (!fs.is_open())
         throw Exception("Could not open file: " + filename);

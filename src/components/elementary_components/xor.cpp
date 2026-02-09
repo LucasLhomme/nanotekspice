@@ -51,9 +51,5 @@ namespace nts {
             return nts::False;
         return nts::True;
     }
-
-    ComponentType Xor::getType() const {
-        return nts::ComponentType::GATE;
-    }
 } // nts
 

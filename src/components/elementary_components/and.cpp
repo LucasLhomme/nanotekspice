@@ -52,9 +52,5 @@ namespace nts {
             return nts::Undefined;
         return nts::True;
     }
-
-    ComponentType And::getType() const {
-        return nts::ComponentType::GATE;
-    }
 } // nts
 

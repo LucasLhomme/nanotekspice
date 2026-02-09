@@ -27,8 +27,8 @@ namespace nts {
 		_creators["false"] = []() { return std::make_unique<class False>(); };
         _creators["and"] = []() { return std::make_unique<And>(); };
         _creators["xor"] = []() { return std::make_unique<Xor>(); };
-        _creators["Or"] = []() { return std::make_unique<Or>(); };
-        _creators["Not"] = []() { return std::make_unique<Not>(); };
+        _creators["or"] = []() { return std::make_unique<Or>(); };
+        _creators["not"] = []() { return std::make_unique<Not>(); };
     }
 
     std::unique_ptr<nts::IComponent> Factory::createComponent(const std::string &type)
