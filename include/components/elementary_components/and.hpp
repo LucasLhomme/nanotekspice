@@ -6,10 +6,10 @@
 #define NANO_1_AND_HPP
 
 #include <cstddef>
-#include "../../IComponent.hpp"
+#include "IElementary.hpp"
 
 namespace nts {
-    class And : public IComponent {
+    class And : public IElementary {
     private:
         nts::IComponent* _links[4];
         std::size_t _linkPins[4];
