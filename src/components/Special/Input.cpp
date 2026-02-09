@@ -5,7 +5,8 @@
 ** Input
 */
 
-#include "../../include/components/Input.hpp"
+#include "components/Special/Input.hpp"
+#include "components/Special/Special.hpp"
 
 namespace nts {
     Input::Input() : _value(nts::Undefined) {}
@@ -26,9 +27,5 @@ namespace nts {
 
     void Input::setValue(nts::Tristate value) {
         _value = value;
-    }
-
-    nts::ComponentType nts::Input::getType() const {
-        return nts::ComponentType::INPUT;
     }
 }
