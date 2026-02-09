@@ -1,22 +1,25 @@
-//
-// Created by crabe on 09/02/2026.
-//
+/*
+** EPITECH PROJECT, 2026
+** NANO-1
+** File description:
+** True
+*/
 
 #ifndef NANO_1_TRUE_HPP
 #define NANO_1_TRUE_HPP
+
 #include <cstddef>
 #include "IComponent.hpp"
+#include "Special.hpp"
 
 namespace nts {
-    class False : public IComponent {
+    class True : public Special {
     public:
-        False() = default;
-        ~False() override = default;
+        True() = default;
+        ~True() override = default;
         void simulate(std::size_t tick) override;
         Tristate compute(std::size_t pin) override;
         void setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin) override;
-
-        ComponentType getType();
 
         void setValue(nts::Tristate value);
     };

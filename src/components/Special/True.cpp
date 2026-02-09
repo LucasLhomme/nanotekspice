@@ -1,8 +1,12 @@
-//
-// Created by crabe on 09/02/2026.
-//
+/*
+** EPITECH PROJECT, 2026
+** NANO-1
+** File description:
+** True
+*/
 
-#include "../../include/components/True.hpp"
+#include "components/Special/True.hpp"
+#include "components/Special/Special.hpp"
 
 namespace nts {
     void True::simulate(std::size_t tick) {
@@ -19,11 +23,7 @@ namespace nts {
         (void)pin; (void)other; (void)otherPin;
     }
 
-    ComponentType True::getType() {
-        return nts::ComponentType::TRUE;
-    }
-
     void True::setValue(nts::Tristate value) {
-        nts::Tristate result = value;
+        (void)value;
     }
 }

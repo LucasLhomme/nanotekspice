@@ -5,9 +5,10 @@
 ** Circuit Implementation
 */
 
-#include "../include/Circuit.hpp"
-#include "../include/components/Input.hpp"
-#include "../include/components/Clock.hpp"
+#include "Circuit.hpp"
+#include "components/Special/Input.hpp"
+#include "components/Special/Output.hpp"
+#include "components/Special/Clock.hpp"
 
 namespace nts {
 
@@ -37,15 +38,12 @@ namespace nts {
         std::cout << "tick: " << _tick << std::endl;
         std::cout << "input(s):" << std::endl;
         for (auto const& [name, comp] : _components) {
-            if (comp->getType() == nts::ComponentType::INPUT ||
-                comp->getType() == nts::ComponentType::CLOCK) {
+            if (dynamic_cast<nts::Input*>(comp.get()) || dynamic_cast<nts::Clock*>(comp.get()))
                 std::cout << "  " << name << ": " << tristateToString(comp->compute(1)) << std::endl;
-            }
         }
-
         std::cout << "output(s):" << std::endl;
         for (auto const& [name, comp] : _components) {
-            if (comp->getType() == nts::ComponentType::OUTPUT)
+            if (dynamic_cast<nts::Output*>(comp.get()))
                 std::cout << "  " << name << ": " << tristateToString(comp->compute(1)) << std::endl;
         }
     }
@@ -57,9 +55,9 @@ namespace nts {
             std::cerr << "Error: Component '" << inputName << "' not found." << std::endl;
             return;
         }
-
-        nts::ComponentType type = it->second->getType();
-        if (type != nts::ComponentType::INPUT && type != nts::ComponentType::CLOCK) {
+        nts::Input *inputPtr = dynamic_cast<nts::Input*>(it->second.get());
+        nts::Clock *clockPtr = dynamic_cast<nts::Clock*>(it->second.get());
+        if (!inputPtr && !clockPtr) {
             std::cerr << "Error: '" << inputName << "' is not an input or clock." << std::endl;
             return;
         }
@@ -75,12 +73,9 @@ namespace nts {
             std::cerr << "Error: Invalid value '" << value << "'. Use 0, 1 or U." << std::endl;
             return;
         }
-        if (type == nts::ComponentType::INPUT) {
-            auto *inputParams = static_cast<nts::Input*>(it->second.get());
-            inputParams->setValue(newState);
-        } else if (type == nts::ComponentType::CLOCK) {
-             auto *clockParams = static_cast<nts::Clock*>(it->second.get());
-             clockParams->setValue(newState);
-        }
+        if (inputPtr)
+            inputPtr->setValue(newState);
+        else if (clockPtr)
+            clockPtr->setValue(newState);
     }
 }

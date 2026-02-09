@@ -7,19 +7,22 @@
 
 PROJECT     =   ./src
 INCLUDE		=	./include
-COMPONENTS	=	./src/components
+COMPONENTS_SPECIAL	=	./src/components/Special
+COMPONENTS_ELEMENTARY	=	./src/components/elementary_components
 
 SRC         =   $(PROJECT)/main.cpp \
 				$(PROJECT)/Parser.cpp \
 				$(PROJECT)/Factory.cpp \
 				$(PROJECT)/Circuit.cpp \
-				$(COMPONENTS)/Clock.cpp \
-				$(COMPONENTS)/Input.cpp \
-				$(COMPONENTS)/Output.cpp \
-				$(COMPONENTS)/True.cpp \
-				$(COMPONENTS)/False.cpp \
-				$(COMPONENTS)/elementary_components/and.cpp \
-				$(COMPONENTS)/elementary_components/xor.cpp \
+				$(COMPONENTS_SPECIAL)/Clock.cpp \
+				$(COMPONENTS_SPECIAL)/Input.cpp \
+				$(COMPONENTS_SPECIAL)/Output.cpp \
+				$(COMPONENTS_SPECIAL)/True.cpp \
+				$(COMPONENTS_SPECIAL)/False.cpp \
+				$(COMPONENTS_ELEMENTARY)/or.cpp \
+				$(COMPONENTS_ELEMENTARY)/and.cpp \
+				$(COMPONENTS_ELEMENTARY)/xor.cpp \
+				$(COMPONENTS_ELEMENTARY)/not.cpp \
 
 
 OBJ			=	$(SRC:.cpp=.o)

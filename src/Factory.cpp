@@ -5,13 +5,16 @@
 ** Factory implementation
 */
 
-#include "../include/Factory.hpp"
-#include "../include/components/Input.hpp"
-#include "../include/components/Output.hpp"
-#include "../include/components/Clock.hpp"
-#include "../include/components/elementary_components/and.hpp"
-#include "../include/components/elementary_components/xor.hpp"
-#include "../include/Exception.hpp"
+#include "Factory.hpp"
+#include "components/Special/Input.hpp"
+#include "components/Special/Output.hpp"
+#include "components/Special/Clock.hpp"
+#include "components/Special/True.hpp"
+#include "components/Special/False.hpp"
+#include "components/elementary_components/and.hpp"
+#include "components/elementary_components/not.hpp"
+#include "components/elementary_components/or.hpp"
+#include "components/elementary_components/xor.hpp"
 
 namespace nts {
 
@@ -20,8 +23,12 @@ namespace nts {
         _creators["input"]  = []() { return std::make_unique<Input>(); };
         _creators["output"] = []() { return std::make_unique<Output>(); };
         _creators["clock"] = []() { return std::make_unique<Clock>(); };
+        _creators["true"] = []() { return std::make_unique<class True>(); };
+		_creators["false"] = []() { return std::make_unique<class False>(); };
         _creators["and"] = []() { return std::make_unique<And>(); };
         _creators["xor"] = []() { return std::make_unique<Xor>(); };
+        _creators["Or"] = []() { return std::make_unique<Or>(); };
+        _creators["Not"] = []() { return std::make_unique<Not>(); };
     }
 
     std::unique_ptr<nts::IComponent> Factory::createComponent(const std::string &type)
@@ -29,7 +36,7 @@ namespace nts {
         auto component = _creators.find(type);
 
         if (component == _creators.end()) {
-            throw Exception("Unknown component type: " + type);
+            throw std::runtime_error("Unknown component type: " + type);
         }
         return component->second();
     }

@@ -5,7 +5,8 @@
 ** Output
 */
 
-#include "../../include/components/Output.hpp"
+#include "components/Special/Output.hpp"
+#include "components/Special/Special.hpp"
 
 namespace nts {
     Output::Output() : _link(nullptr), _linkPin(0) {}
@@ -25,9 +26,5 @@ namespace nts {
 			return;
         _link = &other;
         _linkPin = otherPin;
-    }
-
-    nts::ComponentType nts::Output::getType() const {
-        return nts::ComponentType::OUTPUT;
     }
 }

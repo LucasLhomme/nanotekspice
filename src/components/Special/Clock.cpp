@@ -5,7 +5,8 @@
 ** Clock Implementation
 */
 
-#include "../../include/components/Clock.hpp"
+#include "components/Special/Clock.hpp"
+#include "components/Special/Special.hpp"
 
 namespace nts {
 
@@ -41,10 +42,5 @@ namespace nts {
     void Clock::setValue(nts::Tristate value)
     {
         _value = value;
-    }
-
-    nts::ComponentType Clock::getType() const
-    {
-        return nts::ComponentType::CLOCK;
     }
 }
