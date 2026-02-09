@@ -24,6 +24,7 @@ SRC         =   $(PROJECT)/main.cpp \
 				$(COMPONENTS_ELEMENTARY)/xor.cpp \
 				$(COMPONENTS_ELEMENTARY)/not.cpp \
 
+
 OBJ			=	$(SRC:.cpp=.o)
 EXEC        =   nanotekspice
 CXX			= 	clang++
