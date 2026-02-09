@@ -9,6 +9,7 @@
 #include "../include/components/Input.hpp"
 #include "../include/components/Output.hpp"
 #include "../include/components/Clock.hpp"
+#include "../include/Exception.hpp"
 
 namespace nts {
 
@@ -24,7 +25,7 @@ namespace nts {
         auto component = _creators.find(type);
 
         if (component == _creators.end()) {
-            throw std::runtime_error("Unknown component type: " + type);
+            throw Exception("Unknown component type: " + type);
         }
         return component->second();
     }
