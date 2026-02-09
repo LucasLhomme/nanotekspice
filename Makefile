@@ -8,6 +8,7 @@
 PROJECT     =   ./src
 INCLUDE		=	./include
 COMPONENTS_SPECIAL	=	./src/components/Special
+COMPONENTS_ELEMENTARY	=	./src/components/elementary_components
 
 SRC         =   $(PROJECT)/main.cpp \
 				$(PROJECT)/Parser.cpp \
@@ -18,6 +19,10 @@ SRC         =   $(PROJECT)/main.cpp \
 				$(COMPONENTS_SPECIAL)/Output.cpp \
 				$(COMPONENTS_SPECIAL)/True.cpp \
 				$(COMPONENTS_SPECIAL)/False.cpp \
+				$(COMPONENTS_ELEMENTARY)/or.cpp \
+				$(COMPONENTS_ELEMENTARY)/and.cpp \
+				$(COMPONENTS_ELEMENTARY)/xor.cpp \
+				$(COMPONENTS_ELEMENTARY)/not.cpp \
 
 OBJ			=	$(SRC:.cpp=.o)
 EXEC        =   nanotekspice
