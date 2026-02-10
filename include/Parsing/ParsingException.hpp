@@ -11,14 +11,16 @@
 #include <exception>
 #include <iostream>
 
-class ParsingException : public std::exception
-{
-public:
-    explicit ParsingException(const std::string message);
-    const char *what() const noexcept override;
-
-private:
-    std::string _message;
-};
+namespace nts {
+    class ParsingException : public std::exception {
+        
+        public:
+            explicit ParsingException(const std::string message);
+            const char *what() const noexcept override;
+    
+        private:
+            std::string _message;
+    };
+}
 
 #endif

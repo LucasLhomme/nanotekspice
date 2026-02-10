@@ -7,11 +7,11 @@
 
 #include "../../include/Parsing/ParsingException.hpp"
 
-ParsingException::ParsingException(const std::string message) : _message(message)
+nts::ParsingException::ParsingException(const std::string message) : _message(message)
 {
 }
 
-const char *ParsingException::what() const noexcept
+const char *nts::ParsingException::what() const noexcept
 {
     return _message.c_str();
 }

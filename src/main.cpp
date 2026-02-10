@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 
             if (filepath.extension() != ".nts")
             {
-                throw ParsingException("bah mauvaise interface");
+                throw nts::ParsingException("bah mauvaise interface");
             }
             else
             {

@@ -18,15 +18,13 @@
 
 namespace nts
 {
-    enum class ParsingSection
-    {
+    enum class ParsingSection {
         UNDEFINED,
         CHIPSETS,
         LINKS
     };
 
-    class Parser
-    {
+    class Parser {
     private:
         std::string _filename;
         std::vector<std::tuple<std::string, std::string>> _chipsets;
