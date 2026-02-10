@@ -11,11 +11,9 @@
 #include <iostream>
 #include <string>
 
-namespace nts
-{
-    enum Tristate
-    {
-        Undefinbed = (-true),
+namespace nts {
+    enum Tristate {
+        Undefined = (-true),
         True = true,
         False = false,
     };
