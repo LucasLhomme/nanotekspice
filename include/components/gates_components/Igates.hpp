@@ -8,10 +8,6 @@
 
 namespace nts {
     class Igates : public IComponent {
-    private:
-            int _input1;
-            int _input2;
-            int _output;
     public:
         struct Gate {
             std::size_t input1;
