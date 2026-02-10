@@ -19,6 +19,8 @@ set(CLANG_DEBUG "-g")
 
 set(SOURCES
         src/main.cpp
+        src/Parsing/Parser.cpp
+        src/Parsing/ParsingException.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})
