@@ -10,8 +10,6 @@
 
 #include "AComponent.hpp"
 
-#include "AComponent.hpp"
-
 class Input : public nts::AComponent {
 public:
     Input(std::string name);
