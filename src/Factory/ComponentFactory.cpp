@@ -5,6 +5,7 @@
 ** ComponentFactory
 */
 #include "Factory/ComponentFactory.hpp"
+#include "Exception/UnknowTypeException.hpp"
 
 ComponentFactory::ComponentFactory()
 {
@@ -25,6 +26,6 @@ ComponentFactory::ComponentFactory()
 std::unique_ptr<nts::IComponent> ComponentFactory::createComponent(const std::string &type)
 {
     if (_create.find(type) == _create.end())
-        throw std::runtime_error("Unknow type, can't create it"); // TODO : Créer une exception pour catch de manière plus propre
+        throw UnknowTypeException(type);
     return _create[type]();
 }
