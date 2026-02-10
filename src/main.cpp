@@ -6,19 +6,33 @@
 */
 
 #include "../include/IComponent.hpp"
-#include "../include/Parser.hpp"
+#include "../include/Parsing/Parser.hpp"
+#include "../include/Parsing/ParsingException.hpp"
 
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
-    if (argc == 2) {
-        std::string filename = argv[1];
-        if (filename.ends_with(".nts")) {
+    // Parsing gestion arguments
+    try
+    {
+        if (argc == 2)
+        {
+            std::string filename = argv[1];
+            std::filesystem::path filepath = filename;
 
+            if (filepath.extension() != ".nts")
+            {
+                throw ParsingException("bah mauvaise interface");
+            }
+            else
+            {
+                nts::Parser p(filename);
+                p.parse();
+            }
         }
-        else {
-            std::cerr << "Usage: " << argv[0] << " filename" << std::endl;
-            return 84;
-        }
+    }
+    catch (const std::exception &e) {
+        std::cerr << "Error : " << e.what() << std::endl;
+        return 84;
     }
     return 0;
 }
