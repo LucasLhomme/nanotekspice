@@ -42,7 +42,7 @@ void nts::Parser::parseLine(const std::string &line)
 {
         if (this->_currentSection == ParsingSection::UNDEFINED)
         {
-                throw ParsingException("Issue with file configuration"); 
+                throw nts::ParsingException("Issue with file configuration"); 
         }
         std::stringstream ss(line);
         std::string s1;
@@ -65,7 +65,7 @@ void nts::Parser::parse()
 
         if (!file.is_open())
         {
-                throw ParsingException("issue with the file opening");
+                throw nts::ParsingException("issue with the file opening");
         }
 
         std::string line;
