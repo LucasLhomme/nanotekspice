@@ -19,6 +19,7 @@ set(CLANG_DEBUG "-g")
 
 set(SOURCES
         src/main.cpp
+        src/Core.cpp
         src/Parsing/Parser.cpp
         src/Parsing/ParsingException.cpp
         src/Factory/ComponentFactory.cpp

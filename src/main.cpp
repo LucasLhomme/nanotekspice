@@ -8,6 +8,7 @@
 #include "../include/IComponent.hpp"
 #include "../include/Parsing/Parser.hpp"
 #include "../include/Parsing/ParsingException.hpp"
+#include "../include/Core.hpp"
 
 int main(int argc, char **argv)
 {
@@ -27,6 +28,8 @@ int main(int argc, char **argv)
             {
                 nts::Parser p(filename);
                 p.parse();
+                nts::Core c;
+                c.core_loop();
             }
         }
     }
