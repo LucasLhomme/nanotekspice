@@ -26,6 +26,6 @@ ComponentFactory::ComponentFactory()
 std::unique_ptr<nts::IComponent> ComponentFactory::createComponent(const std::string &type)
 {
     if (_create.find(type) == _create.end())
-        throw FactoryException("Unknown component type: '" + type + "', can't create it.");
+        throw nts::FactoryException("Unknown component type: '" + type + "', can't create it.");
     return _create[type]();
 }
