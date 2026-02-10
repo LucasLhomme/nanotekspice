@@ -6,11 +6,11 @@
 */
 #include "Exception/FactoryException.hpp"
 
-FactoryException::FactoryException(const std::string &type) : _message()
+nts::FactoryException::FactoryException(const std::string &type) : _message()
 {
 }
 
-const char *FactoryException::what() const noexcept
+const char *nts::FactoryException::what() const noexcept
 {
     return _message.c_str();
 }

@@ -11,13 +11,15 @@
 #include <exception>
 #include <iostream>
 
-class FactoryException : public std::exception {
-public:
-    explicit FactoryException(const std::string &type);
-    const char *what() const noexcept override;
+namespace nts {
+    class FactoryException : public std::exception {
+    public:
+        explicit FactoryException(const std::string &type);
+        const char *what() const noexcept override;
 
-private:
-    std::string _message;
-};
+    private:
+        std::string _message;
+    };
+}
 
 #endif //NANO_EXCEPTION_HPP
