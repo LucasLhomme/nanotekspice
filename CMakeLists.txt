@@ -21,6 +21,8 @@ set(SOURCES
         src/main.cpp
         src/Parsing/Parser.cpp
         src/Parsing/ParsingException.cpp
+        src/Factory/ComponentFactory.cpp
+        src/Factory/FactoryException.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})

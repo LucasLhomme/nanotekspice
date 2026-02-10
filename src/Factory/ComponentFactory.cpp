@@ -5,7 +5,7 @@
 ** ComponentFactory
 */
 #include "Factory/ComponentFactory.hpp"
-#include "Exception/FactoryException.hpp"
+#include "../../include/Factory/FactoryException.hpp"
 
 ComponentFactory::ComponentFactory()
 {

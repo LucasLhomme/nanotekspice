@@ -4,7 +4,7 @@
 ** File description:
 ** UnknowTypeException
 */
-#include "Exception/FactoryException.hpp"
+#include "../../include/Factory/FactoryException.hpp"
 
 nts::FactoryException::FactoryException(const std::string &type) : _message()
 {
