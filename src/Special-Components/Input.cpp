@@ -6,7 +6,7 @@
 */
 #include "Input.hpp"
 
-Input::Input()
+Input::Input(std::string name)
 {
 }
 
