@@ -11,9 +11,9 @@
 #include <exception>
 #include <iostream>
 
-class UnknowTypeException : public std::exception {
+class FactoryException : public std::exception {
 public:
-    explicit UnknowTypeException(const std::string &type);
+    explicit FactoryException(const std::string &type);
     const char *what() const noexcept override;
 
 private:
