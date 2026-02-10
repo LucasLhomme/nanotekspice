@@ -9,6 +9,7 @@
 #define I_COMPONENT_HPP
 
 #include <iostream>
+#include <string>
 
 namespace nts {
     enum Tristate {
@@ -17,7 +18,8 @@ namespace nts {
         False = false,
     };
 
-    class IComponent {
+    class IComponent
+    {
     public:
         virtual ~IComponent() = default;
         virtual void simulate(std::size_t tick) = 0;
