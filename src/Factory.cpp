@@ -15,6 +15,8 @@
 #include "components/elementary_components/not.hpp"
 #include "components/elementary_components/or.hpp"
 #include "components/elementary_components/xor.hpp"
+#include "components/gates_components/comp_4069.hpp"
+#include "components/gates_components/comp_4071.hpp"
 
 namespace nts {
 
@@ -29,6 +31,8 @@ namespace nts {
         _creators["xor"] = []() { return std::make_unique<Xor>(); };
         _creators["or"] = []() { return std::make_unique<Or>(); };
         _creators["not"] = []() { return std::make_unique<Not>(); };
+        _creators["4069"] = []() { return std::make_unique<Comp_4069>(); };
+        _creators["4071"] = []() { return std::make_unique<Comp_4071>(); };
     }
 
     std::unique_ptr<nts::IComponent> Factory::createComponent(const std::string &type)
