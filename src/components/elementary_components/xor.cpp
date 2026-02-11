@@ -21,7 +21,7 @@ namespace nts {
         (void)tick;
     }
 
-    void Xor::setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin)
+    void Xor::setLink(const std::size_t pin, nts::IComponent &other, std::size_t otherPin)
     {
         if (pin < 1 || pin > 3)
             throw Exception(std::string("Invalid pin for Xor: ") + std::to_string(pin));
@@ -43,8 +43,8 @@ namespace nts {
         if (_links[1] == nullptr || _links[2] == nullptr)
             throw Exception("Xor gate missing input link");
 
-        nts::Tristate a = _links[1]->compute(_linkPins[1]);
-        nts::Tristate b = _links[2]->compute(_linkPins[2]);
+        const nts::Tristate a = _links[1]->compute(_linkPins[1]);
+        const nts::Tristate b = _links[2]->compute(_linkPins[2]);
         if (a == nts::Undefined || b == nts::Undefined)
             return nts::Undefined;
         if (a == b)

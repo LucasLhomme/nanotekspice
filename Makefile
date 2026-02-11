@@ -26,6 +26,7 @@ SRC         =   $(PROJECT)/main.cpp \
 				$(COMPONENTS_ELEMENTARY)/not.cpp \
 				$(COMPONENTS_GATES)/comp_4069.cpp \
 				$(COMPONENTS_GATES)/comp_4071.cpp \
+				$(COMPONENTS_GATES)/comp_4030.cpp \
 
 OBJ			=	$(SRC:.cpp=.o)
 EXEC        =   nanotekspice
