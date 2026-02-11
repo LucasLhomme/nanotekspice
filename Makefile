@@ -12,6 +12,7 @@ COMPONENTS_ELEMENTARY	=	./src/components/elementary_components
 COMPONENTS_GATES	=	./src/components/gates_components
 
 SRC         =   $(PROJECT)/main.cpp \
+				$(PROJECT)/components/AComponent.cpp \
 				$(PROJECT)/Parser.cpp \
 				$(PROJECT)/Factory.cpp \
 				$(PROJECT)/Circuit.cpp \

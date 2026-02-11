@@ -8,7 +8,7 @@
 #ifndef OR_COMPONENT_HPP
 #define OR_COMPONENT_HPP
 
-#include "AComponent.hpp"
+#include "components/AComponent.hpp"
 #include <map>
 
 namespace nts {

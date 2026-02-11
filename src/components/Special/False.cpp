@@ -6,17 +6,16 @@
 */
 
 #include "components/Special/False.hpp"
-#include "components/Special/Special.hpp"
 
 namespace nts {
 
-    nts::Tristate False::compute(std::size_t pin) {
+    nts::Tristate FalseComponent::compute(std::size_t pin) {
         if (pin != 1)
             return nts::Undefined;
         return nts::False;
     }
 
-    void False::setValue(nts::Tristate value) {
+    void FalseComponent::setValue(nts::Tristate value) {
         (void)value;
     }
 }

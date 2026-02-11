@@ -6,7 +6,6 @@
 */
 
 #include "components/Special/Clock.hpp"
-#include "components/Special/Special.hpp"
 
 namespace nts {
 

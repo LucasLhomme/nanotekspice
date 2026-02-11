@@ -10,13 +10,13 @@
 
 #include <cstddef>
 #include "IComponent.hpp"
-#include "AComponent.hpp"
+#include "components/AComponent.hpp"
 
 namespace nts {
-    class True : public AComponent {
+    class TrueComponent : public AComponent {
     public:
-        True() = default;
-        ~True() override = default;
+        TrueComponent() = default;
+        ~TrueComponent() override = default;
         Tristate compute(std::size_t pin) override;
         void setValue(nts::Tristate value);
     };

@@ -6,14 +6,15 @@
 */
 
 #include "components/Special/Output.hpp"
-#include "components/Special/Special.hpp"
 
 namespace nts {
-    Output::Output() : _link(nullptr), _linkPin(0) {}
+    Output::Output() {}
 
     nts::Tristate Output::compute(std::size_t pin) {
-        if (pin != 1 || _link == nullptr)
+        if (pin != 1)
 			return nts::Undefined;
-        return _link->compute(_linkPin);
+        if (_links.find(1) == _links.end())
+            return nts::Undefined;
+        return _links[1].first->compute(_links[1].second);
     }
 }

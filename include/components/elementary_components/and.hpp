@@ -6,7 +6,7 @@
 #define NANO_1_AND_HPP
 
 #include <cstddef>
-#include "AComponent.hpp"
+#include "components/AComponent.hpp"
 
 namespace nts {
     class And : public AComponent {

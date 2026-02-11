@@ -26,8 +26,8 @@ namespace nts {
         _creators["input"]  = []() { return std::make_unique<Input>(); };
         _creators["output"] = []() { return std::make_unique<Output>(); };
         _creators["clock"] = []() { return std::make_unique<Clock>(); };
-        _creators["true"] = []() { return std::make_unique<class True>(); };
-		_creators["false"] = []() { return std::make_unique<class False>(); };
+        _creators["true"] = []() { return std::make_unique<TrueComponent>(); };
+		_creators["false"] = []() { return std::make_unique<FalseComponent>(); };
         _creators["and"] = []() { return std::make_unique<And>(); };
         _creators["xor"] = []() { return std::make_unique<Xor>(); };
         _creators["or"] = []() { return std::make_unique<Or>(); };

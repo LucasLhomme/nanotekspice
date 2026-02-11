@@ -5,7 +5,7 @@
 ** AComponent
 */
 
-#include "AComponent.hpp"
+#include "components/AComponent.hpp"
 
 namespace nts {
     void AComponent::setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin)

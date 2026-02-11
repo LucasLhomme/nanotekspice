@@ -4,7 +4,7 @@
 
 #ifndef NANO_1_IGATES_HPP
 #define NANO_1_IGATES_HPP
-#include "../../IComponent.hpp"
+#include "components/AComponent.hpp"
 
 namespace nts {
     class Igates : public AComponent {
