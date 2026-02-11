@@ -4,9 +4,9 @@
 ** File description:
 ** True
 */
-#include "True.hpp"
+#include "TrueComponent.hpp"
 
-nts::Tristate True::compute(std::size_t pin)
+nts::Tristate nts::TrueComponent::compute(std::size_t pin)
 {
     return nts::True;
 }

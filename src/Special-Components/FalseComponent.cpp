@@ -4,9 +4,9 @@
 ** File description:
 ** False
 */
-#include "False.hpp"
+#include "FalseComponent.hpp"
 
-nts::Tristate False::compute(std::size_t pin)
+nts::Tristate nts::FalseComponent::compute(std::size_t pin)
 {
     return nts::False;
 }
