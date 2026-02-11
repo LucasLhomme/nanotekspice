@@ -14,7 +14,6 @@ class True : public nts::AComponent {
 public:
     ~True() override = default;
 
-    void simulate(std::size_t tick) override;
     nts::Tristate compute(std::size_t pin) override;
 };
 
