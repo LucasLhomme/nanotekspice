@@ -9,18 +9,16 @@
 #define INPUT_HPP
 
 #include "IComponent.hpp"
-#include "Special.hpp"
+#include "AComponent.hpp"
 
 namespace nts {
-    class Input : public Special {
+    class Input : public AComponent {
         private:
             nts::Tristate _value;
         public:
             Input();
             ~Input() override = default;
-            void simulate(std::size_t tick) override;
             nts::Tristate compute(std::size_t pin) override;
-            void setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin) override;
             void setValue(nts::Tristate value);
     };
 }

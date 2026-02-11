@@ -9,16 +9,6 @@
 
 namespace nts {
 
-    Or::Or() {}
-
-    void Or::simulate(std::size_t tick) {
-        (void)tick;
-    }
-
-    void Or::setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin) {
-        _links[pin] = std::make_pair(&other, otherPin);
-    }
-
     nts::Tristate Or::compute(std::size_t pin) {
         if (pin == 1 || pin == 2) {
             if (_links.find(pin) == _links.end())

@@ -7,29 +7,6 @@
 
 namespace nts {
 
-    And::And()
-    {
-        int i = 0;
-
-        for (; i < 4; ++i) {
-            _links[i] = nullptr;
-            _linkPins[i] = 0;
-        }
-    }
-
-    void And::simulate(std::size_t tick)
-    {
-        (void)tick;
-    }
-
-    void And::setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin)
-    {
-        if (pin < 1 || pin > 3)
-            throw Exception(std::string("Invalid pin for And: ") + std::to_string(pin));
-        _links[pin] = &other;
-        _linkPins[pin] = otherPin;
-    }
-
     nts::Tristate And::compute(std::size_t pin)
     {
         if (pin < 1 || pin > 3)

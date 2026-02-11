@@ -13,8 +13,10 @@
 namespace nts {
 
     static std::string tristateToString(nts::Tristate v) {
-        if (v == nts::True) return "1";
-        if (v == nts::False) return "0";
+        if (v == nts::True)
+			return "1";
+        if (v == nts::False)
+			return "0";
         return "U";
     }
 

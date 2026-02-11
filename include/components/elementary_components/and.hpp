@@ -6,20 +6,15 @@
 #define NANO_1_AND_HPP
 
 #include <cstddef>
-#include "IElementary.hpp"
+#include "AComponent.hpp"
 
 namespace nts {
-    class And : public IElementary {
-    private:
-        nts::IComponent* _links[4];
-        std::size_t _linkPins[4];
+    class And : public AComponent {
     public:
         And();
         ~And() override = default;
-        void simulate(std::size_t tick) override;
         Tristate compute(std::size_t pin) override;
-        void setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin) override;
     };
-} // nts
+}
 
 #endif //NANO_1_AND_HPP
