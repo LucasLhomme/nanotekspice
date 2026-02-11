@@ -6,25 +6,27 @@
 */
 #include "Clock.hpp"
 
-Clock::Clock(std::string name)
+Clock::Clock(std::string name) : AComponent(name)
 {
+    _value = nts::Undefined;
 }
 
 void Clock::setValue(nts::Tristate value)
 {
-    _value = value;
-}
-
-nts::Tristate Clock::compute(std::size_t pin)
-{
-    return _value;
+    _nextValue = value;
 }
 
 void Clock::simulate(std::size_t tick)
 {
+    _value = _nextValue;
+
     if (_value == nts::True)
-        _value = nts::False;
+        _nextValue = nts::False;
     else if (_value == nts::False)
-        _value = nts::True;
-    else _value = nts::Undefined;
+        _nextValue = nts::True;
+}
+
+nts::Tristate Clock::compute(std::size_t pin)
+{
+    return _value = _nextValue;
 }

@@ -22,6 +22,7 @@ public:
 
 private:
     nts::Tristate _value = nts::Undefined;
+    nts::Tristate _nextValue = nts::Undefined;
 };
 
 #endif //NANO_CLOCK_HPP
