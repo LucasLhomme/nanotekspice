@@ -8,19 +8,15 @@
 #ifndef NOT_COMPONENT_HPP_
 #define NOT_COMPONENT_HPP_
 
-#include "IComponent.hpp"
+#include "AComponent.hpp"
 #include <map>
 
 namespace nts {
-    class Not : public IComponent {
-        private:
-            std::map<std::size_t, std::pair<nts::IComponent*, std::size_t>> _links;
+    class Not : public AComponent {
         public:
             Not() = default;
             ~Not() override = default;
-            void simulate(std::size_t tick) override;
             nts::Tristate compute(std::size_t pin) override;
-            void setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin) override;
     };
 }
 
