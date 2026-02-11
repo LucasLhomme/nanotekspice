@@ -8,17 +8,6 @@
 #include "components/gates_components/comp_4071.hpp"
 
 namespace nts {
-
-    void Comp_4071::simulate(std::size_t tick)
-    {
-        (void)tick;
-    }
-
-    void Comp_4071::setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin)
-    {
-        _links[pin] = std::make_pair(&other, otherPin);
-    }
-
     nts::Tristate Comp_4071::computeOr(std::size_t pinA, std::size_t pinB)
     {
         nts::Tristate valueA = nts::Undefined;

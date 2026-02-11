@@ -7,17 +7,6 @@
 #include <vector>
 
 namespace nts {
-
-    void Comp_4030::simulate(std::size_t tick)
-    {
-        (void)tick;
-    }
-
-    void Comp_4030::setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin)
-    {
-        _links[pin] = std::make_pair(&other, otherPin);
-    }
-
     nts::Tristate Comp_4030::computeXor(nts::Tristate a, nts::Tristate b)
     {
         if (a == nts::Undefined || b == nts::Undefined)
@@ -44,4 +33,4 @@ namespace nts {
             return _links[pin].first->compute(_links[pin].second);
         return nts::Undefined;
     }
-} // nts
+}

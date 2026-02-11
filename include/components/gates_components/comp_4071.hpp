@@ -12,16 +12,13 @@
 #include <map>
 
 namespace nts {
-    class Comp_4071 : public IComponent {
+    class Comp_4071 : public AComponent {
         private:
-            std::map<std::size_t, std::pair<nts::IComponent*, std::size_t>> _links;
             nts::Tristate computeOr(std::size_t pinA, std::size_t pinB);
         public:
             Comp_4071() = default;
             ~Comp_4071() override = default;
-            void simulate(std::size_t tick) override;
             nts::Tristate compute(std::size_t pin) override;
-            void setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin) override;
     };
 }
 
