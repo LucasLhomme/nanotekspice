@@ -29,6 +29,10 @@ set(SOURCES
         src/Special-Components/FalseComponent.cpp
         src/Special-Components/TrueComponent.cpp
         src/Special-Components/OutputComponent.cpp
+        src/Elementary-Components/NotComponent.cpp
+        src/Elementary-Components/OrComponent.cpp
+        src/Elementary-Components/XorComponent.cpp
+        src/Elementary-Components/AndComponent.cpp
         src/AComponent.cpp
 )
 

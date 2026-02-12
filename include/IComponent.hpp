@@ -31,7 +31,7 @@ namespace nts {
 }
 
 namespace nts {
-    nts::Tristate operator&&(nts::Tristate a, nts::Tristate b)
+    inline nts::Tristate operator&&(nts::Tristate a, nts::Tristate b)
     {
         if (a == nts::Tristate::True && b == nts::Tristate::True) {
             return nts::Tristate::True;
@@ -41,7 +41,7 @@ namespace nts {
         return nts::Tristate::Undefined;
     }
 
-    nts::Tristate operator||(nts::Tristate a, nts::Tristate b)
+    inline nts::Tristate operator||(nts::Tristate a, nts::Tristate b)
     {
         if (a == nts::Tristate::True && b == nts::Tristate::True) {
             return nts::Tristate::True;
@@ -53,7 +53,7 @@ namespace nts {
         return nts::Tristate::Undefined;
     }
 
-    nts::Tristate operator^(nts::Tristate a, nts::Tristate b)
+    inline nts::Tristate operator^(nts::Tristate a, nts::Tristate b)
     {
         if (a == nts::Tristate::False && b == nts::Tristate::True) {
             return nts::Tristate::True;
@@ -67,7 +67,7 @@ namespace nts {
         return nts::Tristate::Undefined;
     }
 
-    nts::Tristate operator!(nts::Tristate value)
+    inline nts::Tristate operator!(nts::Tristate value)
     {
         if (value == nts::Tristate::True) {
             return nts::Tristate::False;

@@ -5,7 +5,7 @@
 ** NotComponent
 */
 
-#include "NotComponent.hpp"
+#include "../../include/Elementary-Components/NotComponent.hpp"
 
 NotComponent::NotComponent()
 {

@@ -4,7 +4,8 @@
 ** File description:
 ** XorComponent
 */
-#include "XorComponent.hpp"
+
+#include "../../include/Elementary-Components/XorComponent.hpp"
 
 XorComponent::XorComponent()
 {

@@ -4,7 +4,8 @@
 ** File description:
 ** AndComponent
 */
-#include "AndComponent.hpp"
+
+#include "../../include/Elementary-Components/AndComponent.hpp"
 
 nts::AndComponent::AndComponent()
 {
