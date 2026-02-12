@@ -9,7 +9,7 @@
 #define CLOCK_HPP_
 
 #include "IComponent.hpp"
-#include "AComponent.hpp"
+#include "components/AComponent.hpp"
 
 namespace nts {
     class Clock : public AComponent {

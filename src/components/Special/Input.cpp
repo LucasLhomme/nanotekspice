@@ -6,7 +6,6 @@
 */
 
 #include "components/Special/Input.hpp"
-#include "components/Special/Special.hpp"
 
 namespace nts {
     Input::Input() : _value(nts::Undefined) {}

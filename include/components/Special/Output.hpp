@@ -9,7 +9,7 @@
 #define OUTPUT_HPP
 
 #include "IComponent.hpp"
-#include "AComponent.hpp"
+#include "components/AComponent.hpp"
 
 namespace nts {
     class Output : public AComponent {

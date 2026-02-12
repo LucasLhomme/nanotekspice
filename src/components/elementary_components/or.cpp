@@ -9,6 +9,8 @@
 
 namespace nts {
 
+    Or::Or() {}
+
     nts::Tristate Or::compute(std::size_t pin) {
         if (pin == 1 || pin == 2) {
             if (_links.find(pin) == _links.end())

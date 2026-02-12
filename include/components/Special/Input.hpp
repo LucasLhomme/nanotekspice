@@ -9,7 +9,7 @@
 #define INPUT_HPP
 
 #include "IComponent.hpp"
-#include "AComponent.hpp"
+#include "components/AComponent.hpp"
 
 namespace nts {
     class Input : public AComponent {

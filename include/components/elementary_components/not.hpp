@@ -8,7 +8,7 @@
 #ifndef NOT_COMPONENT_HPP_
 #define NOT_COMPONENT_HPP_
 
-#include "AComponent.hpp"
+#include "components/AComponent.hpp"
 #include <map>
 
 namespace nts {

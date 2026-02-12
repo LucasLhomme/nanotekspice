@@ -6,16 +6,15 @@
 */
 
 #include "components/Special/True.hpp"
-#include "components/Special/Special.hpp"
 
 namespace nts {
-    nts::Tristate True::compute(std::size_t pin) {
+    nts::Tristate TrueComponent::compute(std::size_t pin) {
         if (pin != 1)
             return nts::Undefined;
         return nts::True;
     }
 
-    void True::setValue(nts::Tristate value) {
+    void TrueComponent::setValue(nts::Tristate value) {
         (void)value;
     }
 }

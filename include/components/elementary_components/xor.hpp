@@ -5,7 +5,7 @@
 #ifndef NANO_1_XOR_HPP
 #define NANO_1_XOR_HPP
 
-#include "AComponent.hpp"
+#include "components/AComponent.hpp"
 #include <cstddef>
 
 namespace nts {
