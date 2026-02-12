@@ -10,6 +10,9 @@
 
 #include <iostream>
 #include <string>
+#include <map>
+#include <memory>
+#include <utility>
 
 namespace nts {
     enum Tristate {

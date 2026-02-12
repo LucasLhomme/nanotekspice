@@ -24,10 +24,11 @@ set(SOURCES
         src/Parsing/ParsingException.cpp
         src/Factory/ComponentFactory.cpp
         src/Factory/FactoryException.cpp
-        src/Special-Components/Input.cpp
-        src/Special-Components/Clock.cpp
-        src/Special-Components/False.cpp
-        src/Special-Components/True.cpp
+        src/Special-Components/InputComponent.cpp
+        src/Special-Components/ClockComponent.cpp
+        src/Special-Components/FalseComponent.cpp
+        src/Special-Components/TrueComponent.cpp
+        src/Special-Components/OutputComponent.cpp
         src/AComponent.cpp
 )
 

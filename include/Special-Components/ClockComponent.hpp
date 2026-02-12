@@ -2,29 +2,29 @@
 ** EPITECH PROJECT, 2026
 ** nano
 ** File description:
-** Clock
+** ClockComponent
 */
 
-#ifndef NANO_CLOCK_HPP
-    #define NANO_CLOCK_HPP
+#ifndef NANO_ClockComponent_HPP
+    #define NANO_ClockComponent_HPP
 
 #include "AComponent.hpp"
 
 namespace nts {
-    class Clock : public nts::AComponent {
+    class ClockComponent : public nts::AComponent {
     public:
-        Clock();
-        ~Clock() override = default;
-    
+        ClockComponent();
+        ~ClockComponent() noexcept override = default;
+
         void setValue(nts::Tristate value);
-    
+
         void simulate(std::size_t tick) override;
         nts::Tristate compute(std::size_t pin) override;
-    
+
     private:
         nts::Tristate _value = nts::Undefined;
         nts::Tristate _nextValue = nts::Undefined;
     };
 }
 
-#endif //NANO_CLOCK_HPP
+#endif //NANO_ClockComponent_HPP

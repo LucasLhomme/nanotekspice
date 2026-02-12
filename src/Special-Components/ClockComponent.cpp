@@ -4,19 +4,19 @@
 ** File description:
 ** Clock
 */
-#include "../../include/Special-Components/Clock.hpp"
+#include "../../include/Special-Components/ClockComponent.hpp"
 
-nts::Clock::Clock()
+nts::ClockComponent::ClockComponent()
 {
     _value = nts::Undefined;
 }
 
-void nts::Clock::setValue(nts::Tristate value)
+void nts::ClockComponent::setValue(nts::Tristate value)
 {
     _nextValue = value;
 }
 
-void nts::Clock::simulate(std::size_t tick)
+void nts::ClockComponent::simulate(std::size_t tick)
 {
     _value = _nextValue;
 
@@ -26,7 +26,7 @@ void nts::Clock::simulate(std::size_t tick)
         _nextValue = nts::True;
 }
 
-nts::Tristate nts::Clock::compute(std::size_t pin)
+nts::Tristate nts::ClockComponent::compute(std::size_t pin)
 {
     return _value = _nextValue;
 }
