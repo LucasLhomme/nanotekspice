@@ -36,7 +36,7 @@ namespace nts {
         int index = (a == nts::True ? 1 : 0) +
                     (b == nts::True ? 2 : 0) +
                     (c == nts::True ? 4 : 0);
-        const std::vector<std::size_t> dataPins = {1,2,3,4,5,6,7,9};
+        static const std::vector<std::size_t> dataPins = {1,2,3,4,5,6,7,9};
         if (index < 0 || index >= dataPins.size())
             return nts::Undefined;
         return getVal(dataPins[index]);
