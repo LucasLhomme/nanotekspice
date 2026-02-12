@@ -6,7 +6,7 @@
 */
 
 #ifndef XORCOMPONENT_HPP_
-#define XORCOMPONENT_HPP_
+    #define XORCOMPONENT_HPP_
 
 #include "AComponent.hpp"
 
