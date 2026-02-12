@@ -18,6 +18,7 @@
 #include "components/gates_components/comp_4069.hpp"
 #include "components/gates_components/comp_4071.hpp"
 #include "components/gates_components/comp_4030.hpp"
+#include "components/gates_components/comp_4001.hpp"
 
 namespace nts {
 
