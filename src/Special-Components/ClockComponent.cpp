@@ -4,9 +4,9 @@
 ** File description:
 ** Clock
 */
-#include "ClockComponent.hpp"
+#include "../../include/Special-Components/ClockComponent.hpp"
 
-nts::ClockComponent::ClockComponent(std::string name)
+nts::ClockComponent::ClockComponent()
 {
     _value = nts::Undefined;
 }

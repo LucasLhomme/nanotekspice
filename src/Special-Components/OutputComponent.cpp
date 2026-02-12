@@ -4,13 +4,14 @@
 ** File description:
 ** Output
 */
-#include "OutputComponent.hpp"
+#include "../../include/Special-Components/OutputComponent.hpp"
 
 
-nts::OutputComponent::OutputComponent(std::string name)
+nts::OutputComponent::OutputComponent()
 {
 }
 
 nts::Tristate nts::OutputComponent::compute(std::size_t pin)
 {
+    return nts::True;
 }

@@ -17,8 +17,8 @@ namespace nts {
     public:
         void setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin) override;
         void simulate(std::size_t tick) override;
-        virtual nts::Tristate compute(std::size_t pin) = 0;
-        nts::Tristate nts::AComponent::getLink(std::size_t pin);
+        virtual nts::Tristate compute(std::size_t pin) override = 0;
+        nts::Tristate getLink(std::size_t pin);
 
     protected:
         std::map<std::size_t, std::vector<std::pair<nts::IComponent*, std::size_t>>> _links;

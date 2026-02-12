@@ -13,7 +13,7 @@
 namespace nts {
     class OutputComponent : public nts::AComponent {
     public:
-        OutputComponent(std::string name);
+        OutputComponent();
         ~OutputComponent() noexcept override = default;
 
         nts::Tristate compute(std::size_t pin) override;

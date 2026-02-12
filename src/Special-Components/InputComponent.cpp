@@ -4,9 +4,9 @@
 ** File description:
 ** InputComponent
 */
-#include "InputComponent.hpp"
+#include "../../include/Special-Components/InputComponent.hpp"
 
-nts::InputComponent::InputComponent(std::string name)
+nts::InputComponent::InputComponent()
 {
     _value = nts::Undefined;
 }

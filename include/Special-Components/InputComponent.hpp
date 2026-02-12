@@ -13,7 +13,7 @@
 namespace nts {
     class InputComponent : public nts::AComponent {
     public:
-        InputComponent(std::string name);
+        InputComponent();
         ~InputComponent() noexcept override = default;
 
         void setValue(nts::Tristate value);
