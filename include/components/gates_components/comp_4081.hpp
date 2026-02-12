@@ -6,7 +6,7 @@
 #define NANO_1_COMP_4081_HPP
 #include <vector>
 #include "../AComponent.hpp"
-#include "Igates.hpp"
+#include "../Igates.hpp"
 
 namespace nts {
     class Comp_4081 : public Igates {
