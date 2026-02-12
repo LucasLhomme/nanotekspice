@@ -6,13 +6,10 @@
 */
 
 #include "components/Special/Clock.hpp"
-#include "components/Special/Special.hpp"
 
 namespace nts {
 
-    Clock::Clock() : _value(nts::Undefined)
-    {
-    }
+    Clock::Clock() : _value(nts::Undefined) {}
 
     void Clock::simulate(std::size_t tick)
     {
@@ -30,13 +27,6 @@ namespace nts {
         if (pin != 1)
             return nts::Undefined;
         return _value;
-    }
-
-    void Clock::setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin)
-    {
-        (void)pin;
-        (void)other;
-        (void)otherPin;
     }
 
     void Clock::setValue(nts::Tristate value)

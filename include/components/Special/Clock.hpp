@@ -9,10 +9,10 @@
 #define CLOCK_HPP_
 
 #include "IComponent.hpp"
-#include "Special.hpp"
+#include "components/AComponent.hpp"
 
 namespace nts {
-    class Clock : public Special {
+    class Clock : public AComponent {
     private:
         nts::Tristate _value;
     public:
@@ -20,7 +20,6 @@ namespace nts {
         ~Clock() override = default;
         void simulate(std::size_t tick) override;
         nts::Tristate compute(std::size_t pin) override;
-        void setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin) override;
         void setValue(nts::Tristate value);
     };
 }

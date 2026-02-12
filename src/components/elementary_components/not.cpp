@@ -9,16 +9,6 @@
 
 namespace nts {
 
-    void Not::simulate(std::size_t tick)
-    {
-        (void)tick;
-    }
-
-    void Not::setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin)
-    {
-        _links[pin] = std::make_pair(&other, otherPin);
-    }
-
     nts::Tristate Not::compute(std::size_t pin)
     {
         if (pin != 2)

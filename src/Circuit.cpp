@@ -9,12 +9,16 @@
 #include "components/Special/Input.hpp"
 #include "components/Special/Output.hpp"
 #include "components/Special/Clock.hpp"
+#include "components/Special/True.hpp"
+#include "components/Special/False.hpp"
 
 namespace nts {
 
     static std::string tristateToString(nts::Tristate v) {
-        if (v == nts::True) return "1";
-        if (v == nts::False) return "0";
+        if (v == nts::True)
+			return "1";
+        if (v == nts::False)
+			return "0";
         return "U";
     }
 
@@ -35,12 +39,16 @@ namespace nts {
 
     void Circuit::display()
     {
-        std::cout << "tick: " << _tick << std::endl;
-        std::cout << "input(s):" << std::endl;
-        for (auto const& [name, comp] : _components) {
-            if (dynamic_cast<nts::Input*>(comp.get()) || dynamic_cast<nts::Clock*>(comp.get()))
-                std::cout << "  " << name << ": " << tristateToString(comp->compute(1)) << std::endl;
+    std::cout << "tick: " << _tick << std::endl;
+    std::cout << "input(s):" << std::endl;
+    for (auto const& [name, comp] : _components) {
+        if (dynamic_cast<nts::Input*>(comp.get()) || 
+            dynamic_cast<nts::Clock*>(comp.get()) ||
+            dynamic_cast<nts::TrueComponent*>(comp.get()) ||
+            dynamic_cast<nts::FalseComponent*>(comp.get())) {
+            std::cout << "  " << name << ": " << tristateToString(comp->compute(1)) << std::endl;
         }
+    }
         std::cout << "output(s):" << std::endl;
         for (auto const& [name, comp] : _components) {
             if (dynamic_cast<nts::Output*>(comp.get()))

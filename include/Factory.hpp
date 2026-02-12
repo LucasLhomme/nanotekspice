@@ -8,11 +8,11 @@
 #ifndef NANO_1_FACTORY_HPP
 #define NANO_1_FACTORY_HPP
 
-#include <memory>       // Pour std::unique_ptr
-#include <string>       // Pour std::string
-#include <map>          // Pour std::map
-#include <functional>   // Pour std::function
-#include <iostream>     // Pour les erreurs éventuelles
+#include <memory>
+#include <string>
+#include <map>
+#include <functional>
+#include <iostream>
 #include "IComponent.hpp"
 
 namespace nts {

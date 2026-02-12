@@ -10,16 +10,14 @@
 
 #include <cstddef>
 #include "IComponent.hpp"
-#include "Special.hpp"
+#include "components/AComponent.hpp"
 
 namespace nts {
-    class False : public Special {
+    class FalseComponent : public AComponent {
     public:
-        False() = default;
-        ~False() override = default;
-        void simulate(std::size_t tick) override;
+        FalseComponent() = default;
+        ~FalseComponent() override = default;
         Tristate compute(std::size_t pin) override;
-        void setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin) override;
         void setValue(nts::Tristate value);
     };
 }

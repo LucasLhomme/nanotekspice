@@ -6,25 +6,15 @@
 */
 
 #include "components/Special/Output.hpp"
-#include "components/Special/Special.hpp"
 
 namespace nts {
-    Output::Output() : _link(nullptr), _linkPin(0) {}
-
-    void Output::simulate(std::size_t tick) {
-        (void)tick;
-    }
+    Output::Output() {}
 
     nts::Tristate Output::compute(std::size_t pin) {
-        if (pin != 1 || _link == nullptr)
-			return nts::Undefined;
-        return _link->compute(_linkPin);
-    }
-
-    void Output::setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin) {
         if (pin != 1)
-			return;
-        _link = &other;
-        _linkPin = otherPin;
+			return nts::Undefined;
+        if (_links.find(1) == _links.end())
+            return nts::Undefined;
+        return _links[1].first->compute(_links[1].second);
     }
 }

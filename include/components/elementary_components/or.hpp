@@ -8,19 +8,15 @@
 #ifndef OR_COMPONENT_HPP
 #define OR_COMPONENT_HPP
 
-#include "IElementary.hpp"
+#include "components/AComponent.hpp"
 #include <map>
 
 namespace nts {
-    class Or : public IElementary {
-        private:
-            std::map<size_t, std::pair<nts::IComponent*, size_t>> _links;
+    class Or : public AComponent {
         public:
             Or();
             ~Or() override = default;
-            void simulate(std::size_t tick) override;
             nts::Tristate compute(std::size_t pin) override;
-            void setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin) override;
     };
 }
 #endif

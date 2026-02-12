@@ -9,8 +9,10 @@ PROJECT     =   ./src
 INCLUDE		=	./include
 COMPONENTS_SPECIAL	=	./src/components/Special
 COMPONENTS_ELEMENTARY	=	./src/components/elementary_components
+COMPONENTS_GATES	=	./src/components/gates_components
 
 SRC         =   $(PROJECT)/main.cpp \
+				$(PROJECT)/components/AComponent.cpp \
 				$(PROJECT)/Parser.cpp \
 				$(PROJECT)/Factory.cpp \
 				$(PROJECT)/Circuit.cpp \
@@ -23,7 +25,12 @@ SRC         =   $(PROJECT)/main.cpp \
 				$(COMPONENTS_ELEMENTARY)/and.cpp \
 				$(COMPONENTS_ELEMENTARY)/xor.cpp \
 				$(COMPONENTS_ELEMENTARY)/not.cpp \
-
+				$(COMPONENTS_GATES)/comp_4069.cpp \
+				$(COMPONENTS_GATES)/comp_4071.cpp \
+				$(COMPONENTS_GATES)/comp_4030.cpp \
+				$(COMPONENTS_GATES)/comp_4001.cpp \
+				$(COMPONENTS_GATES)/comp_4081.cpp \
+				$(COMPONENTS_GATES)/comp_4011.cpp \
 
 OBJ			=	$(SRC:.cpp=.o)
 EXEC        =   nanotekspice
