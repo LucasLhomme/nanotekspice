@@ -1,30 +1,29 @@
 /*
 ** EPITECH PROJECT, 2026
-** nts
+** nano
 ** File description:
-** Abstract class de IComponent
+** AComponent
 */
 
-#ifndef ACOMPONENT_HPP_
-#define ACOMPONENT_HPP_
+#ifndef NANO_ACOMPONENT_HPP
+#define NANO_ACOMPONENT_HPP
 
 #include "IComponent.hpp"
+#include "map"
 
 namespace nts {
-    class AComponent : public IComponent {
-        protected:
-            nts::Tristate status;
-            std::string type;
-            std::string name;
-            
-        public:
+    class AComponent : public nts::IComponent {
+    public:
+        AComponent(std::string name = "");
+        virtual ~AComponent() = default;
 
-            virtual ~AComponent() {};
+        void setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin) override;
+        virtual void simulate(std::size_t tick) override;
+        virtual nts::Tristate compute(std::size_t pin) override;
 
-            virtual nts::Tristate getStatus() const = 0;
-            virtual std::string getType() const = 0;
-            virtual std::string getName() const = 0;
+    protected:
+        std::map<std::size_t, std::pair<nts::IComponent&, std::size_t>> _links;
     };
 }
 
-#endif /* !ACOMPONENT_HPP_ */
+#endif //NANO_ACOMPONENT_HPP

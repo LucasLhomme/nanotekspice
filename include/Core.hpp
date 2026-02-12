@@ -12,24 +12,25 @@
 #include "IComponent.hpp"
 #include <algorithm>
 #include <csignal>
-
+#include <map>
+#include <memory>
 
 namespace nts {
     class Core {
         private:
-            std::vector<nts::IComponent *> components;
-            std::vector<std::tuple<std::string, std::string>> components_info;
-            std::size_t tick;
+            std::size_t _tick;
+            std::map<std::string, std::pair<std::string, std::unique_ptr<nts::IComponent>>> _components;
 
         public:
-            Core(std::vector<std::tuple<std::string, std::string>> components_inf);
-            ~Core();
-    
-            void core_loop();
-            void display();
-            void simulate();
+            Core(std::size_t tick, std::map<std::string, std::pair<std::string, std::unique_ptr<nts::IComponent>>> components);
+            
+            void addComponent(std::string &name, std::string &type, std::unique_ptr<nts::IComponent> component);
+            nts::IComponent *getComponent(const std::string &name);
 
-            std::size_t getTick() const;
+            void core_loop();
+            void simulate();
+            void display() const;
+            void setInput(const std::string &name, const std::string &value);
     };
 }
 

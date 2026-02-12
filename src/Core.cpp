@@ -7,7 +7,7 @@
 
 #include "../include/Core.hpp"
 
-nts::Core::Core(std::vector<std::tuple<std::string, std::string>> component_inf) : components_info(component_inf) {}
+nts::Core::Core(std::size_t tick, std::map<std::string, std::pair<std::string, std::unique_ptr<nts::IComponent>>> components) : _tick(tick), _components(components) {}
 
 nts::Core::~Core() {}
 
@@ -24,7 +24,7 @@ void nts::Core::core_loop() {
         if (line == "exit") {
             break;
         } else if (line == "display") {
-            this->display();
+           this->display();
         } else if (line == "simulate") {
             // this->simulate();
         } else {
@@ -34,10 +34,6 @@ void nts::Core::core_loop() {
     }
 }
 
-// bool compareComponents(nts::IComponent* a, nts::IComponent* b) {
-//     return a->getName() < b->getName();
-// }
-
 std::string tristateToString(nts::Tristate v) {
     if (v == nts::True)
         return "1";
@@ -46,38 +42,54 @@ std::string tristateToString(nts::Tristate v) {
     return "U";
 }
 
-void nts::Core::display() {
-    std::cout << "tick: " << this->tick << std::endl;
+nts::IComponent *nts::Core::getComponent(const std::string &name) {
+    auto comp = _components.find(name);
 
-    std::vector<nts::IComponent*> inputs;
-    std::vector<nts::IComponent*> outputs;
+    if (comp == _components.end())
+        return nullptr;
 
-    for (auto component : this->components) {
-        if (component->getType() == "input" || component->getType() == "clock") {
-            inputs.push_back(component);
-        } else if (component->getType() == "output") {
-            outputs.push_back(component);
+    return comp->second.second.get();
+}
+
+void nts::Core::addComponent(std::string &name, std::string &type, std::unique_ptr<nts::IComponent> component) {
+
+    _components[name] = std::make_pair(type, std::move(component));
+}
+
+int whichType(const std::pair<std::string, std::unique_ptr<nts::IComponent>> &_component)
+{
+    if (_component.first == "input" || _component.first == "clock") {
+        return 1;
+    }
+    else if (_component.first == "output") {
+        return 2;
+    }
+    else {
+        return 3;
+    }
+}
+
+void nts::Core::display() const {
+    std::cout << "tick: " << _tick << std::endl;
+    
+    std::cout << "input(s):" << std::endl;
+    for (const auto &pair : _components) {
+        if (whichType(pair.second) == 1) {
+            std::cout << "  " << pair.first << ": " << tristateToString(pair.second.second->compute(1)) << std::endl;
         }
     }
-
-    std::sort(inputs.begin(), inputs.end(), compareComponents);
-    std::sort(outputs.begin(), outputs.end(), compareComponents);
-
-    std::cout << "input(s):" << std::endl;
-    for (auto in : inputs) {
-        std::cout << "  " << in->getName() << ": " << get_status(*in) << std::endl;
-    }
-
+    
     std::cout << "output(s):" << std::endl;
-    for (auto out : outputs) {
-        out->compute()
-        std::cout << "  " << out->getName() << ": " << get_status(*out) << std::endl;
+    for (const auto &pair : _components) {
+        if (whichType(pair.second) == 2) {
+            std::cout << "  " << pair.first << ": " << tristateToString(pair.second.second->compute(1)) << std::endl;
+        }
     }
 }
 
 void nts::Core::simulate() {
-    this->tick++;
-    for (auto component : this->components) {
-        component->simulate(tick);
+    _tick++;
+    for (auto &pair : _components) {
+        pair.second.second->simulate(_tick);
     }
 }
