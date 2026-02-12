@@ -19,6 +19,8 @@ namespace nts {
             {8, 9, 10},
             {12, 13, 11}
         };
+        // helper to get a linked pin value (added)
+        nts::Tristate getVal(std::size_t p);
     public:
         Comp_4512() = default;
         ~Comp_4512() override = default;
