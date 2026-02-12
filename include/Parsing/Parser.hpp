@@ -25,21 +25,21 @@ namespace nts
     };
 
     class Parser {
-    private:
-        std::string _filename;
-        std::vector<std::tuple<std::string, std::string>> _chipsets;
-        std::vector<std::tuple<std::string, std::string>> _links;
-        ParsingSection _currentSection;
+        private:
+            std::string _filename;
+            std::vector<std::tuple<std::string, std::string>> _chipsets;
+            std::vector<std::tuple<std::string, std::string>> _links;
+            ParsingSection _currentSection;
 
-    public:
-        Parser(const std::string &filename);
-        ~Parser();
+        public:
+            Parser(const std::string &filename);
+            ~Parser();
 
-        void parse();
-        void parseLine(const std::string &line);
+            void parse();
+            void parseLine(const std::string &line);
 
-        const std::vector<std::tuple<std::string, std::string>> getChipsets() const;
-        const std::vector<std::tuple<std::string, std::string>> getLinks() const;
+            const std::vector<std::tuple<std::string, std::string>> getChipsets() const;
+            const std::vector<std::tuple<std::string, std::string>> getLinks() const;
     };
 }
 

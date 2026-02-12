@@ -4,8 +4,8 @@
 ** File description:
 ** Output
 */
-#include "../../include/Special-Components/OutputComponent.hpp"
 
+#include "../../include/Special-Components/OutputComponent.hpp"
 
 nts::OutputComponent::OutputComponent()
 {

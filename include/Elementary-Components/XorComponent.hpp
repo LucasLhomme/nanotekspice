@@ -10,12 +10,14 @@
 
 #include "AComponent.hpp"
 
-class XorComponent : public nts::AComponent {
-    public:
-        XorComponent();
-        ~XorComponent() noexcept override = default;
-
-        nts::Tristate compute(std::size_t pin) override;
-};
+namespace nts {
+    class XorComponent : public nts::AComponent {
+        public:
+            XorComponent();
+            ~XorComponent() noexcept override = default;
+    
+            nts::Tristate compute(std::size_t pin) override;
+    };
+}
 
 #endif /* !XORCOMPONENT_HPP_ */

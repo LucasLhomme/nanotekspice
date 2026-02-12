@@ -7,15 +7,21 @@
 
 #include "../include/Core.hpp"
 
-nts::Core::Core(std::map<std::string, std::pair<std::string, std::unique_ptr<nts::IComponent>>> &&components) : _components(std::move(components)) {}
+nts::Core::Core(std::map<std::string, std::pair<std::string, std::unique_ptr<nts::IComponent>>> &&components) : _components(std::move(components))
+{
+}
 
-nts::Core::~Core() {}
+nts::Core::~Core()
+{
+}
 
-void signalHandler(int signal) {
+void signalHandler(int signal)
+{
         std::exit(signal);
 }
 
-void nts::Core::core_loop() {
+void nts::Core::core_loop()
+{
     std::string line;
     std::cout << "> ";
     std::signal(SIGINT, signalHandler);
@@ -24,9 +30,9 @@ void nts::Core::core_loop() {
         if (line == "exit") {
             break;
         } else if (line == "display") {
-           this->display();
+            this->display();
         } else if (line == "simulate") {
-            // this->simulate();
+            this->simulate();
         } else {
             // input=value
         }
@@ -34,15 +40,18 @@ void nts::Core::core_loop() {
     }
 }
 
-std::string tristateToString(nts::Tristate v) {
+std::string tristateToString(nts::Tristate v)
+{
     if (v == nts::True)
         return "1";
     if (v == nts::False)
         return "0";
+
     return "U";
 }
 
-nts::IComponent *nts::Core::getComponent(const std::string &name) {
+nts::IComponent *nts::Core::getComponent(const std::string &name)
+{
     auto comp = _components.find(name);
 
     if (comp == _components.end())
@@ -51,8 +60,8 @@ nts::IComponent *nts::Core::getComponent(const std::string &name) {
     return comp->second.second.get();
 }
 
-void nts::Core::addComponent(const std::string &name, std::string &type, std::unique_ptr<nts::IComponent> component) {
-
+void nts::Core::addComponent(const std::string &name, std::string &type, std::unique_ptr<nts::IComponent> component)
+{
     _components[name] = std::make_pair(type, std::move(component));
 }
 
@@ -69,7 +78,8 @@ int whichType(const std::pair<std::string, std::unique_ptr<nts::IComponent>> &_c
     }
 }
 
-void nts::Core::display() const {
+void nts::Core::display() const
+{
     std::cout << "tick: " << _tick << std::endl;
     
     std::cout << "input(s):" << std::endl;
@@ -87,7 +97,8 @@ void nts::Core::display() const {
     }
 }
 
-void nts::Core::simulate() {
+void nts::Core::simulate()
+{
     _tick++;
     for (auto &pair : _components) {
         pair.second.second->simulate(_tick);

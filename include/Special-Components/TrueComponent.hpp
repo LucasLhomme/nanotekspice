@@ -12,10 +12,10 @@
 
 namespace nts {
     class TrueComponent : public nts::AComponent {
-    public:
-        ~TrueComponent() noexcept override = default;
+        public:
+            ~TrueComponent() noexcept override = default;
 
-        nts::Tristate compute(std::size_t pin) override;
+            nts::Tristate compute(std::size_t pin) override;
     };
 }
 

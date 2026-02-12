@@ -4,6 +4,7 @@
 ** File description:
 ** InputComponent
 */
+
 #include "../../include/Special-Components/InputComponent.hpp"
 
 nts::InputComponent::InputComponent()

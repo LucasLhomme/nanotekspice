@@ -13,13 +13,12 @@
 
 namespace nts {
     class ParsingException : public std::exception {
+        private:
+            std::string _message;
         
         public:
             explicit ParsingException(const std::string message);
             const char *what() const noexcept override;
-    
-        private:
-            std::string _message;
     };
 }
 

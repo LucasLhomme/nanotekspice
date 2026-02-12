@@ -10,12 +10,14 @@
 
 #include "AComponent.hpp"
 
-class OrComponent : public nts::AComponent {
-    public:
-        OrComponent();
-        ~OrComponent() noexcept override = default;
-
-        nts::Tristate compute(std::size_t pin) override;
-};
+namespace nts {
+    class OrComponent : public nts::AComponent {
+        public:
+            OrComponent();
+            ~OrComponent() noexcept override = default;
+    
+            nts::Tristate compute(std::size_t pin) override;
+    };
+}
 
 #endif /* !ORCOMPONENT_HPP_ */

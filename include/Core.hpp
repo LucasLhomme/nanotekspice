@@ -27,7 +27,7 @@ namespace nts {
             
             void addComponent(const std::string &name, std::string &type, std::unique_ptr<nts::IComponent> component);
             nts::IComponent *getComponent(const std::string &name);
-
+            
             void core_loop();
             void simulate();
             void display() const;

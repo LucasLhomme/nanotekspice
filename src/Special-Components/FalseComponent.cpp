@@ -4,6 +4,7 @@
 ** File description:
 ** False
 */
+
 #include "../../include/Special-Components/FalseComponent.hpp"
 
 nts::Tristate nts::FalseComponent::compute(std::size_t pin)

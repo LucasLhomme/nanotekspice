@@ -7,14 +7,15 @@
 
 #include "../../include/Elementary-Components/OrComponent.hpp"
 
-OrComponent::OrComponent()
+nts::OrComponent::OrComponent()
 {
 }
 
-nts::Tristate OrComponent::compute(std::size_t pin)
+nts::Tristate nts::OrComponent::compute(std::size_t pin)
 {
     if (pin == 3) {
         return getLink(1) || getLink(2); 
     }
+
     return getLink(pin);
 }

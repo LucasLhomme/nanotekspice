@@ -13,12 +13,11 @@
 
 namespace nts {
     class FactoryException : public std::exception {
-    public:
-        explicit FactoryException(const std::string &type);
-        const char *what() const noexcept override;
-
-    private:
-        std::string _message;
+        private:
+            std::string _message;
+        public:
+            explicit FactoryException(const std::string &type);
+            const char *what() const noexcept override;
     };
 }
 

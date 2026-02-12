@@ -4,6 +4,7 @@
 ** File description:
 ** Clock
 */
+
 #include "../../include/Special-Components/ClockComponent.hpp"
 
 nts::ClockComponent::ClockComponent()

@@ -4,6 +4,7 @@
 ** File description:
 ** AComponent
 */
+
 #include "AComponent.hpp"
 
 void nts::AComponent::simulate(std::size_t tick)
@@ -21,5 +22,6 @@ nts::Tristate nts::AComponent::getLink(std::size_t pin)
         return nts::Undefined;
     }
     auto &connections = _links[pin].front();
+
     return connections.first->compute(connections.second);
 }

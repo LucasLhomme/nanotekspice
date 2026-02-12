@@ -12,18 +12,18 @@
 
 namespace nts {
     class ClockComponent : public nts::AComponent {
-    public:
-        ClockComponent();
-        ~ClockComponent() noexcept override = default;
+        private:
+            nts::Tristate _value = nts::Undefined;
+            nts::Tristate _nextValue = nts::Undefined;
 
-        void setValue(nts::Tristate value);
+        public:
+            ClockComponent();
+            ~ClockComponent() noexcept override = default;
 
-        void simulate(std::size_t tick) override;
-        nts::Tristate compute(std::size_t pin) override;
+            void setValue(nts::Tristate value);
 
-    private:
-        nts::Tristate _value = nts::Undefined;
-        nts::Tristate _nextValue = nts::Undefined;
+            void simulate(std::size_t tick) override;
+            nts::Tristate compute(std::size_t pin) override;
     };
 }
 

@@ -16,5 +16,6 @@ nts::Tristate nts::AndComponent::compute(std::size_t pin)
     if (pin == 3) {
         return getLink(1) && getLink(2); 
     }
+
     return getLink(pin);
 }

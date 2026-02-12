@@ -10,12 +10,14 @@
 
 #include "AComponent.hpp"
 
-class NotComponent : public nts::AComponent {
-    public:
-        NotComponent();
-        ~NotComponent() noexcept override = default;
-
-        nts::Tristate compute(std::size_t pin) override;
-};
+namespace nts {
+    class NotComponent : public nts::AComponent {
+        public:
+            NotComponent();
+            ~NotComponent() noexcept override = default;
+    
+            nts::Tristate compute(std::size_t pin) override;
+    };
+}
 
 #endif /* !NOTCOMPONENT_HPP_ */

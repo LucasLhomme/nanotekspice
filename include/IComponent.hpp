@@ -33,47 +33,54 @@ namespace nts {
 namespace nts {
     inline nts::Tristate operator&&(nts::Tristate a, nts::Tristate b)
     {
-        if (a == nts::Tristate::True && b == nts::Tristate::True) {
+        if (a == nts::Tristate::True && b == nts::Tristate::True)
             return nts::Tristate::True;
-        } else if (a == nts::Tristate::False || b == nts::Tristate::False) {
+
+        else if (a == nts::Tristate::False || b == nts::Tristate::False)
             return nts::Tristate::False;
-        }
+
         return nts::Tristate::Undefined;
     }
 
     inline nts::Tristate operator||(nts::Tristate a, nts::Tristate b)
     {
-        if (a == nts::Tristate::True && b == nts::Tristate::True) {
+        if (a == nts::Tristate::True && b == nts::Tristate::True)
             return nts::Tristate::True;
-        } else if (a == nts::Tristate::True || b == nts::Tristate::True) {
+
+        else if (a == nts::Tristate::True || b == nts::Tristate::True)
             return nts::Tristate::True;
-        } else if (a == nts::Tristate::False && b == nts::Tristate::False) {
+
+        else if (a == nts::Tristate::False && b == nts::Tristate::False)
             return nts::Tristate::False;
-        }
+
         return nts::Tristate::Undefined;
     }
 
     inline nts::Tristate operator^(nts::Tristate a, nts::Tristate b)
     {
-        if (a == nts::Tristate::False && b == nts::Tristate::True) {
+        if (a == nts::Tristate::False && b == nts::Tristate::True)
             return nts::Tristate::True;
-        } else if (a == nts::Tristate::True && b == nts::Tristate::False) {
+
+        else if (a == nts::Tristate::True && b == nts::Tristate::False)
             return nts::Tristate::True;
-        } else if (a == nts::Tristate::False && b == nts::Tristate::False) {
+
+        else if (a == nts::Tristate::False && b == nts::Tristate::False)
             return nts::Tristate::False;
-        } else if (a == nts::Tristate::True && b == nts::Tristate::True) {
+
+        else if (a == nts::Tristate::True && b == nts::Tristate::True)
             return nts::Tristate::False;
-        }
+
         return nts::Tristate::Undefined;
     }
 
     inline nts::Tristate operator!(nts::Tristate value)
     {
-        if (value == nts::Tristate::True) {
+        if (value == nts::Tristate::True)
             return nts::Tristate::False;
-        } else if (value == nts::Tristate::False) {
+
+        else if (value == nts::Tristate::False)
             return nts::Tristate::True;
-        }
+
         return nts::Tristate::Undefined;
     }
 }
