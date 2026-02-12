@@ -21,6 +21,7 @@ SRC         =   $(PROJECT)/main.cpp \
 				$(COMPONENTS_SPECIAL)/Output.cpp \
 				$(COMPONENTS_SPECIAL)/True.cpp \
 				$(COMPONENTS_SPECIAL)/False.cpp \
+				$(COMPONENTS_SPECIAL)/Logger.cpp \
 				$(COMPONENTS_ELEMENTARY)/or.cpp \
 				$(COMPONENTS_ELEMENTARY)/and.cpp \
 				$(COMPONENTS_ELEMENTARY)/xor.cpp \
