@@ -4,7 +4,6 @@
 ** File description:
 ** OrComponent
 */
-
 #include "OrComponent.hpp"
 
 OrComponent::OrComponent()
