@@ -10,6 +10,7 @@
 #include "Special-Components/TrueComponent.hpp"
 #include "Special-Components/FalseComponent.hpp"
 #include "Special-Components/ClockComponent.hpp"
+#include "Special-Components/OutputComponent.hpp"
 
 nts::ComponentFactory::ComponentFactory()
 {
@@ -21,7 +22,7 @@ nts::ComponentFactory::ComponentFactory()
     // _create["clock"] = [](){ return std::make_unique<Clock>(); };
     // // Special components
     _create["input"] = [](){ return std::make_unique<nts::InputComponent>(); };
-    // _create["output"] = [](){return std::make_unique<Output>(); };
+    _create["output"] = [](){return std::make_unique<nts::OutputComponent>(); };
     _create["true"] = [](){ return std::make_unique<nts::TrueComponent>(); };
     _create["false"] = [](){ return std::make_unique<nts::FalseComponent>(); };
     _create["clock"] = [](){ return std::make_unique<nts::ClockComponent>(); };

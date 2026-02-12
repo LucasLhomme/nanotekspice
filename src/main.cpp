@@ -64,18 +64,15 @@ int main(int argc, char **argv)
             {
                 nts::Parser p(filename);
                 p.parse();
-                std::cout << "on est la hein" << std::endl;
                 nts::ComponentFactory factory;
                 std::map<std::string, std::pair<std::string, std::unique_ptr<nts::IComponent>>> component_tab;
+                
                 std::vector<std::tuple<std::string, std::string>> chipsets = p.getChipsets();
                 std::vector<std::tuple<std::string, std::string>> links = p.getLinks();
                 int test = 0;
                 for (auto chipset : chipsets) {
-                    std::cout << "on est la hein" << test << std::endl;
                     std::unique_ptr<nts::IComponent> component = factory.createComponent(std::get<0>(chipset));
                     component_tab[std::get<1>(chipset)] = std::make_pair(std::get<0>(chipset), std::move(component));
-
-                    test = test + 1;
                 }
                 debugPrintMap(component_tab);
                 nts::Core c(std::move(component_tab));
