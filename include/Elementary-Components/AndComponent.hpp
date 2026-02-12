@@ -6,7 +6,7 @@
 */
 
 #ifndef ANDCOMPONENT_HPP_
-#define ANDCOMPONENT_HPP_
+    #define ANDCOMPONENT_HPP_
 
 #include "AComponent.hpp"
 
