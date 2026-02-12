@@ -3,7 +3,6 @@
 //
 
 #include "../../../include/components/advanced_components/comp_4512.hpp"
-#include "../../../include/Exception.hpp"
 
 namespace nts {
 
@@ -17,7 +16,7 @@ namespace nts {
     nts::Tristate Comp_4512::compute(std::size_t pin)
     {
         if (pin != 14)
-            throw Exception(std::string("Too much pin: ") + std::to_string(pin));
+            return nts::Undefined;
 
         nts::Tristate oe = getVal(15); // Output Enable
         nts::Tristate inhibit = getVal(10); // forced zero
