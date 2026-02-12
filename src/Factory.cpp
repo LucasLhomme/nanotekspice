@@ -23,6 +23,7 @@
 #include "components/gates_components/comp_4081.hpp"
 #include "components/gates_components/comp_4011.hpp"
 #include "components/advanced_components/comp_4512.hpp"
+#include "components/advanced_components/comp_4514.hpp"
 
 namespace nts {
 
@@ -45,6 +46,7 @@ namespace nts {
         _creators["4081"] = []() { return std::make_unique<Comp_4081>(); };
         _creators["4011"] = []() { return std::make_unique<Comp_4011>(); };
         _creators["4512"] = []() { return std::make_unique<Comp_4512>(); };
+        _creators["4514"] = []() { return std::make_unique<Comp_4514>(); };
     }
 
     std::unique_ptr<nts::IComponent> Factory::createComponent(const std::string &type)
