@@ -10,19 +10,21 @@
 
 #include "AComponent.hpp"
 
-class Clock : public nts::AComponent {
-public:
-    Clock(std::string name);
-    ~Clock() override = default;
-
-    void setValue(nts::Tristate value);
-
-    void simulate(std::size_t tick) override;
-    nts::Tristate compute(std::size_t pin) override;
-
-private:
-    nts::Tristate _value = nts::Undefined;
-    nts::Tristate _nextValue = nts::Undefined;
-};
+namespace nts {
+    class Clock : public nts::AComponent {
+    public:
+        Clock();
+        ~Clock() override = default;
+    
+        void setValue(nts::Tristate value);
+    
+        void simulate(std::size_t tick) override;
+        nts::Tristate compute(std::size_t pin) override;
+    
+    private:
+        nts::Tristate _value = nts::Undefined;
+        nts::Tristate _nextValue = nts::Undefined;
+    };
+}
 
 #endif //NANO_CLOCK_HPP

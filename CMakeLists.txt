@@ -24,6 +24,11 @@ set(SOURCES
         src/Parsing/ParsingException.cpp
         src/Factory/ComponentFactory.cpp
         src/Factory/FactoryException.cpp
+        src/Special-Components/Input.cpp
+        src/Special-Components/Clock.cpp
+        src/Special-Components/False.cpp
+        src/Special-Components/True.cpp
+        src/AComponent.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})

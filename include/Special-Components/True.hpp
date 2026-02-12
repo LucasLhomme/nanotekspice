@@ -10,12 +10,14 @@
 
 #include "AComponent.hpp"
 
-class True : public nts::AComponent {
-public:
-    ~True() override = default;
-
-    void simulate(std::size_t tick) override;
-    nts::Tristate compute(std::size_t pin) override;
-};
+namespace nts {
+    class True : public nts::AComponent {
+    public:
+        ~True() override = default;
+    
+        void simulate(std::size_t tick) override;
+        nts::Tristate compute(std::size_t pin) override;
+    };
+}
 
 #endif //NANO_TRUE_HPP

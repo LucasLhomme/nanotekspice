@@ -7,18 +7,18 @@
 
 #include "../include/Core.hpp"
 
-nts::Core::Core(std::size_t tick, std::map<std::string, std::pair<std::string, std::unique_ptr<nts::IComponent>>> components) : _tick(tick), _components(components) {}
+nts::Core::Core(std::map<std::string, std::pair<std::string, std::unique_ptr<nts::IComponent>>> &&components) : _components(std::move(components)) {}
 
 nts::Core::~Core() {}
 
-void exit(int signal) {
+void signalHandler(int signal) {
         std::exit(signal);
 }
 
 void nts::Core::core_loop() {
     std::string line;
     std::cout << "> ";
-    std::signal(SIGINT, exit);
+    std::signal(SIGINT, signalHandler);
 
     while (std::getline(std::cin, line)) {
         if (line == "exit") {
@@ -51,7 +51,7 @@ nts::IComponent *nts::Core::getComponent(const std::string &name) {
     return comp->second.second.get();
 }
 
-void nts::Core::addComponent(std::string &name, std::string &type, std::unique_ptr<nts::IComponent> component) {
+void nts::Core::addComponent(const std::string &name, std::string &type, std::unique_ptr<nts::IComponent> component) {
 
     _components[name] = std::make_pair(type, std::move(component));
 }

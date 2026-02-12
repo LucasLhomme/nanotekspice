@@ -10,19 +10,21 @@
 
 #include "AComponent.hpp"
 
-class Input : public nts::AComponent {
-public:
-    Input(std::string name);
-    ~Input() override = default;
-
-    void setValue(nts::Tristate value);
-
-    void simulate(std::size_t tick) override;
-    nts::Tristate compute(std::size_t pin) override;
-
-private:
-    nts::Tristate _value = nts::Undefined;
-    nts::Tristate _nextValue = nts::Undefined;
-};
+namespace nts {
+    class Input : public nts::AComponent {
+    public:
+        Input();
+        ~Input() override = default;
+    
+        void setValue(nts::Tristate value);
+    
+        void simulate(std::size_t tick) override;
+        nts::Tristate compute(std::size_t pin) override;
+    
+    private:
+        nts::Tristate _value = nts::Undefined;
+        nts::Tristate _nextValue = nts::Undefined;
+    };
+}
 
 #endif //NANO_INPUT_HPP

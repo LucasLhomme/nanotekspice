@@ -4,24 +4,25 @@
 ** File description:
 ** Input
 */
-#include "Input.hpp"
 
-Input::Input(std::string name) : AComponent(name)
+#include "../../include/Special-Components/Input.hpp"
+
+nts::Input::Input()
 {
     _value = nts::Undefined;
 }
 
-void Input::setValue(nts::Tristate value)
+void nts::Input::setValue(nts::Tristate value)
 {
     _nextValue = value;
 }
 
-void Input::simulate(std::size_t tick)
+void nts::Input::simulate(std::size_t tick)
 {
     _value = _nextValue;
 }
 
-nts::Tristate Input::compute(std::size_t pin)
+nts::Tristate nts::Input::compute(std::size_t pin)
 {
     return _value;
 }

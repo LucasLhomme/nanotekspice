@@ -18,13 +18,14 @@
 namespace nts {
     class Core {
         private:
-            std::size_t _tick;
+            std::size_t _tick = 0;
             std::map<std::string, std::pair<std::string, std::unique_ptr<nts::IComponent>>> _components;
 
         public:
-            Core(std::size_t tick, std::map<std::string, std::pair<std::string, std::unique_ptr<nts::IComponent>>> components);
+            Core(std::map<std::string, std::pair<std::string, std::unique_ptr<nts::IComponent>>> &&components);
+            ~Core();
             
-            void addComponent(std::string &name, std::string &type, std::unique_ptr<nts::IComponent> component);
+            void addComponent(const std::string &name, std::string &type, std::unique_ptr<nts::IComponent> component);
             nts::IComponent *getComponent(const std::string &name);
 
             void core_loop();

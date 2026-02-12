@@ -11,17 +11,17 @@
 #include "Special-Components/False.hpp"
 #include "Special-Components/Clock.hpp"
 
-ComponentFactory::ComponentFactory()
+nts::ComponentFactory::ComponentFactory()
 {
-    // Special components
+    // Special componentsnts
     _create["input"] = [](){ return std::make_unique<Input>(); };
     // _create["output"] = [](){return std::make_unique<Output>(); };
-    _create["true"] = [](){ return std::make_unique<True>(); };
-    _create["false"] = [](){ return std::make_unique<False>(); };
+    _create["true"] = [](){ return std::make_unique<class nts::True>(); };
+    _create["false"] = [](){ return std::make_unique<class nts::False>(); };
     _create["clock"] = [](){ return std::make_unique<Clock>(); };
 }
 
-std::unique_ptr<nts::IComponent> ComponentFactory::createComponent(const std::string &type)
+std::unique_ptr<nts::IComponent> nts::ComponentFactory::createComponent(const std::string &type)
 {
     if (_create.find(type) == _create.end())
         throw nts::FactoryException("Unknown component type: '" + type + "', can't create it.");

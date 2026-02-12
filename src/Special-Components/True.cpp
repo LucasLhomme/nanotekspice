@@ -4,13 +4,13 @@
 ** File description:
 ** True
 */
-#include "True.hpp"
+#include "../../include/Special-Components/True.hpp"
 
-void True::simulate(std::size_t tick)
+void nts::True::simulate(std::size_t tick)
 {
 }
 
-nts::Tristate True::compute(std::size_t pin)
+nts::Tristate nts::True::compute(std::size_t pin)
 {
     return nts::True;
 }

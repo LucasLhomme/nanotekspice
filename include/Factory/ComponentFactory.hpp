@@ -14,13 +14,15 @@
 #include <stdexcept>
 #include "IComponent.hpp"
 
-class ComponentFactory {
-public:
-    ComponentFactory();
-    std::unique_ptr<nts::IComponent> createComponent(const std::string &type);
-
-private:
-    std::unordered_map<std::string, std::function<std::unique_ptr<nts::IComponent>()>> _create;
-};
+namespace nts {
+    class ComponentFactory {
+    public:
+        ComponentFactory();
+        std::unique_ptr<nts::IComponent> createComponent(const std::string &type);
+    
+    private:
+        std::unordered_map<std::string, std::function<std::unique_ptr<nts::IComponent>()>> _create;
+    };
+}
 
 #endif //NANO_FACTORY_HPP

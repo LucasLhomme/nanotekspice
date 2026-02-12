@@ -4,13 +4,13 @@
 ** File description:
 ** False
 */
-#include "False.hpp"
+#include "../../include/Special-Components/False.hpp"
 
-void False::simulate(std::size_t tick)
+void nts::False::simulate(std::size_t tick)
 {
 }
 
-nts::Tristate False::compute(std::size_t pin)
+nts::Tristate nts::False::compute(std::size_t pin)
 {
     return nts::False;
 }
