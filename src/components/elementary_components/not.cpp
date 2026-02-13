@@ -16,7 +16,7 @@ namespace nts {
         if (_links.find(1) == _links.end())
             return nts::Undefined;
         auto link = _links[1];
-        nts::Tristate value = link.first->compute(link.second);
+        nts::Tristate value = computeSafe(link.first, link.second);
         if (value == nts::True)
             return nts::False;
         if (value == nts::False)

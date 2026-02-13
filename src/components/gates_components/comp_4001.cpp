@@ -15,11 +15,11 @@ namespace nts {
 
         if (_links.find(pinA) != _links.end()) {
             auto link = _links[pinA];
-            valueA = link.first->compute(link.second);
+            valueA = computeSafe(link.first, link.second);
         }
         if (_links.find(pinB) != _links.end()) {
             auto link = _links[pinB];
-            valueB = link.first->compute(link.second);
+            valueB = computeSafe(link.first, link.second);
         }
         if (valueA == nts::True || valueB == nts::True)
             return nts::False;

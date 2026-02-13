@@ -17,14 +17,14 @@ namespace nts {
         if (pin == 1 || pin == 2) {
             if (_links.find(pin) == _links.end())
                 throw Exception(std::string("Unlinked input pin on Xor: ") + std::to_string(pin));
-            return _links[pin].first->compute(_links[pin].second);
+            return computeSafe(_links[pin].first, _links[pin].second);
         }
 
         if (_links.find(1) == _links.end() || _links.find(2) == _links.end())
             throw Exception("Xor gate missing input link");
 
-        const nts::Tristate a = _links[1].first->compute(_links[1].second);
-        const nts::Tristate b = _links[2].first->compute(_links[2].second);
+        const nts::Tristate a = computeSafe(_links[1].first, _links[1].second);
+        const nts::Tristate b = computeSafe(_links[2].first, _links[2].second);
         if (a == nts::Undefined || b == nts::Undefined)
             return nts::Undefined;
         if (a == b)

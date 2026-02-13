@@ -13,7 +13,7 @@ namespace nts {
     void Output::simulate(std::size_t tick) {
         (void)tick;
         if (_links.find(1) != _links.end()) {
-            _value = _links[1].first->compute(_links[1].second);
+            _value = computeSafe(_links[1].first, _links[1].second);
         } else {
             _value = nts::Undefined;
         }
