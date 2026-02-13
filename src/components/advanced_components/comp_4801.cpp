@@ -64,15 +64,15 @@ namespace nts {
         nts::Tristate oe = getVal(20); // Output Enable
         nts::Tristate we = getVal(21); // Write Enable
         int addr = getAddress();
-        bool bitIndex = false;
+        int bitIndex = -1;
 
         for (size_t i = 0; i < dataPins.size(); ++i) {
             if (dataPins[i] == pin) {
-                bitIndex = true;
+                bitIndex = static_cast<int>(i);
                 break;
             }
         }
-        if (bitIndex == false)
+        if (bitIndex == -1)
             return nts::Undefined;
         if (ce != nts::False || oe != nts::False || we == nts::False) {
             return nts::Undefined;
