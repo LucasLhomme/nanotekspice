@@ -10,6 +10,7 @@ INCLUDE		=	./include
 COMPONENTS_SPECIAL	=	./src/components/Special
 COMPONENTS_ELEMENTARY	=	./src/components/elementary_components
 COMPONENTS_GATES	=	./src/components/gates_components
+ADVANCED_COMP	=	./src/components/advanced_components
 
 SRC         =   $(PROJECT)/main.cpp \
 				$(PROJECT)/components/AComponent.cpp \
@@ -32,6 +33,12 @@ SRC         =   $(PROJECT)/main.cpp \
 				$(COMPONENTS_GATES)/comp_4001.cpp \
 				$(COMPONENTS_GATES)/comp_4081.cpp \
 				$(COMPONENTS_GATES)/comp_4011.cpp \
+				$(ADVANCED_COMP)/comp_4512.cpp \
+				$(ADVANCED_COMP)/comp_4514.cpp \
+				$(ADVANCED_COMP)/comp_4008.cpp \
+				$(ADVANCED_COMP)/comp_4801.cpp \
+				$(ADVANCED_COMP)/comp_2716.cpp \
+				$(ADVANCED_COMP)/comp_4017.cpp \
 
 OBJ			=	$(SRC:.cpp=.o)
 

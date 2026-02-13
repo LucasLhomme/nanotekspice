@@ -8,7 +8,7 @@
 #ifndef NANO_1_COMP4069_HPP
 #define NANO_1_COMP4069_HPP
 
-#include "Igates.hpp"
+#include "../Igates.hpp"
 #include <map>
 
 namespace nts {
