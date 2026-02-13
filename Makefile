@@ -21,6 +21,7 @@ SRC         =   $(PROJECT)/main.cpp \
 				$(COMPONENTS_SPECIAL)/Output.cpp \
 				$(COMPONENTS_SPECIAL)/True.cpp \
 				$(COMPONENTS_SPECIAL)/False.cpp \
+				$(COMPONENTS_SPECIAL)/Logger.cpp \
 				$(COMPONENTS_ELEMENTARY)/or.cpp \
 				$(COMPONENTS_ELEMENTARY)/and.cpp \
 				$(COMPONENTS_ELEMENTARY)/xor.cpp \
@@ -33,6 +34,19 @@ SRC         =   $(PROJECT)/main.cpp \
 				$(COMPONENTS_GATES)/comp_4011.cpp \
 
 OBJ			=	$(SRC:.cpp=.o)
+
+# Core Objects (Everything except main)
+OBJ_MAIN    =   $(PROJECT)/main.o
+OBJ_CORE    =   $(filter-out $(OBJ_MAIN), $(OBJ))
+
+# Bonus Configuration
+NAME_BONUS  =   nanotekspice_gui
+SRC_BONUS   =   bonus/GraphicInterface.cpp \
+                bonus/GraphicComponent.cpp \
+                bonus/main_gui.cpp
+OBJ_BONUS   =   $(SRC_BONUS:.cpp=.o)
+SFML_FLAGS  =   -lsfml-graphics -lsfml-window -lsfml-system
+
 EXEC        =   nanotekspice
 CXX			= 	clang++
 CXXFLAGS    +=  -std=c++20 -W -Wall -Wextra -g -Iinclude/
@@ -42,10 +56,15 @@ all: $(EXEC)
 $(EXEC): $(OBJ)
 	$(CXX) -o $(EXEC) $(OBJ) $(CXXFLAGS)
 
+bonus: $(OBJ_CORE) $(OBJ_BONUS)
+	$(CXX) -o $(NAME_BONUS) $(OBJ_CORE) $(OBJ_BONUS) $(CXXFLAGS) $(SFML_FLAGS)
+
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
-	rm -f $(EXEC)
+	rm -f $(EXEC) $(NAME_BONUS)
+
+re: fclean all
 
 re: fclean all
