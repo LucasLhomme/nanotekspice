@@ -8,18 +8,18 @@
 #include <map>
 #include <utility>
 #include <vector>
+#include "components/advanced_components/AdvancedComponent.hpp"
 #include "components/Igates.hpp"
 
 namespace nts {
-    class Comp_4514 : public Igates {
+    class Comp_4514 : public AdvancedComponent {
     private:
-        const std::vector<Gate> _gates = {
+        const std::vector<Igates::Gate> _gates = {
             {1, 2, 3},
             {5, 6, 4},
             {8, 9, 10},
             {12, 13, 11}
         };
-        nts::Tristate getVal(std::size_t p);
     public:
         Comp_4514() = default;
         ~Comp_4514() override = default;

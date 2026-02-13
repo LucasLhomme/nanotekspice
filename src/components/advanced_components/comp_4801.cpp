@@ -15,13 +15,6 @@ namespace nts {
         }
     }
 
-    nts::Tristate Comp_4801::getVal(std::size_t p)
-    {
-        if (_links.find(p) == _links.end())
-            return nts::Undefined;
-        return computeSafe(_links[p].first, _links[p].second);
-    }
-
     int Comp_4801::getAddress() {
         int address = 0;
 
@@ -59,12 +52,9 @@ namespace nts {
     }
 
     nts::Tristate Comp_4801::compute(std::size_t pin) {
-        static const std::vector<size_t> dataPins = {9, 10, 11, 13, 14, 15, 16, 17};
-        nts::Tristate ce = getVal(18); // Chip Enable
-        nts::Tristate oe = getVal(20); // Output Enable
-        nts::Tristate we = getVal(21); // Write Enable
         int addr = getAddress();
         int bitIndex = -1;
+        static const std::vector<size_t> dataPins = {1,2,3,4,5,6,7,0};
 
         for (size_t i = 0; i < dataPins.size(); ++i) {
             if (dataPins[i] == pin) {
@@ -74,6 +64,11 @@ namespace nts {
         }
         if (bitIndex == -1)
             return nts::Undefined;
+
+        nts::Tristate ce = getVal(22); // CE
+        nts::Tristate oe = getVal(21); // OE
+        nts::Tristate we = getVal(20); // WE
+
         if (ce != nts::False || oe != nts::False || we == nts::False) {
             return nts::Undefined;
         }

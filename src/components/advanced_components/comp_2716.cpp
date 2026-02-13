@@ -15,12 +15,6 @@ namespace nts {
         }
     }
 
-    nts::Tristate Comp_2716::getVal(std::size_t p)
-    {
-        if (_links.find(p) == _links.end())
-            return nts::Undefined;
-        return computeSafe(_links[p].first, _links[p].second);
-    }
 
     int Comp_2716::getAddress() {
         int address = 0;

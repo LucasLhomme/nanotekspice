@@ -7,12 +7,11 @@
 #include <map>
 #include <utility>
 #include <vector>
-#include "components/Igates.hpp"
+#include "components/advanced_components/AdvancedComponent.hpp"
 
 namespace nts {
-        class Comp_4801 : public AComponent {
+        class Comp_4801 : public AdvancedComponent {
         private:
-            nts::Tristate getVal(std::size_t pin);
             int getAddress();
             std::vector<std::array<nts::Tristate, 8>> _memory;
         public:

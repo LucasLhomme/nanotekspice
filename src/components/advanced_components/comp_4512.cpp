@@ -6,13 +6,6 @@
 
 namespace nts {
 
-    nts::Tristate Comp_4512::getVal(std::size_t p)
-    {
-        if (_links.find(p) == _links.end())
-            return nts::Undefined;
-        return computeSafe(_links[p].first, _links[p].second);
-    }
-
     nts::Tristate Comp_4512::compute(std::size_t pin)
     {
         if (pin != 14)
@@ -30,6 +23,7 @@ namespace nts {
             return nts::False;
         if (oe == nts::Undefined || inhibit == nts::Undefined)
             return nts::Undefined;
+
         if (a == nts::Undefined || b == nts::Undefined || c == nts::Undefined)
             return nts::Undefined;
         const unsigned long index = (a == nts::True ? 1 : 0) +
