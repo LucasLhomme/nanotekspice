@@ -24,14 +24,14 @@ namespace nts {
         for (const auto &gate : _gates) {
             if (gate.output == pin) {
                 if (_links.find(gate.input1) != _links.end())
-                    val1 = _links[gate.input1].first->compute(_links[gate.input1].second);
+                    val1 = computeSafe(_links[gate.input1].first, _links[gate.input1].second);
                 if (_links.find(gate.input2) != _links.end())
-                    val2 = _links[gate.input2].first->compute(_links[gate.input2].second);
+                    val2 = computeSafe(_links[gate.input2].first, _links[gate.input2].second);
             return computeNand(val1, val2);
             }
         }
         if (_links.contains(pin))
-            return _links[pin].first->compute(_links[pin].second);
+            return computeSafe(_links[pin].first, _links[pin].second);
         return nts::Undefined;
     }
 

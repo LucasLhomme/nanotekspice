@@ -8,7 +8,7 @@
 #include <utility>
 #include <vector>
 
-#include "Igates.hpp"
+#include "../Igates.hpp"
 
 namespace nts {
     class Comp_4030 : public Igates {

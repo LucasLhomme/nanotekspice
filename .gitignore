@@ -1,6 +1,9 @@
 .idea/
 *.o
 nanotekspice
+nanotekspice_gui
 test.nts
 test.sh
 global_test.nts
+*.nts
+G-OOP-400_nanotekspice/

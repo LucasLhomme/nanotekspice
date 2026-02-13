@@ -8,15 +8,20 @@
 #include "components/Special/Input.hpp"
 
 namespace nts {
-    Input::Input() : _value(nts::Undefined) {}
+    Input::Input() : _value(nts::Undefined), _nextValue(nts::Undefined) {}
+
+    void Input::simulate(std::size_t tick) {
+        (void)tick;
+        _value = _nextValue;
+    }
 
     nts::Tristate Input::compute(std::size_t pin) {
         if (pin != 1)
-			return nts::Undefined;
+            return nts::Undefined;
         return _value;
     }
 
     void Input::setValue(nts::Tristate value) {
-        _value = value;
+        _nextValue = value;
     }
 }
