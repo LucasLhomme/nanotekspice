@@ -19,7 +19,7 @@ namespace nts {
     {
         if (_links.find(p) == _links.end())
             return nts::Undefined;
-        return _links[p].first->compute(_links[p].second);
+        return computeSafe(_links[p].first, _links[p].second);
     }
 
     int Comp_4801::getAddress() {

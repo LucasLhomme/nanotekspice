@@ -19,7 +19,7 @@ namespace nts {
     nts::Tristate Comp_4017::getVal(std::size_t pin) {
         if (_links.find(pin) == _links.end())
             return nts::Undefined;
-        return _links[pin].first->compute(_links[pin].second);
+        return computeSafe(_links[pin].first, _links[pin].second);
     }
 
     void Comp_4017::simulate(std::size_t tick) {
