@@ -10,21 +10,17 @@
 #include "components/Igates.hpp"
 
 namespace nts {
-    class Comp_4801 : public Igates {
-    private:
-        const std::vector<Gate> _gates = {
-            {1, 2, 3},
-            {5, 6, 4},
-            {8, 9, 10},
-            {12, 13, 11}
+        class Comp_4801 : public AComponent {
+        private:
+            nts::Tristate getVal(std::size_t pin);
+            int getAddress();
+            std::vector<std::array<nts::Tristate, 8>> _memory;
+        public:
+            Comp_4801();
+            ~Comp_4801() override = default;
+            nts::Tristate compute(std::size_t pin) override;
+            void simulate(std::size_t tick) override;
         };
-        nts::Tristate getVal(std::size_t p);
-    public:
-        Comp_4801() = default;
-        ~Comp_4801() override = default;
-
-        nts::Tristate compute(std::size_t pin) override;
-    };
-} // nts
+    }
 
 #endif //NANO_1_COMP_4001_HPP
