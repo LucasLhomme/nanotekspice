@@ -2,8 +2,8 @@
 // Created by crabe on 13/02/2026.
 //
 
-#ifndef NANO_1_COMP_4001_HPP
-#define NANO_1_COMP_4001_HPP
+#ifndef NANO_1_COMP_4801_HPP
+#define NANO_1_COMP_4801_HPP
 #include <map>
 #include <utility>
 #include <vector>
@@ -23,4 +23,4 @@ namespace nts {
         };
     }
 
-#endif //NANO_1_COMP_4001_HPP
+#endif //NANO_1_COMP_4801_HPP

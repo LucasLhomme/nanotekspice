@@ -6,6 +6,8 @@
 */
 
 #include "Factory.hpp"
+
+#include "components/advanced_components/comp_2716.hpp"
 #include "components/Special/Input.hpp"
 #include "components/Special/Output.hpp"
 #include "components/Special/Clock.hpp"
@@ -51,6 +53,7 @@ namespace nts {
         _creators["4514"] = []() { return std::make_unique<Comp_4514>(); };
         _creators["4008"] = []() { return std::make_unique<Comp_4008>(); };
         _creators["4801"] = []() { return std::make_unique<Comp_4801>(); };
+        _creators["2716"] = []() { return std::make_unique<Comp_2716>(); };
     }
 
     std::unique_ptr<nts::IComponent> Factory::createComponent(const std::string &type)
