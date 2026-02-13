@@ -1,4 +1,13 @@
-#include "../../../include/components/advanced_components/comp_4017.hpp"
+/*
+** EPITECH PROJECT, 2026
+** NANO-1
+** File description:
+** comp_4017
+*/
+
+#include "components/advanced_components/comp_4017.hpp"
+#include <array>
+
 
 namespace nts {
 
@@ -38,30 +47,23 @@ namespace nts {
     }
 
     nts::Tristate Comp_4017::compute(std::size_t pin) {
-        int targetCount = -1;
-        switch (pin) {
-            case 3:  targetCount = 0; break; // Q0
-            case 2:  targetCount = 1; break; // Q1
-            case 4:  targetCount = 2; break; // Q2
-            case 7:  targetCount = 3; break; // Q3
-            case 10: targetCount = 4; break; // Q4
-            case 1:  targetCount = 5; break; // Q5
-            case 5:  targetCount = 6; break; // Q6
-            case 6:  targetCount = 7; break; // Q7
-            case 9:  targetCount = 8; break; // Q8
-            case 11: targetCount = 9; break; // Q9
-            case 12: 
-                if (_count <= 4)
-                    return nts::True;
-                else
-                    return nts::False;
-            
-            default: return nts::Undefined;
-        }
-        if (_count == targetCount) {
-            return nts::True;
-        } else {
+
+        static const std::array<int, 16> pinToCount =
+            // -1 = unused, -2 = special case for pin 12 and 0-4 = true, 5-9 = false
+            { -1, 5, 1, 0, 2, 6, 7, 3, -1, 8, 4, 9, -2, -1, -1, -1 };
+
+        if (pin >= pinToCount.size())
+            return nts::Undefined;
+        int mapVal = pinToCount[pin];
+        if (mapVal == -1)
+            return nts::Undefined;
+        if (mapVal == -2) {
+            if (_count <= 4)
+                return nts::True;
             return nts::False;
         }
+        if (_count == mapVal)
+            return nts::True;
+        return nts::False;
     }
 }

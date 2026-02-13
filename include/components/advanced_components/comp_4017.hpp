@@ -4,13 +4,15 @@
 
 #ifndef NANO_1_COMP_4017_HPP
 #define NANO_1_COMP_4017_HPP
+
 #include <map>
 #include <utility>
 #include <vector>
 #include "components/Igates.hpp"
 
+
 namespace nts {
-    class Comp_4017 : public AComponent {
+    class Comp_4017 : public Igates {
     private:
         nts::Tristate getVal(std::size_t pin);
         int _count;
