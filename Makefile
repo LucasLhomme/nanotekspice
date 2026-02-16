@@ -39,6 +39,7 @@ SRC         =   $(PROJECT)/main.cpp \
 				$(ADVANCED_COMP)/comp_4801.cpp \
 				$(ADVANCED_COMP)/comp_2716.cpp \
 				$(ADVANCED_COMP)/comp_4017.cpp \
+				$(ADVANCED_COMP)/comp_4013.cpp \
 
 OBJ			=	$(SRC:.cpp=.o)
 

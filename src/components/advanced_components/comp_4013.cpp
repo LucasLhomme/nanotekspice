@@ -5,7 +5,7 @@
 ** comp_4013
 */
 
-#include "Comp_4013.hpp"
+#include "components/advanced_components/comp_4013.hpp"
 
 namespace nts {
     Comp_4013::Comp_4013() {
@@ -38,7 +38,7 @@ namespace nts {
     }
 
 
-    void Comp_4013::updateFlipFlop(nts::Tristate data, nts::Tristate clock, nts::Tristate set, nts::Tristate reset, nts::Tristate &q, nts::Tristate &nq, nts::Tristate &lastClock) {
+    void Comp_4013::updateFlipFlop(nts::Tristate data, nts::Tristate clock, nts::Tristate set, nts::Tristate reset, nts::Tristate &output, nts::Tristate &noutput, nts::Tristate &lastClock) {
         bool isRisingEdge = (clock == nts::True && lastClock != nts::True);
         lastClock = clock;
 

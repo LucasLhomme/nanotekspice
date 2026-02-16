@@ -29,6 +29,7 @@
 #include "components/advanced_components/comp_4008.hpp"
 #include "components/advanced_components/comp_4801.hpp"
 #include "components/advanced_components/comp_4017.hpp"
+#include "components/advanced_components/comp_4013.hpp"
 
 namespace nts {
 
