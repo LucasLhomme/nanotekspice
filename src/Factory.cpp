@@ -56,6 +56,7 @@ namespace nts {
         _creators["4801"] = []() { return std::make_unique<Comp_4801>(); };
         _creators["2716"] = []() { return std::make_unique<Comp_2716>(); };
         _creators["4017"] = []() { return std::make_unique<Comp_4017>(); };
+        _creators["4013"] = []() { return std::make_unique<Comp_4013>(); };
     }
 
     std::unique_ptr<nts::IComponent> Factory::createComponent(const std::string &type)

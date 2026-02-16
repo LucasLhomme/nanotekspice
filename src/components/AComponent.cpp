@@ -24,10 +24,8 @@ namespace nts {
     {
         if (!other)
             return nts::Undefined;
-
         if (recursionDepth > 300)
             return nts::Undefined;
-        
         recursionDepth++;
         try {
             nts::Tristate res = other->compute(pin);
