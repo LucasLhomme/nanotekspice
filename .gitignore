@@ -7,3 +7,5 @@ test.sh
 global_test.nts
 *.nts
 G-OOP-400_nanotekspice/
+log.bin
+tester.sh
