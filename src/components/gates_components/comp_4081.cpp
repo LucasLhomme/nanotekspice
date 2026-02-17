@@ -10,10 +10,8 @@ namespace nts {
 
     nts::Tristate Comp_4081::computeAnd(nts::Tristate val1, nts::Tristate val2)
     {
-        if (val1 == nts::False && val2 == nts::False)
+        if (val1 == nts::False || val2 == nts::False)
             return nts::False;
-        if (val1 == nts::True && val2 == nts::True)
-            return nts::True;
         if (val1 == nts::Undefined || val2 == nts::Undefined)
             return nts::Undefined;
         return nts::True;
