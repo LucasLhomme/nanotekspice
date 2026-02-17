@@ -12,9 +12,9 @@ namespace nts {
     {
         if (val1 == nts::False || val2 == nts::False)
             return nts::False;
-        if (val1 == nts::True && val2 == nts::True)
-            return nts::True;
-        return nts::Undefined;
+        if (val1 == nts::Undefined || val2 == nts::Undefined)
+            return nts::Undefined;
+        return nts::True;
     }
     nts::Tristate Comp_4081::compute(std::size_t pin) {
         nts::Tristate val1 = nts::Undefined;
