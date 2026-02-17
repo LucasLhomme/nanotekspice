@@ -1,6 +1,9 @@
-//
-// Created by crabe on 09/02/2026.
-//
+/*
+** EPITECH PROJECT, 2026
+** NANO-1
+** File description:
+** xor
+*/
 
 #include "../../../include/components/elementary_components/xor.hpp"
 #include "../../../include/Exception.hpp"
@@ -11,25 +14,11 @@ namespace nts {
 
     nts::Tristate Xor::compute(std::size_t pin)
     {
-        if (pin < 1 || pin > 3)
+        if (pin != 3)
             return nts::Undefined;
-
-        if (pin == 1 || pin == 2) {
-            if (_links.find(pin) == _links.end())
-                throw Exception(std::string("Unlinked input pin on Xor: ") + std::to_string(pin));
-            return computeSafe(_links[pin].first, _links[pin].second);
-        }
-
-        if (_links.find(1) == _links.end() || _links.find(2) == _links.end())
-            throw Exception("Xor gate missing input link");
-
-        const nts::Tristate a = computeSafe(_links[1].first, _links[1].second);
-        const nts::Tristate b = computeSafe(_links[2].first, _links[2].second);
-        if (a == nts::Undefined || b == nts::Undefined)
-            return nts::Undefined;
-        if (a == b)
-            return nts::False;
-        return nts::True;
+        nts::Tristate a = (_links.count(1)) ? computeSafe(_links[1].first, _links[1].second) : nts::Undefined;
+        nts::Tristate b = (_links.count(2)) ? computeSafe(_links[2].first, _links[2].second) : nts::Undefined;
+        return a ^ b;
     }
 }
 
