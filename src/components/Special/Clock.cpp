@@ -9,7 +9,9 @@
 
 namespace nts {
 
-    Clock::Clock() : _value(nts::Undefined) {}
+    Clock::Clock() {
+        _value = nts::Undefined;
+    }
 
     void Clock::simulate(std::size_t tick)
     {
@@ -19,7 +21,8 @@ namespace nts {
             _value = nts::False;
         } else if (_value == nts::False) {
             _value = nts::True;
-        }
+        } else
+            _value = nts::Undefined;
     }
 
     nts::Tristate Clock::compute(std::size_t pin)
