@@ -11,7 +11,6 @@
 namespace nts {
     class Comp_4011 : public Igates {
     private:
-        nts::Tristate computeNand(nts::Tristate val1, nts::Tristate val2);
         const std::vector<Gate> _gates = {
             {1, 2, 3},
             {5, 6, 4},

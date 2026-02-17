@@ -13,8 +13,6 @@
 
 namespace nts {
     class Comp_4071 : public AComponent {
-        private:
-            nts::Tristate computeOr(std::size_t pinA, std::size_t pinB);
         public:
             Comp_4071() = default;
             ~Comp_4071() override = default;
