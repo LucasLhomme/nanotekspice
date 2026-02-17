@@ -1,22 +1,14 @@
-//
-// Created by crabe on 12/02/2026.
-//
+/*
+** EPITECH PROJECT, 2026
+** NANO-1
+** File description:
+** comp_4011
+*/
 
 #include "components/gates_components/comp_4011.hpp"
 #include "../../../include/IComponent.hpp"
 
 namespace nts {
-
-    nts::Tristate Comp_4011::computeNand(nts::Tristate val1, nts::Tristate val2)
-    {
-        if (val1 == nts::False && val2 == nts::False)
-            return nts::True;
-        if (val1 == nts::True && val2 == nts::True)
-            return nts::False;
-        if (val1 == nts::Undefined || val2 == nts::Undefined)
-            return nts::Undefined;
-        return nts::True;
-    }
     nts::Tristate Comp_4011::compute(std::size_t pin) {
         nts::Tristate val1 = nts::Undefined;
         nts::Tristate val2 = nts::Undefined;
@@ -27,12 +19,11 @@ namespace nts {
                     val1 = computeSafe(_links[gate.input1].first, _links[gate.input1].second);
                 if (_links.find(gate.input2) != _links.end())
                     val2 = computeSafe(_links[gate.input2].first, _links[gate.input2].second);
-            return computeNand(val1, val2);
+            return !(val1 && val2);
             }
         }
-        if (_links.contains(pin))
+        if (_links.find(pin) != _links.end())
             return computeSafe(_links[pin].first, _links[pin].second);
         return nts::Undefined;
     }
-
-} // nts
+}

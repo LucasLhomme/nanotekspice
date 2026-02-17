@@ -18,26 +18,29 @@ namespace nts {
 
     void Comp_4017::simulate(std::size_t tick) {
         (void)tick;
+        
         nts::Tristate clock = getVal(14);   // CP0
         nts::Tristate inhibit = getVal(13); // CP1
         nts::Tristate reset = getVal(15);   // MR
 
+        nts::Tristate currentGate = nts::False;
+        if (clock == nts::True && inhibit == nts::False) {
+            currentGate = nts::True;
+        }
+
         if (reset == nts::True) {
             _count = 0;
-            _prevClock = clock;
+            _prevClock = currentGate;
             return;
         }
-        if (inhibit == nts::True) {
-            _prevClock = clock;
-            return;
-        }
-        if (_prevClock == nts::False && clock == nts::True) {
+
+        if (_prevClock == nts::False && currentGate == nts::True) {
             _count++;
             if (_count > 9) {
                 _count = 0;
             }
         }
-        _prevClock = clock;
+        _prevClock = currentGate;
     }
 
     nts::Tristate Comp_4017::compute(std::size_t pin) {

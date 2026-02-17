@@ -48,12 +48,16 @@ namespace nts {
         sf::Text m_sliderText;
         bool m_isDraggingSlider;
 
+        sf::RectangleShape m_simulateButton;
+        sf::Text m_simulateText;
+
         void initLayout();
         void update();
         void draw();
         void drawWires();
         void updateDisplay();
         void handleSliderInput(const sf::Event &event);
+        void handleMouseClick(const sf::Vector2i &mousePos);
     };
 
 }

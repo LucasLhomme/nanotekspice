@@ -13,8 +13,8 @@ namespace nts {
         for (auto& byte : _memory) {
             byte.fill(nts::Undefined);
         }
+        _outputBuffer.fill(nts::Undefined);
     }
-
 
     int Comp_2716::getAddress() {
         int address = 0;
@@ -33,28 +33,28 @@ namespace nts {
 
     void Comp_2716::simulate(std::size_t tick) {
         (void)tick;
+        nts::Tristate ce = getVal(18); // Chip Enable
+        nts::Tristate oe = getVal(20); // Output Enable
+        int addr = getAddress();
+
+        if (ce == nts::False && oe == nts::False) {
+            if (addr >= 0 && addr < 2048) {
+                _outputBuffer = _memory[addr];
+            } else {
+                _outputBuffer.fill(nts::Undefined);
+            }
+        } else {
+            _outputBuffer.fill(nts::Undefined);
+        }
     }
 
     nts::Tristate Comp_2716::compute(std::size_t pin) {
         static const std::vector<size_t> dataPins = {9, 10, 11, 13, 14, 15, 16, 17};
-        nts::Tristate ce = getVal(18); // Chip Enable
-        nts::Tristate oe = getVal(20); // Output Enable
-        int addr = getAddress();
-        int bitIndex = -1;
 
         for (size_t i = 0; i < dataPins.size(); ++i) {
-            if (dataPins[i] == pin) {
-                bitIndex = static_cast<int>(i);
-                break;
-            }
+            if (dataPins[i] == pin)
+                return _outputBuffer[i];
         }
-        if (bitIndex == -1)
-            return nts::Undefined;
-        if (ce != nts::False || oe != nts::False) {
-            return nts::Undefined;
-        }
-        if (addr < 0 || addr >= 2048)
-            return nts::Undefined;
-        return _memory[addr][bitIndex];
+        return nts::Undefined;
     }
 } // nts

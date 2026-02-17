@@ -13,12 +13,10 @@
 
 namespace nts {
     class Comp_4001 : public AComponent {
-    private:
-        nts::Tristate computeNor(std::size_t pinA, std::size_t pinB);
-    public:
-        Comp_4001() = default;
-        ~Comp_4001() override = default;
-        nts::Tristate compute(std::size_t pin) override;
+        public:
+            Comp_4001() = default;
+            ~Comp_4001() override = default;
+            nts::Tristate compute(std::size_t pin) override;
     };
 }
 

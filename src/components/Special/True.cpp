@@ -9,7 +9,7 @@
 
 namespace nts {
     nts::Tristate TrueComponent::compute(std::size_t pin) {
-        if (pin != 1)
+        if (!pin)
             return nts::Undefined;
         return nts::True;
     }

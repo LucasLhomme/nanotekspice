@@ -33,7 +33,23 @@ namespace nts {
     {
         _tick++;
         for (auto &it : _components) {
-            it.second->simulate(_tick);
+            if (dynamic_cast<nts::Input*>(it.second.get()) ||
+                dynamic_cast<nts::Clock*>(it.second.get()) ||
+                dynamic_cast<nts::TrueComponent*>(it.second.get()) ||
+                dynamic_cast<nts::FalseComponent*>(it.second.get()))
+                it.second->simulate(_tick);
+        }
+        for (auto &it : _components) {
+            if (!dynamic_cast<nts::Input*>(it.second.get()) &&
+                !dynamic_cast<nts::Clock*>(it.second.get()) &&
+                !dynamic_cast<nts::TrueComponent*>(it.second.get()) &&
+                !dynamic_cast<nts::FalseComponent*>(it.second.get()) &&
+                !dynamic_cast<nts::Output*>(it.second.get()))
+                it.second->simulate(_tick);
+        }
+        for (auto &it : _components) {
+            if (dynamic_cast<nts::Output*>(it.second.get()))
+                it.second->simulate(_tick);
         }
     }
 

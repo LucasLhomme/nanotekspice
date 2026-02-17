@@ -12,6 +12,8 @@
 #undef protected
 #undef private
 
+#include "../include/components/Special/Input.hpp"
+#include "../include/components/Special/Clock.hpp"
 #include "GraphicInterface.hpp"
 #include <iostream>
 #include <algorithm>
@@ -45,6 +47,23 @@ namespace nts {
         m_sliderText.setFillColor(sf::Color::White);
         m_sliderText.setPosition(350.f, 10.f);
         m_sliderText.setString("Tick: 0/0  [SPC]=Step  [L/R]=Seek");
+
+        // Simulate Button
+        m_simulateButton.setSize(sf::Vector2f(100.f, 30.f));
+        m_simulateButton.setFillColor(sf::Color(70, 70, 80));
+        m_simulateButton.setOutlineThickness(2.f);
+        m_simulateButton.setOutlineColor(sf::Color::White);
+        m_simulateButton.setPosition(700.f, 10.f);
+
+        m_simulateText.setFont(m_font);
+        m_simulateText.setString("SIMULATE");
+        m_simulateText.setCharacterSize(14);
+        m_simulateText.setFillColor(sf::Color::White);
+        sf::FloatRect textBounds = m_simulateText.getLocalBounds();
+        m_simulateText.setPosition(
+            700.f + (100.f - textBounds.width) / 2.f,
+            10.f + (30.f - textBounds.height) / 2.f - 2.f
+        );
 
         initLayout();
         captureSnapshot();
@@ -205,7 +224,48 @@ namespace nts {
         m_window.draw(m_sliderKnob);
         m_window.draw(m_sliderText);
 
+        m_window.draw(m_simulateButton);
+        m_window.draw(m_simulateText);
+
         m_window.display();
+    }
+
+    void GraphicInterface::handleMouseClick(const sf::Vector2i &mousePos)
+    {
+        sf::Vector2f worldPos = m_window.mapPixelToCoords(mousePos);
+
+        if (m_simulateButton.getGlobalBounds().contains(worldPos)) {
+            simulateAndCapture();
+            return;
+        }
+
+        for (auto &[name, component] : m_components) {
+            sf::FloatRect bounds(component->getPosition(), sf::Vector2f(120.f, 80.f));
+            if (bounds.contains(worldPos)) {
+                auto it = m_circuit._components.find(name);
+                if (it != m_circuit._components.end()) {
+                    nts::IComponent* logicalComp = it->second.get();
+
+                    auto inputComp = dynamic_cast<nts::Input*>(logicalComp);
+                    if (inputComp) {
+                        nts::Tristate current = inputComp->compute(1);
+                        nts::Tristate nextVal = (current == nts::True) ? nts::False : nts::True;
+                        inputComp->setValue(nextVal);
+                        component->setPinState(1, nextVal);
+                        return;
+                    }
+
+                    auto clockComp = dynamic_cast<nts::Clock*>(logicalComp);
+                    if (clockComp) {
+                         nts::Tristate current = clockComp->compute(1);
+                         nts::Tristate nextVal = (current == nts::True) ? nts::False : nts::True;
+                         clockComp->setValue(nextVal);
+                         component->setPinState(1, nextVal);
+                         return;
+                    }
+                }
+            }
+        }
     }
 
     void GraphicInterface::run()
@@ -215,6 +275,9 @@ namespace nts {
             while (m_window.pollEvent(event)) {
                 if (event.type == sf::Event::Closed) {
                     m_window.close();
+                }
+                if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
+                    handleMouseClick(sf::Mouse::getPosition(m_window));
                 }
                 if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
                     m_window.close();

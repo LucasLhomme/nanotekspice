@@ -8,40 +8,23 @@
 #include "components/gates_components/comp_4071.hpp"
 
 namespace nts {
-    nts::Tristate Comp_4071::computeOr(std::size_t pinA, std::size_t pinB)
+nts::Tristate Comp_4071::compute(std::size_t pin)
     {
-        nts::Tristate valueA = nts::Undefined;
-        nts::Tristate valueB = nts::Undefined;
-
-        if (_links.find(pinA) != _links.end()) {
-            auto link = _links[pinA];
-            valueA = computeSafe(link.first, link.second);
-        }
-        if (_links.find(pinB) != _links.end()) {
-            auto link = _links[pinB];
-            valueB = computeSafe(link.first, link.second);
-        }
-        if (valueA == nts::True || valueB == nts::True)
-            return nts::True;
-        if (valueA == nts::False && valueB == nts::False)
-            return nts::False;
-        return nts::Undefined;
-    }
-
-    nts::Tristate Comp_4071::compute(std::size_t pin)
-    {
+        std::size_t pinA = 0;
+        std::size_t pinB = 0;
         switch (pin) {
-            case 3:
-                return computeOr(1, 2);
-            case 4:
-                return computeOr(5, 6);
-            case 10:
-                return computeOr(8, 9);
-            case 11:
-                return computeOr(12, 13);
-            default:
-                return nts::Undefined;
+            case 3:  pinA = 1;  pinB = 2;  break;
+            case 4:  pinA = 5;  pinB = 6;  break;
+            case 10: pinA = 8;  pinB = 9;  break;
+            case 11: pinA = 12; pinB = 13; break;
+            default: return nts::Undefined;
         }
+        nts::Tristate valA = nts::Undefined;
+        nts::Tristate valB = nts::Undefined;
+        if (_links.find(pinA) != _links.end())
+            valA = computeSafe(_links[pinA].first, _links[pinA].second);
+        if (_links.find(pinB) != _links.end())
+            valB = computeSafe(_links[pinB].first, _links[pinB].second);
+        return valA || valB;
     }
-
 }
