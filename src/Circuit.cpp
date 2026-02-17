@@ -32,8 +32,27 @@ namespace nts {
     void Circuit::simulate()
     {
         _tick++;
+        // first we simulate all source components
         for (auto &it : _components) {
-            it.second->simulate(_tick);
+            if (dynamic_cast<nts::Input*>(it.second.get()) ||
+                dynamic_cast<nts::Clock*>(it.second.get()) ||
+                dynamic_cast<nts::TrueComponent*>(it.second.get()) ||
+                dynamic_cast<nts::FalseComponent*>(it.second.get()))
+                it.second->simulate(_tick);
+        }
+        // after we simulate all internal components (gates, RAM, ROM, etc.)
+        for (auto &it : _components) {
+            if (!dynamic_cast<nts::Input*>(it.second.get()) &&
+                !dynamic_cast<nts::Clock*>(it.second.get()) &&
+                !dynamic_cast<nts::TrueComponent*>(it.second.get()) &&
+                !dynamic_cast<nts::FalseComponent*>(it.second.get()) &&
+                !dynamic_cast<nts::Output*>(it.second.get()))
+                it.second->simulate(_tick);
+        }
+        // and at the end we simulate Output components (they read from other components)
+        for (auto &it : _components) {
+            if (dynamic_cast<nts::Output*>(it.second.get()))
+                it.second->simulate(_tick);
         }
     }
 

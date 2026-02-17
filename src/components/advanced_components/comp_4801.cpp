@@ -13,6 +13,7 @@ namespace nts {
         for (auto& byte : _memory) {
             byte.fill(nts::Undefined);
         }
+        _outputBuffer.fill(nts::Undefined);
     }
 
     int Comp_4801::getAddress() {
@@ -32,48 +33,39 @@ namespace nts {
 
     void Comp_4801::simulate(std::size_t tick) {
         (void)tick;
-        nts::Tristate ce = getVal(18); // Chip Enable (CS)
+        nts::Tristate ce = getVal(18); // Chip Enable
         nts::Tristate we = getVal(21); // Write Enable
+        nts::Tristate oe = getVal(20); // Output Enable
         int addr = getAddress();
 
-
-        if (ce != nts::False || we != nts::False) {
-            return;
-        }
-        if (addr < 0 || addr >= 1024)
-            return;
-        // write pin data: DQ0 to DQ7
         static const std::vector<size_t> dataPins = {9, 10, 11, 13, 14, 15, 16, 17};
 
-        // store the data in memory
-        for (size_t i = 0; i < 8; ++i) {
-            _memory[addr][i] = getVal(dataPins[i]);
+        if (ce == nts::False && we == nts::False) {
+            if (addr >= 0 && addr < 1024) {
+                for (size_t i = 0; i < 8; ++i) {
+                    _memory[addr][i] = getVal(dataPins[i]);
+                }
+            }
+        }
+
+        if (ce == nts::False && we != nts::False && oe == nts::False) {
+            if (addr >= 0 && addr < 1024) {
+                _outputBuffer = _memory[addr];
+            } else {
+                _outputBuffer.fill(nts::Undefined);
+            }
+        } else {
+            _outputBuffer.fill(nts::Undefined);
         }
     }
 
     nts::Tristate Comp_4801::compute(std::size_t pin) {
-        int addr = getAddress();
-        int bitIndex = -1;
-        static const std::vector<size_t> dataPins = {1,2,3,4,5,6,7,0};
+        static const std::vector<size_t> dataPins = {9, 10, 11, 13, 14, 15, 16, 17};
 
         for (size_t i = 0; i < dataPins.size(); ++i) {
-            if (dataPins[i] == pin) {
-                bitIndex = static_cast<int>(i);
-                break;
-            }
+            if (dataPins[i] == pin)
+                return _outputBuffer[i];
         }
-        if (bitIndex == -1)
-            return nts::Undefined;
-
-        nts::Tristate ce = getVal(22); // CE
-        nts::Tristate oe = getVal(21); // OE
-        nts::Tristate we = getVal(20); // WE
-
-        if (ce != nts::False || oe != nts::False || we == nts::False) {
-            return nts::Undefined;
-        }
-        if (addr < 0 || addr >= 1024)
-            return nts::Undefined;
-        return _memory[addr][bitIndex];
+        return nts::Undefined;
     }
 } // nts
