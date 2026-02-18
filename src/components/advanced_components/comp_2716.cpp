@@ -6,6 +6,10 @@
 #include <array>
 #include "../../../include/IComponent.hpp"
 
+#include <vector>
+#include <fstream>
+#include <iostream>
+
 namespace nts {
 
     Comp_2716::Comp_2716() {
@@ -14,17 +18,31 @@ namespace nts {
             byte.fill(nts::Undefined);
         }
         _outputBuffer.fill(nts::Undefined);
+        
+        std::ifstream file("rom.bin", std::ios::binary);
+        if (file.is_open()) {
+            char buffer[2048];
+            file.read(buffer, 2048);
+            std::streamsize bytesRead = file.gcount();
+            for (int i = 0; i < bytesRead; ++i) {
+                unsigned char c = static_cast<unsigned char>(buffer[i]);
+                for (int bit = 0; bit < 8; ++bit) {
+                    _memory[i][bit] = ((c >> bit) & 1) ? nts::True : nts::False;
+                }
+            }
+        }
     }
 
     int Comp_2716::getAddress() {
         int address = 0;
-
         // A0=8 A1=7 A2=6 A3=5 A4=4 A5=3 A6=2 A7=1 A8=23 A9=22 A10=19
         static const std::vector<size_t> addrPins = {8, 7, 6, 5, 4, 3, 2, 1, 23, 22, 19};
+        
         for (std::size_t i = 0; i < addrPins.size(); ++i) {
             nts::Tristate val = getVal(addrPins[i]);
             if (val == nts::Undefined)
-                return -1;
+                val = nts::False; 
+                
             if (val == nts::True)
                 address += (1 << i);
         }
@@ -35,9 +53,8 @@ namespace nts {
         (void)tick;
         nts::Tristate ce = getVal(18); // Chip Enable
         nts::Tristate oe = getVal(20); // Output Enable
-        int addr = getAddress();
-
         if (ce == nts::False && oe == nts::False) {
+            int addr = getAddress();
             if (addr >= 0 && addr < 2048) {
                 _outputBuffer = _memory[addr];
             } else {
