@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2026
 ** NANO-1
 ** File description:
-** Logger Implementation
+** Logger Implementation Fixed
 */
 
 #include "components/Special/Logger.hpp"
@@ -12,7 +12,7 @@ namespace nts {
 
     Logger::Logger() : _previousClock(nts::Undefined)
     {
-        _file.open("./log.bin", std::ios::out | std::ios::trunc | std::ios::binary);
+        _file.open("./log.bin", std::ios::out | std::ios::app | std::ios::binary);
     }
 
     Logger::~Logger()
@@ -33,7 +33,8 @@ namespace nts {
         (void)tick;
         nts::Tristate clock = getPinValue(9);
         nts::Tristate inhibit = getPinValue(10);
-        if (inhibit == nts::True) {
+
+        if (inhibit != nts::False) {
             _previousClock = clock;
             return;
         }
