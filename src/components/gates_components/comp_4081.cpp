@@ -11,8 +11,6 @@
 
 namespace nts {
     nts::Tristate Comp_4081::compute(std::size_t pin) {
-        nts::Tristate val1 = nts::Undefined;
-        nts::Tristate val2 = nts::Undefined;
 
         for (const auto &gate : _gates) {
             if (gate.output == pin) {
