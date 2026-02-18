@@ -9,9 +9,8 @@
 
 namespace nts {
     nts::Tristate TrueComponent::compute(std::size_t pin) {
-        if (!pin)
-            return nts::Undefined;
-        return nts::True;
+        (void)pin;
+        return Tristate::True;
     }
 
     void TrueComponent::setValue(nts::Tristate value) {
