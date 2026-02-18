@@ -8,9 +8,10 @@
 #include <iostream>
 #include <csignal>
 #include "../include/Parser.hpp"
+#include "../include/Exception.hpp"
 #include "../include/Circuit.hpp"
 
-bool g_loopRunning = false;
+volatile std::sig_atomic_t g_loopRunning = false;
 
 void signalHandler(int signum) {
     (void)signum;
@@ -23,11 +24,24 @@ int main(int argc, char **argv)
         std::cerr << "Usage: ./nanotekspice file.nts" << std::endl;
         return 84;
     }
+    std::signal(SIGINT, signalHandler);
     nts::Circuit circuit;
     nts::Parser parser;
     try {
         parser.parse(argv[1]);
         circuit.setComponents(parser.getComponents());
+    } catch (const ParserException &e) {
+        std::cerr << "Parser error: " << e.what() << std::endl;
+        return 84;
+    } catch (const FactoryException &e) {
+        std::cerr << "Factory error: " << e.what() << std::endl;
+        return 84;
+    } catch (const ComponentException &e) {
+        std::cerr << "Component error: " << e.what() << std::endl;
+        return 84;
+    } catch (const CircuitException &e) {
+        std::cerr << "Circuit error: " << e.what() << std::endl;
+        return 84;
     } catch (const std::exception &e) {
         std::cerr << "Error: " << e.what() << std::endl;
         return 84;
@@ -42,7 +56,11 @@ int main(int argc, char **argv)
         } else if (input == "simulate") {
             circuit.simulate();
         } else if (input == "loop") {
-            std::cout << "Loop command requires signal handling." << std::endl;
+            g_loopRunning = true;
+            while (g_loopRunning) {
+                circuit.simulate();
+                circuit.display();
+            }
         } else {
             size_t pos = input.find('=');
             if (pos != std::string::npos) {
