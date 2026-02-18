@@ -6,12 +6,6 @@
 
 namespace nts {
 
-    nts::Tristate Comp_4514::getVal(std::size_t p)
-    {
-        if (_links.find(p) == _links.end())
-            return nts::Undefined;
-        return _links[p].first->compute(_links[p].second);
-    }
 
     nts::Tristate Comp_4514::compute(std::size_t pin)
     {

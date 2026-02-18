@@ -13,7 +13,6 @@
 namespace nts {
     class Comp_4030 : public Igates {
     private:
-        nts::Tristate computeXor(nts::Tristate a, nts::Tristate b);
         const std::vector<Gate> _gates = {
             {1, 2, 3},
             {5, 6, 4},

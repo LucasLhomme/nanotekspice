@@ -31,12 +31,6 @@ namespace nts {
         return nts::False;
     }
 
-    nts::Tristate Comp_4008::getVal(std::size_t p)
-    {
-        if (_links.find(p) == _links.end())
-            return nts::Undefined;
-        return _links[p].first->compute(_links[p].second);
-    }
     nts::Tristate Comp_4008::compute(std::size_t pin)
     {
         nts::Tristate carryIn = getVal(9);

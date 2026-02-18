@@ -6,6 +6,7 @@
 */
 
 #include "Factory.hpp"
+#include "Exception.hpp"
 
 #include "components/advanced_components/comp_2716.hpp"
 #include "components/Special/Input.hpp"
@@ -31,6 +32,7 @@
 #include "components/advanced_components/comp_4017.hpp"
 #include "components/advanced_components/comp_4013.hpp"
 #include "components/advanced_components/comp_4040.hpp"
+#include "components/advanced_components/comp_4094.hpp"
 
 namespace nts {
 
@@ -60,6 +62,7 @@ namespace nts {
         _creators["4017"] = []() { return std::make_unique<Comp_4017>(); };
         _creators["4013"] = []() { return std::make_unique<Comp_4013>(); };
         _creators["4040"] = []() { return std::make_unique<Comp_4040>(); };
+        _creators["4094"] = []() { return std::make_unique<Comp_4094>(); };
     }
 
     std::unique_ptr<nts::IComponent> Factory::createComponent(const std::string &type)
@@ -67,7 +70,7 @@ namespace nts {
         auto component = _creators.find(type);
 
         if (component == _creators.end()) {
-            throw std::runtime_error("Unknown component type: " + type);
+            throw FactoryException("Unknown component type: " + type);
         }
         return component->second();
     }
