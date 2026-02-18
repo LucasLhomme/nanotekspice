@@ -6,6 +6,7 @@
 */
 
 #include "Factory.hpp"
+#include "Exception.hpp"
 
 #include "components/advanced_components/comp_2716.hpp"
 #include "components/Special/Input.hpp"
@@ -63,7 +64,7 @@ namespace nts {
         auto component = _creators.find(type);
 
         if (component == _creators.end()) {
-            throw std::runtime_error("Unknown component type: " + type);
+            throw FactoryException("Unknown component type: " + type);
         }
         return component->second();
     }

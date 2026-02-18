@@ -21,4 +21,24 @@ class Exception : public std::exception {
         }
 };
 
+class FactoryException : public Exception {
+    public:
+        explicit FactoryException(const std::string &message) : Exception(message) {}
+};
+
+class ParserException : public Exception {
+    public:
+        explicit ParserException(const std::string &message) : Exception(message) {}
+};
+
+class CircuitException : public Exception {
+    public:
+        explicit CircuitException(const std::string &message) : Exception(message) {}
+};
+
+class ComponentException : public Exception {
+    public:
+        explicit ComponentException(const std::string &message) : Exception(message) {}
+};
+
 #endif //NANO_1_EXCEPTION_HPP

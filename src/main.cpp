@@ -8,6 +8,7 @@
 #include <iostream>
 #include <csignal>
 #include "../include/Parser.hpp"
+#include "../include/Exception.hpp"
 #include "../include/Circuit.hpp"
 
 bool g_loopRunning = false;
@@ -28,6 +29,18 @@ int main(int argc, char **argv)
     try {
         parser.parse(argv[1]);
         circuit.setComponents(parser.getComponents());
+    } catch (const ParserException &e) {
+        std::cerr << "Parser error: " << e.what() << std::endl;
+        return 84;
+    } catch (const FactoryException &e) {
+        std::cerr << "Factory error: " << e.what() << std::endl;
+        return 84;
+    } catch (const ComponentException &e) {
+        std::cerr << "Component error: " << e.what() << std::endl;
+        return 84;
+    } catch (const CircuitException &e) {
+        std::cerr << "Circuit error: " << e.what() << std::endl;
+        return 84;
     } catch (const std::exception &e) {
         std::cerr << "Error: " << e.what() << std::endl;
         return 84;

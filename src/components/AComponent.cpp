@@ -53,13 +53,12 @@ namespace nts {
             return nts::Undefined;
         
         recursionDepth++;
-        try {
-            nts::Tristate res = other->compute(pin);
-            recursionDepth--;
-            return res;
-        } catch (...) {
-            recursionDepth--;
-            throw;
-        }
+        struct RecursionGuard {
+            int &depth;
+            RecursionGuard(int &d) : depth(d) {}
+            ~RecursionGuard() { depth--; }
+        } guard(recursionDepth);
+        nts::Tristate res = other->compute(pin);
+        return res;
     }
 }
