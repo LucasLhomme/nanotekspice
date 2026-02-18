@@ -9,12 +9,16 @@
 #define COMP_4094_HPP_
 
 #include "components/advanced_components/AdvancedComponent.hpp"
+#include <array>
+
 
 namespace nts {
     class Comp_4094 : public AdvancedComponent {
     private:
         int _count;
         nts::Tristate _prevClock;
+        std::array<nts::Tristate, 8> _shift;
+        std::array<nts::Tristate, 8> _outputBuffer;
     public:
         Comp_4094();
         ~Comp_4094() override = default;
