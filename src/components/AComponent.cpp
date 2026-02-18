@@ -48,10 +48,8 @@ namespace nts {
     {
         if (!other)
             return nts::Undefined;
-
         if (recursionDepth > 300)
             return nts::Undefined;
-        
         recursionDepth++;
         struct RecursionGuard {
             int &depth;
