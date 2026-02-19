@@ -11,9 +11,8 @@ namespace nts {
 
     nts::Tristate Not::compute(std::size_t pin)
     {
-        if (pin != 2 || _links.find(1) == _links.end())
+        if (pin != 2)
             return nts::Undefined;
-        nts::Tristate value = computeSafe(_links[1].first, _links[1].second);
-        return !value;
+        return !getLinkValue(1);
     }
 }

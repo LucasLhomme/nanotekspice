@@ -16,8 +16,8 @@ namespace nts {
 
     void Comp_4040::simulate(std::size_t tick) {
         (void)tick;
-        nts::Tristate clock = computeSafe(_links[10].first, _links[10].second);
-        nts::Tristate reset = computeSafe(_links[11].first, _links[11].second);
+        nts::Tristate clock = getLinkValue(10);
+        nts::Tristate reset = getLinkValue(11);
 
         if (reset == nts::True) {
             _counter = 0;

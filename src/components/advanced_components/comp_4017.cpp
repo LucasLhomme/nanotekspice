@@ -8,7 +8,6 @@
 #include "components/advanced_components/comp_4017.hpp"
 #include <array>
 
-
 namespace nts {
 
     Comp_4017::Comp_4017() {
@@ -18,10 +17,9 @@ namespace nts {
 
     void Comp_4017::simulate(std::size_t tick) {
         (void)tick;
-        
-        nts::Tristate clock = getVal(14);   // CP0
-        nts::Tristate inhibit = getVal(13); // CP1
-        nts::Tristate reset = getVal(15);   // MR
+        nts::Tristate clock = getLinkValue(14);
+        nts::Tristate inhibit = getLinkValue(13);
+        nts::Tristate reset = getLinkValue(15);
 
         nts::Tristate currentGate = nts::False;
         if (clock == nts::True && inhibit == nts::False) {
@@ -44,7 +42,6 @@ namespace nts {
     }
 
     nts::Tristate Comp_4017::compute(std::size_t pin) {
-        // BE CAREFULL: mapping pin -> targetCount (-1 = unused, -2 = special for pin 12). Values follow the datasheet, not random.
         static const std::array<int, 16> pinToCount = { -1, 5, 1, 0, 2, 6, 7, 3, -1, 8, 4, 9, -2, -1, -1, -1 };
 
         if (pin >= pinToCount.size())
@@ -59,10 +56,9 @@ namespace nts {
             else
                 return nts::False;
         }
-        if (_count == mapVal) {
+        if (_count == mapVal)
             return nts::True;
-        } else {
+        else
             return nts::False;
-        }
     }
 }

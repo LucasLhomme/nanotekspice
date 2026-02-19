@@ -27,11 +27,10 @@ namespace nts {
 
     void Comp_4094::simulate(std::size_t tick)
     {
-        // Pins used (convention): 15 = OE (output enable, active low), 3 = CLOCK, 1 = STROBE (latch), 2 = DATA (serial in)
-        nts::Tristate oe = getVal(15);
-        nts::Tristate clock = getVal(3);
-        nts::Tristate strobe = getVal(1);
-        nts::Tristate data = getVal(2);
+        nts::Tristate oe = getLinkValue(15);
+        nts::Tristate clock = getLinkValue(3);
+        nts::Tristate strobe = getLinkValue(1);
+        nts::Tristate data = getLinkValue(2);
 
         bool prevLow = (_prevClock == nts::False || _prevClock == nts::Undefined);
         bool nowHigh = (clock == nts::True);
@@ -51,5 +50,4 @@ namespace nts {
 
         _prevClock = clock;
     }
-
-} // namespace nts
+}

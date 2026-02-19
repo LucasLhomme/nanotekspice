@@ -69,9 +69,8 @@ namespace nts {
     {
         auto component = _creators.find(type);
 
-        if (component == _creators.end()) {
+        if (component == _creators.end())
             throw FactoryException("Unknown component type: " + type);
-        }
         return component->second();
     }
 }
