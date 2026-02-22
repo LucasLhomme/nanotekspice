@@ -15,6 +15,7 @@ namespace nts {
     class Clock : public AComponent {
     private:
         nts::Tristate _value;
+        nts::Tristate _nextValue;
     public:
         Clock();
         ~Clock() override = default;
