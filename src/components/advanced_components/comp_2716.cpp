@@ -5,7 +5,6 @@
 #include "../../../include/components/advanced_components/comp_2716.hpp"
 #include <array>
 #include "../../../include/IComponent.hpp"
-
 #include <vector>
 #include <fstream>
 #include <iostream>
@@ -35,11 +34,10 @@ namespace nts {
 
     int Comp_2716::getAddress() {
         int address = 0;
-        // A0=8 A1=7 A2=6 A3=5 A4=4 A5=3 A6=2 A7=1 A8=23 A9=22 A10=19
         static const std::vector<size_t> addrPins = {8, 7, 6, 5, 4, 3, 2, 1, 23, 22, 19};
         
         for (std::size_t i = 0; i < addrPins.size(); ++i) {
-            nts::Tristate val = getVal(addrPins[i]);
+            nts::Tristate val = getLinkValue(addrPins[i]);
             if (val == nts::Undefined)
                 val = nts::False; 
                 
@@ -51,8 +49,9 @@ namespace nts {
 
     void Comp_2716::simulate(std::size_t tick) {
         (void)tick;
-        nts::Tristate ce = getVal(18); // Chip Enable
-        nts::Tristate oe = getVal(20); // Output Enable
+        nts::Tristate ce = getLinkValue(18);
+        nts::Tristate oe = getLinkValue(20);
+
         if (ce == nts::False && oe == nts::False) {
             int addr = getAddress();
             if (addr >= 0 && addr < 2048) {
@@ -74,4 +73,4 @@ namespace nts {
         }
         return nts::Undefined;
     }
-} // nts
+}

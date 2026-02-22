@@ -5,8 +5,7 @@
 ** and
 */
 
-#include "../../../include/components/elementary_components/and.hpp"
-#include "../../../include/Exception.hpp"
+#include "components/elementary_components/and.hpp"
 
 namespace nts {
 
@@ -16,9 +15,6 @@ namespace nts {
     {
         if (pin != 3)
             return nts::Undefined;
-        nts::Tristate a = computeSafe(_links[1].first, _links[1].second);
-        nts::Tristate b = computeSafe(_links[2].first, _links[2].second);
-        return a && b;
+        return getLinkValue(1) && getLinkValue(2);
     }
 }
-

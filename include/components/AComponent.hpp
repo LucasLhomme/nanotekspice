@@ -10,12 +10,15 @@
 
 #include "IComponent.hpp"
 #include <map>
+#include <utility>
 
 namespace nts {
     class AComponent : public IComponent {
         protected:
             std::map<std::size_t, std::pair<nts::IComponent*, std::size_t>> _links;
             nts::Tristate computeSafe(nts::IComponent *other, std::size_t pin);
+            nts::Tristate getLinkValue(std::size_t pin);
+            std::pair<nts::IComponent*, std::size_t> getLink(std::size_t pin) const;
 
         public:
             virtual ~AComponent() = default;

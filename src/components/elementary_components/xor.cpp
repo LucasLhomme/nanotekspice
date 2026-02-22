@@ -5,8 +5,7 @@
 ** xor
 */
 
-#include "../../../include/components/elementary_components/xor.hpp"
-#include "../../../include/Exception.hpp"
+#include "components/elementary_components/xor.hpp"
 
 namespace nts {
 
@@ -16,9 +15,6 @@ namespace nts {
     {
         if (pin != 3)
             return nts::Undefined;
-        nts::Tristate a = (_links.count(1)) ? computeSafe(_links[1].first, _links[1].second) : nts::Undefined;
-        nts::Tristate b = (_links.count(2)) ? computeSafe(_links[2].first, _links[2].second) : nts::Undefined;
-        return a ^ b;
+        return getLinkValue(1) ^ getLinkValue(2);
     }
 }
-

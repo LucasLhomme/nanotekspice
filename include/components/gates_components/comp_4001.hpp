@@ -8,11 +8,20 @@
 #ifndef NANO_1_COMP4001_HPP
 #define NANO_1_COMP4001_HPP
 
+#include <vector>
 #include "../AComponent.hpp"
+#include "../Igates.hpp"
 #include <map>
 
 namespace nts {
-    class Comp_4001 : public AComponent {
+    class Comp_4001 : public Igates {
+        private:
+            const std::vector<Gate> _gates = {
+                {1, 2, 3},
+                {5, 6, 4},
+                {8, 9, 10},
+                {12, 13, 11}
+            };
         public:
             Comp_4001() = default;
             ~Comp_4001() override = default;
