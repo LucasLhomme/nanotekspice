@@ -97,7 +97,7 @@ void nts::Parser::parse(const std::string &filename)
     while (std::getline(fs, line)) {
         line = trimLine(line);
         if (line.empty())
-		continue;
+		    continue;
         if (line == ".chipsets:") {
             state = 1;
             continue;
@@ -106,13 +106,12 @@ void nts::Parser::parse(const std::string &filename)
             state = 2;
             continue;
         }
-        if (state == 1) {
+        if (state == 1)
             parseChipset(line);
-        } else if (state == 2) {
+        else if (state == 2)
             parseLink(line);
-        } else {
+        else
             throw ParserException("Instruction found outside of a section: " + line);
-        }
     }
 }
 

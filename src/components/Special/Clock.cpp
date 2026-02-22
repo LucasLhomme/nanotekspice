@@ -11,18 +11,20 @@ namespace nts {
 
     Clock::Clock() {
         _value = nts::Undefined;
+        _nextValue = nts::Undefined;
     }
 
     void Clock::simulate(std::size_t tick)
     {
         (void)tick;
-
+        _value = _nextValue;
         if (_value == nts::True) {
-            _value = nts::False;
+            _nextValue = nts::False;
         } else if (_value == nts::False) {
-            _value = nts::True;
-        } else
-            _value = nts::Undefined;
+            _nextValue = nts::True;
+        } else {
+            _nextValue = nts::Undefined;
+        }
     }
 
     nts::Tristate Clock::compute(std::size_t pin)
@@ -34,6 +36,6 @@ namespace nts {
 
     void Clock::setValue(nts::Tristate value)
     {
-        _value = value;
+        _nextValue = value;
     }
 }

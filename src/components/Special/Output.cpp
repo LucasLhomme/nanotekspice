@@ -8,7 +8,7 @@
 #include "components/Special/Output.hpp"
 
 namespace nts {
-    Output::Output() : _value(nts::Undefined) {}
+    Output::Output() {}
 
     nts::Tristate Output::compute(std::size_t pin) {
         if (pin != 1)

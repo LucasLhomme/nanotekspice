@@ -27,6 +27,7 @@ namespace nts {
 
     void Comp_4094::simulate(std::size_t tick)
     {
+        (void)tick;
         nts::Tristate oe = getLinkValue(15);
         nts::Tristate clock = getLinkValue(3);
         nts::Tristate strobe = getLinkValue(1);
