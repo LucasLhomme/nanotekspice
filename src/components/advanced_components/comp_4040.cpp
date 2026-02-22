@@ -28,8 +28,7 @@ namespace nts {
                 if (_counter != -1) { 
                     _counter++;
                     if (_counter > 4095)
-                        _counter = 0;        _counter = -1; 
-
+                        _counter = 0;
                 }
             }
         }
