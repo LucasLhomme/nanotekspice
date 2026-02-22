@@ -13,6 +13,7 @@ COMPONENTS_GATES	=	./src/components/gates_components
 ADVANCED_COMP	=	./src/components/advanced_components
 
 SRC         =   $(PROJECT)/main.cpp \
+				$(PROJECT)/Shell.cpp \
 				$(PROJECT)/components/AComponent.cpp \
 				$(PROJECT)/Parser.cpp \
 				$(PROJECT)/Factory.cpp \

@@ -6,17 +6,7 @@
 */
 
 #include <iostream>
-#include <csignal>
-#include "../include/Parser.hpp"
-#include "../include/Exception.hpp"
-#include "../include/Circuit.hpp"
-
-volatile std::sig_atomic_t g_loopRunning = false;
-
-void signalHandler(int signum) {
-    (void)signum;
-    g_loopRunning = false;
-}
+#include "../include/Shell.hpp"
 
 int main(int argc, char **argv)
 {
@@ -24,55 +14,9 @@ int main(int argc, char **argv)
         std::cerr << "Usage: ./nanotekspice file.nts" << std::endl;
         return 84;
     }
-    std::signal(SIGINT, signalHandler);
-    nts::Circuit circuit;
-    nts::Parser parser;
-    try {
-        parser.parse(argv[1]);
-        circuit.setComponents(parser.getComponents());
-    } catch (const ParserException &e) {
-        std::cerr << "Parser error: " << e.what() << std::endl;
+    nts::Shell shell;
+    if (shell.init(argv[1]) == 84)
         return 84;
-    } catch (const FactoryException &e) {
-        std::cerr << "Factory error: " << e.what() << std::endl;
-        return 84;
-    } catch (const ComponentException &e) {
-        std::cerr << "Component error: " << e.what() << std::endl;
-        return 84;
-    } catch (const CircuitException &e) {
-        std::cerr << "Circuit error: " << e.what() << std::endl;
-        return 84;
-    } catch (const std::exception &e) {
-        std::cerr << "Error: " << e.what() << std::endl;
-        return 84;
-    }
-    std::cout << "> ";
-    std::string input;
-    while (std::getline(std::cin, input)) {
-        if (input == "exit") {
-            break;
-        } else if (input == "display") {
-            circuit.display();
-        } else if (input == "simulate") {
-            circuit.simulate();
-        } else if (input == "loop") {
-            g_loopRunning = true;
-            while (g_loopRunning) {
-                circuit.simulate();
-                circuit.display();
-            }
-        } else {
-            size_t pos = input.find('=');
-            if (pos != std::string::npos) {
-                std::string name = input.substr(0, pos);
-                std::string value = input.substr(pos + 1);
-                circuit.setValue(name, value);
-            } else {
-                std::cout << "Unknown command." << std::endl;
-            }
-        }
-        std::cout << "> ";
-    }
-
+    shell.run();
     return 0;
 }
