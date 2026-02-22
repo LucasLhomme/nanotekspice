@@ -10,7 +10,7 @@
 namespace nts {
 
     Comp_4040::Comp_4040() {
-        _counter = 0;
+        _counter = -1; 
         _prevClock = nts::Undefined;
     }
 
@@ -19,15 +19,19 @@ namespace nts {
         nts::Tristate clock = getLinkValue(10);
         nts::Tristate reset = getLinkValue(11);
 
-        if (reset == nts::True) {
+        if (reset == nts::True)
             _counter = 0;
-            _prevClock = clock;
-            return;
-        }
-        if (_prevClock == nts::True && clock == nts::False) {
-            _counter++;
-            if (_counter > 4095)
-                _counter = 0;
+        else if (reset == nts::Undefined)
+            _counter = -1;
+        else {
+            if (_prevClock == nts::True && clock == nts::False) {
+                if (_counter != -1) { 
+                    _counter++;
+                    if (_counter > 4095)
+                        _counter = 0;        _counter = -1; 
+
+                }
+            }
         }
         _prevClock = clock;
     }
@@ -48,8 +52,10 @@ namespace nts {
             case 14: bitIndex = 9; break;
             case 15: bitIndex = 10; break;
             case 1:  bitIndex = 11; break;
-            default: return nts::Undefined;
+            default: return getLinkValue(pin); 
         }
+        if (_counter == -1)
+            return nts::Undefined;
         if ((_counter >> bitIndex) & 1) {
             return nts::True;
         } else {

@@ -38,17 +38,21 @@ namespace nts {
     }
 
     void Comp_4013::updateFlipFlop(nts::Tristate data, nts::Tristate clock, nts::Tristate set, nts::Tristate reset, nts::Tristate &output, nts::Tristate &noutput, nts::Tristate &lastClock) {
-        bool isRisingEdge = (clock == nts::True && lastClock != nts::True);
+        bool isRisingEdge = (clock == nts::True && lastClock == nts::False);
         lastClock = clock;
 
-        if (set == nts::True) {
-            output = nts::True;
+        if (set == nts::True || reset == nts::True) {
+            output = (set == nts::True) ? nts::True : nts::False;
             noutput = (reset == nts::True) ? nts::True : nts::False;
+            if (set == nts::True && reset == nts::True) {
+                output = nts::True;
+                noutput = nts::True;
+            }
             return;
         }
-        if (reset == nts::True) {
-            output = nts::False;
-            noutput = nts::True;
+        if (set == nts::Undefined || reset == nts::Undefined) {
+            output = nts::Undefined;
+            noutput = nts::Undefined;
             return;
         }
         if (isRisingEdge) {
@@ -63,7 +67,7 @@ namespace nts {
             case 2:  return _noutput1;
             case 13: return _output2;
             case 12: return _noutput2;
-            default: return nts::Undefined;
+            default: return getLinkValue(pin); 
         }
     }
 }
