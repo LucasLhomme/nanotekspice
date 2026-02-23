@@ -13,15 +13,21 @@ namespace nts {
     {
         _count = 0;
         _prevClock = nts::Undefined;
+        _shift.fill(nts::False);
+        _outputBuffer.fill(nts::False);
     }
 
     nts::Tristate Comp_4094::compute(std::size_t pin)
     {
-        static const std::array<size_t, 8> outPins = {4,5,6,7,8,9,10,11};
+        static const std::array<size_t, 8> outPins = {4,5,6,7,14,13,12,11};
         for (size_t i = 0; i < outPins.size(); ++i) {
             if (outPins[i] == pin)
                 return _outputBuffer[i];
         }
+        if (pin == 9)
+            return _outputBuffer[7];
+        if (pin == 10)
+            return _outputBuffer[0];
         return nts::Undefined;
     }
 
@@ -33,9 +39,9 @@ namespace nts {
         nts::Tristate strobe = getLinkValue(1);
         nts::Tristate data = getLinkValue(2);
 
-        bool prevLow = (_prevClock == nts::False || _prevClock == nts::Undefined);
-        bool nowHigh = (clock == nts::True);
-        if (prevLow && nowHigh) {
+        bool prevHigh = (_prevClock == nts::True);
+        bool nowLow = (clock == nts::False);
+        if (prevHigh && nowLow) {
             for (int i = 7; i > 0; --i)
                 _shift[i] = _shift[i-1];
             _shift[0] = data;
@@ -45,10 +51,9 @@ namespace nts {
             _outputBuffer = _shift;
         }
 
-        if (oe != nts::False) {
+        if (oe != nts::True) {
             _outputBuffer.fill(nts::Undefined);
         }
-
         _prevClock = clock;
     }
 }
