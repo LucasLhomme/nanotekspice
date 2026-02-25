@@ -58,12 +58,8 @@ namespace nts {
     std::cout << "tick: " << _tick << std::endl;
     std::cout << "input(s):" << std::endl;
     for (auto const& [name, comp] : _components) {
-        if (dynamic_cast<nts::Input*>(comp.get()) || 
-            dynamic_cast<nts::Clock*>(comp.get()) ||
-            dynamic_cast<nts::TrueComponent*>(comp.get()) ||
-            dynamic_cast<nts::FalseComponent*>(comp.get())) {
+        if (dynamic_cast<nts::Input*>(comp.get()) || dynamic_cast<nts::Clock*>(comp.get()))
             std::cout << "  " << name << ": " << tristateToString(comp->compute(1)) << std::endl;
-        }
     }
         std::cout << "output(s):" << std::endl;
         for (auto const& [name, comp] : _components) {
