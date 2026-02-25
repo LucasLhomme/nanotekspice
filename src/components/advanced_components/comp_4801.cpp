@@ -38,20 +38,24 @@ namespace nts {
 
         static const std::vector<size_t> dataPins = {9, 10, 11, 13, 14, 15, 16, 17};
 
-        if (ce == nts::False && we == nts::False) {
-            if (addr >= 0 && addr < 1024) {
-                for (size_t i = 0; i < 8; ++i)
-                    _memory[addr][i] = getLinkValue(dataPins[i]);
-            }
-        }
-
-        if (ce == nts::False && we != nts::False && oe == nts::False) {
-            if (addr >= 0 && addr < 1024)
-                _outputBuffer = _memory[addr];
-            else
+        if (ce == nts::False) {
+            if (we == nts::False) {
+                if (addr >= 0 && addr < 1024) {
+                    for (size_t i = 0; i < dataPins.size(); ++i)
+                        _memory[addr][i] = getLinkValue(dataPins[i]);
+                }
                 _outputBuffer.fill(nts::Undefined);
-        } else
+            } else if (oe == nts::False) {
+                if (addr >= 0 && addr < 1024)
+                    _outputBuffer = _memory[addr];
+                else
+                    _outputBuffer.fill(nts::Undefined);
+            } else {
+                _outputBuffer.fill(nts::Undefined);
+            }
+        } else {
             _outputBuffer.fill(nts::Undefined);
+        }
     }
 
     nts::Tristate Comp_4801::compute(std::size_t pin) {
