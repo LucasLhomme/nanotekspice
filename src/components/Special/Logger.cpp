@@ -34,6 +34,10 @@ namespace nts {
             char c = 0;
             for (std::size_t i = 0; i < 8; ++i) {
                 nts::Tristate bit = getLinkValue(i + 1);
+                if (bit == nts::Undefined) {
+                    _previousClock = clock;
+                    return;
+                }
                 if (bit == nts::True)
                     c |= (1 << i);
             }
