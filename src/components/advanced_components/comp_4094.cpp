@@ -19,7 +19,6 @@ namespace nts {
 
     nts::Tristate Comp_4094::compute(std::size_t pin)
     {
-        nts::Tristate oe = getLinkValue(15);
         nts::Tristate clock = getLinkValue(3);
 
         if (pin == 9)
