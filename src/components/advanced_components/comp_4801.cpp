@@ -8,8 +8,6 @@
 
 namespace nts {
 
-    // Use inherited AComponent::getLinkValue to read linked pin values
-
     Comp_4801::Comp_4801() {
         _memory.resize(1024);
         for (auto& byte : _memory) {
