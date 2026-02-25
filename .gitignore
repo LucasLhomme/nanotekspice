@@ -9,5 +9,6 @@ global_test.nts
 G-OOP-400_nanotekspice/
 log.bin
 tester.sh
+*result*
 *.in
 *.log
