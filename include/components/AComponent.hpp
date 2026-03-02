@@ -20,6 +20,14 @@ namespace nts {
             nts::Tristate getLinkValue(std::size_t pin);
             std::pair<nts::IComponent*, std::size_t> getLink(std::size_t pin) const;
 
+        private:
+            class RecursionGuard {
+                int &depth;
+            public:
+                explicit RecursionGuard(int &d) : depth(d) { depth++; }
+                ~RecursionGuard() { depth--; }
+            };
+
         public:
             virtual ~AComponent() = default;
             void setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin) override;

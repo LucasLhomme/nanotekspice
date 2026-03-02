@@ -51,17 +51,13 @@ namespace nts {
 
         if (recursionDepth > 300)
             return nts::Undefined;
-        
-        recursionDepth++;
-        try {
-            nts::Tristate res = other->compute(pin);
-            recursionDepth--;
-            return res;
-        } catch (...) {
-            recursionDepth--;
-            throw;
-        }
+
+        RecursionGuard guard(recursionDepth);
+        nts::Tristate res = other->compute(pin);
+        return res;
     }
+}
+
 
     nts::Tristate AComponent::getLinkValue(std::size_t pin)
     {
