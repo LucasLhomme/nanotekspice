@@ -92,10 +92,6 @@ namespace nts {
         }
         if (_components.find(name_a) == _components.end() || _components.find(name_b) == _components.end())
             throw ParserException("Unknown component name in links");
-        if (_connectedPins.count(str_link_a))
-            throw ParserException("Duplicate link on pin: " + str_link_a);
-        if (_connectedPins.count(str_link_b))
-            throw ParserException("Duplicate link on pin: " + str_link_b);
         _connectedPins.insert(str_link_a);
         _connectedPins.insert(str_link_b);
         _components[name_a]->setLink(pin_a, *_components[name_b], pin_b);
