@@ -16,6 +16,8 @@ namespace nts {
             int getAddress();
             std::vector<std::array<nts::Tristate, 8>> _memory;
             std::array<nts::Tristate, 8> _outputBuffer;
+            nts::Tristate getLinkValue(std::size_t pin);
+            nts::Tristate getVal(std::size_t pin);
         public:
             Comp_4801();
             ~Comp_4801() override = default;
