@@ -14,3 +14,4 @@ tester.sh
 *.log
 html/
 latex/
+xml/
