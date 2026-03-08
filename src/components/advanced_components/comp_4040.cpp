@@ -9,11 +9,19 @@
 
 namespace nts {
 
+    /**
+     * \brief Initialize the 4040 binary counter state.
+     */
     Comp_4040::Comp_4040() {
         _counter = -1; 
         _prevClock = nts::Undefined;
     }
 
+    /**
+     * \brief Increment or reset the internal counter based on clock/reset pins.
+     *
+     * @param tick Simulation tick (unused).
+     */
     void Comp_4040::simulate(std::size_t tick) {
         (void)tick;
         nts::Tristate clock = getLinkValue(10);
@@ -35,6 +43,12 @@ namespace nts {
         _prevClock = clock;
     }
 
+    /**
+     * \brief Return the state of the requested counter output bit.
+     *
+     * @param pin Pin number to query.
+     * @return True/False for the bit or Undefined if counter unset.
+     */
     nts::Tristate Comp_4040::compute(std::size_t pin) {
         int bitIndex = -1;
 

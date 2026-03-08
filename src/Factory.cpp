@@ -36,6 +36,12 @@
 
 namespace nts {
 
+    /**
+     * \brief Register component creators in the factory.
+     *
+     * The constructor populates the internal map of creator lambdas
+     * for supported component types.
+     */
     Factory::Factory()
     {
         _creators["input"]  = []() { return std::make_unique<Input>(); };
@@ -65,6 +71,13 @@ namespace nts {
         _creators["4094"] = []() { return std::make_unique<Comp_4094>(); };
     }
 
+    /**
+     * \brief Create a component instance from its type name.
+     *
+     * @param type String identifier of the component type.
+     * @return A unique_ptr owning the created IComponent instance.
+     * @throws FactoryException if the type is unknown.
+     */
     std::unique_ptr<nts::IComponent> Factory::createComponent(const std::string &type)
     {
         auto component = _creators.find(type);

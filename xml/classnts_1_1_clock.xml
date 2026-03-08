@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classnts_1_1_clock" kind="class" language="C++" prot="public">
+    <compoundname>nts::Clock</compoundname>
+    <basecompoundref refid="classnts_1_1_a_component" prot="public" virt="non-virtual">nts::AComponent</basecompoundref>
+    <includes refid="_clock_8hpp" local="no">Clock.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classnts_1_1_clock_1add5aad87b4489221f80080316c949c1e" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">nts::Tristate</ref></type>
+        <definition>nts::Tristate nts::Clock::_value</definition>
+        <argsstring></argsstring>
+        <name>_value</name>
+        <qualifiedname>nts::Clock::_value</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/Special/Clock.hpp" line="17" column="23" bodyfile="include/components/Special/Clock.hpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnts_1_1_clock_1aa5689106131555e30d12af365d313217" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">nts::Tristate</ref></type>
+        <definition>nts::Tristate nts::Clock::_nextValue</definition>
+        <argsstring></argsstring>
+        <name>_nextValue</name>
+        <qualifiedname>nts::Clock::_nextValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/Special/Clock.hpp" line="18" column="23" bodyfile="include/components/Special/Clock.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnts_1_1_clock_1aeb39171ab5f207ba51004b96b896a350" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nts::Clock::Clock</definition>
+        <argsstring>()</argsstring>
+        <name>Clock</name>
+        <qualifiedname>nts::Clock::Clock</qualifiedname>
+        <briefdescription>
+<para>Initialize a <ref refid="classnts_1_1_clock" kindref="compound">Clock</ref> with undefined state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/Special/Clock.hpp" line="20" column="9" bodyfile="src/components/Special/Clock.cpp" bodystart="15" bodyend="18"/>
+        <references refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67acd3798312faf84cc906f348914affe32" compoundref="_i_component_8hpp" startline="15">nts::Undefined</references>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_clock_1a353455eb0bb9959175209e77d2ba2dd1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nts::Clock::~Clock</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~Clock</name>
+        <qualifiedname>nts::Clock::~Clock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/Special/Clock.hpp" line="21" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_clock_1a048e4d22d82daaefbda5338b10d19e34" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void nts::Clock::simulate</definition>
+        <argsstring>(std::size_t tick) override</argsstring>
+        <name>simulate</name>
+        <qualifiedname>nts::Clock::simulate</qualifiedname>
+        <reimplements refid="classnts_1_1_a_component_1a8f88c3be92b4e7ee67a23a698bfd5e27">simulate</reimplements>
+        <param>
+          <type>std::size_t</type>
+          <declname>tick</declname>
+        </param>
+        <briefdescription>
+<para>Toggle or advance the clock state on simulation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tick</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current simulation tick (unused). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/Special/Clock.hpp" line="22" column="14" bodyfile="src/components/Special/Clock.cpp" bodystart="25" bodyend="36"/>
+        <references refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67a50cab1b9db2634fdfe6c66e7fc075b7a" compoundref="_i_component_8hpp" startline="17">nts::False</references>
+        <references refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67ab1180fbbc1ff889aadf69a5af5e6321d" compoundref="_i_component_8hpp" startline="16">nts::True</references>
+        <references refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67acd3798312faf84cc906f348914affe32" compoundref="_i_component_8hpp" startline="15">nts::Undefined</references>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_clock_1ae783f674c2dddb1f39e9e41d5cef618f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">nts::Tristate</ref></type>
+        <definition>nts::Tristate nts::Clock::compute</definition>
+        <argsstring>(std::size_t pin) override</argsstring>
+        <name>compute</name>
+        <qualifiedname>nts::Clock::compute</qualifiedname>
+        <reimplements refid="classnts_1_1_i_component_1ab257e0216765341e4ed0e717422700e4">compute</reimplements>
+        <param>
+          <type>std::size_t</type>
+          <declname>pin</declname>
+        </param>
+        <briefdescription>
+<para>Return the current clock value on pin 1. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin number to read (only 1 is valid). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Current clock <ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">Tristate</ref> value or Undefined for invalid pins. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/Special/Clock.hpp" line="23" column="23" bodyfile="src/components/Special/Clock.cpp" bodystart="44" bodyend="49"/>
+        <references refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67acd3798312faf84cc906f348914affe32" compoundref="_i_component_8hpp" startline="15">nts::Undefined</references>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_clock_1a1f2611e0f7eab292c6cd5060aca97aff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void nts::Clock::setValue</definition>
+        <argsstring>(nts::Tristate value)</argsstring>
+        <name>setValue</name>
+        <qualifiedname>nts::Clock::setValue</qualifiedname>
+        <param>
+          <type><ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">nts::Tristate</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Schedule a value for the clock to take on next <ref refid="classnts_1_1_clock_1a048e4d22d82daaefbda5338b10d19e34" kindref="member">simulate()</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">Tristate</ref> value to set as next state. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/Special/Clock.hpp" line="24" column="14" bodyfile="src/components/Special/Clock.cpp" bodystart="56" bodyend="59"/>
+        <referencedby refid="classnts_1_1_circuit_1a3e60936599c07f4c203ad412b0d7a594" compoundref="_circuit_8cpp" startline="97" endline="126">nts::Circuit::setValue</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>nts::AComponent</label>
+        <link refid="classnts_1_1_a_component"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>nts::Clock</label>
+        <link refid="classnts_1_1_clock"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>nts::IComponent</label>
+        <link refid="classnts_1_1_i_component"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>nts::AComponent</label>
+        <link refid="classnts_1_1_a_component"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>nts::Clock</label>
+        <link refid="classnts_1_1_clock"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>nts::IComponent</label>
+        <link refid="classnts_1_1_i_component"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/components/Special/Clock.hpp" line="15" column="5" bodyfile="include/components/Special/Clock.hpp" bodystart="15" bodyend="25"/>
+    <listofallmembers>
+      <member refid="classnts_1_1_a_component_1ae63889bb8bbc33c44724ca240d88f5c8" prot="protected" virt="non-virtual"><scope>nts::Clock</scope><name>_links</name></member>
+      <member refid="classnts_1_1_clock_1aa5689106131555e30d12af365d313217" prot="private" virt="non-virtual"><scope>nts::Clock</scope><name>_nextValue</name></member>
+      <member refid="classnts_1_1_clock_1add5aad87b4489221f80080316c949c1e" prot="private" virt="non-virtual"><scope>nts::Clock</scope><name>_value</name></member>
+      <member refid="classnts_1_1_clock_1aeb39171ab5f207ba51004b96b896a350" prot="public" virt="non-virtual"><scope>nts::Clock</scope><name>Clock</name></member>
+      <member refid="classnts_1_1_clock_1ae783f674c2dddb1f39e9e41d5cef618f" prot="public" virt="virtual"><scope>nts::Clock</scope><name>compute</name></member>
+      <member refid="classnts_1_1_a_component_1a43181d6bfd6eef21662546e21249755d" prot="protected" virt="non-virtual"><scope>nts::Clock</scope><name>computeSafe</name></member>
+      <member refid="classnts_1_1_a_component_1ac774f24806b049715e2286b7a129e2f1" prot="protected" virt="non-virtual"><scope>nts::Clock</scope><name>getLink</name></member>
+      <member refid="classnts_1_1_a_component_1a2c7251830c7baee64a5f55bedf9d66a1" prot="protected" virt="non-virtual"><scope>nts::Clock</scope><name>getLinkValue</name></member>
+      <member refid="classnts_1_1_a_component_1ae84b45160f256985cba8f7594b478279" prot="public" virt="virtual"><scope>nts::Clock</scope><name>setLink</name></member>
+      <member refid="classnts_1_1_clock_1a1f2611e0f7eab292c6cd5060aca97aff" prot="public" virt="non-virtual"><scope>nts::Clock</scope><name>setValue</name></member>
+      <member refid="classnts_1_1_clock_1a048e4d22d82daaefbda5338b10d19e34" prot="public" virt="virtual"><scope>nts::Clock</scope><name>simulate</name></member>
+      <member refid="classnts_1_1_a_component_1afc72ea1a3c5dd5b9573a4c8723a78fb8" prot="public" virt="virtual"><scope>nts::Clock</scope><name>~AComponent</name></member>
+      <member refid="classnts_1_1_clock_1a353455eb0bb9959175209e77d2ba2dd1" prot="public" virt="non-virtual"><scope>nts::Clock</scope><name>~Clock</name></member>
+      <member refid="classnts_1_1_i_component_1a06c557f1d5b9668b15de6ea789779abd" prot="public" virt="virtual"><scope>nts::Clock</scope><name>~IComponent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

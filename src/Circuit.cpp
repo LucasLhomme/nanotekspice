@@ -14,6 +14,12 @@
 
 namespace nts {
 
+    /**
+     * \brief Convert a Tristate value to its string representation.
+     *
+     * @param v Tristate value to convert (True/False/Undefined).
+     * @return "1", "0" or "U" representing the value.
+     */
     static std::string tristateToString(nts::Tristate v) {
         if (v == nts::True)
 			return "1";
@@ -22,13 +28,24 @@ namespace nts {
         return "U";
     }
 
+    /**
+     * \brief Default constructor initializing the circuit tick counter.
+     */
     Circuit::Circuit() : _tick(0){}
 
+    /**
+     * \brief Set the components map for the circuit.
+     *
+     * @param components Map of component name to ownership of IComponent.
+     */
     void Circuit::setComponents(std::map<std::string, std::unique_ptr<nts::IComponent>> components)
     {
         _components = std::move(components);
     }
 
+    /**
+     * \brief Advance the simulation by one tick and update components.
+     */
     void Circuit::simulate()
     {
         _tick++;
@@ -53,6 +70,9 @@ namespace nts {
         }
     }
 
+    /**
+     * \brief Print current tick and the state of input/output components.
+     */
     void Circuit::display()
     {
     std::cout << "tick: " << _tick << std::endl;
@@ -68,6 +88,12 @@ namespace nts {
         }
     }
 
+    /**
+     * \brief Set the value of an input or clock component.
+     *
+     * @param inputName Name of the input or clock component to set.
+     * @param value String value to assign: "1", "0" or "U".
+     */
     void Circuit::setValue(const std::string &inputName, const std::string &value)
     {
         auto it = _components.find(inputName);

@@ -15,6 +15,12 @@
 
 namespace nts {
 
+    /**
+     * \brief Trim comments and surrounding whitespace from a line.
+     *
+     * @param line Input line potentially containing comments or spaces.
+     * @return Cleaned line without trailing/leading whitespace or comments.
+     */
     std::string Parser::trimLine(const std::string &line)
     {
         std::string clean = line;
@@ -31,6 +37,12 @@ namespace nts {
         return clean;
     }
 
+    /**
+     * \brief Parse a chipset definition line and create the component.
+     *
+     * @param line Line containing type and name of the component.
+     * @throws ParserException on malformed definitions or duplicates.
+     */
     void Parser::parseChipset(const std::string &line)
     {
         std::stringstream ss(line);
@@ -51,6 +63,12 @@ namespace nts {
         _components[name] = _factory.createComponent(type);
     }
 
+    /**
+     * \brief Parse a link definition and connect two component pins.
+     *
+     * @param line Line describing a link in the format "name:pin name:pin".
+     * @throws ParserException on malformed links or unknown components.
+     */
     void Parser::parseLink(const std::string &line)
     {
         std::stringstream ss(line);
@@ -98,6 +116,12 @@ namespace nts {
         _components[name_b]->setLink(pin_b, *_components[name_a], pin_a);
     }
 
+    /**
+     * \brief Parse an .nts file and populate components and links.
+     *
+     * @param filename Path to the .nts file to parse.
+     * @throws ParserException on file/format errors or missing sections.
+     */
     void Parser::parse(const std::string &filename)
     {
         if (!filename.ends_with(".nts"))
@@ -140,6 +164,11 @@ namespace nts {
             throw ParserException("No components declared in file");
     }
 
+    /**
+     * \brief Retrieve the parsed components map (transfers ownership).
+     *
+     * @return Map of component name to unique_ptr of IComponent.
+     */
     std::map<std::string, std::unique_ptr<nts::IComponent>> Parser::getComponents()
     {
         return std::move(_components);

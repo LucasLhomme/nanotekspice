@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classnts_1_1_parser" kind="class" language="C++" prot="public">
+    <compoundname>nts::Parser</compoundname>
+    <includes refid="_parser_8hpp" local="no">Parser.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classnts_1_1_parser_1a7a82515db6863159d92dc6989aa01730" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::unique_ptr&lt; <ref refid="classnts_1_1_i_component" kindref="compound">nts::IComponent</ref> &gt; &gt;</type>
+        <definition>std::map&lt;std::string, std::unique_ptr&lt;nts::IComponent&gt; &gt; nts::Parser::_components</definition>
+        <argsstring></argsstring>
+        <name>_components</name>
+        <qualifiedname>nts::Parser::_components</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Parser.hpp" line="21" column="22" bodyfile="include/Parser.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnts_1_1_parser_1aae481790d3119fdc93da8428fffa8208" prot="private" static="no" mutable="no">
+        <type><ref refid="classnts_1_1_factory" kindref="compound">nts::Factory</ref></type>
+        <definition>nts::Factory nts::Parser::_factory</definition>
+        <argsstring></argsstring>
+        <name>_factory</name>
+        <qualifiedname>nts::Parser::_factory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Parser.hpp" line="22" column="26" bodyfile="include/Parser.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnts_1_1_parser_1a02e1d7a844dc53c2880dc1e4c04507cf" prot="private" static="no" mutable="no">
+        <type>std::set&lt; std::string &gt;</type>
+        <definition>std::set&lt;std::string&gt; nts::Parser::_connectedPins</definition>
+        <argsstring></argsstring>
+        <name>_connectedPins</name>
+        <qualifiedname>nts::Parser::_connectedPins</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Parser.hpp" line="23" column="22" bodyfile="include/Parser.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classnts_1_1_parser_1aaa47b938766b77e926a3a794049eeeb1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string nts::Parser::trimLine</definition>
+        <argsstring>(const std::string &amp;line)</argsstring>
+        <name>trimLine</name>
+        <qualifiedname>nts::Parser::trimLine</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+<para>Trim comments and surrounding whitespace from a line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classnts_1_1_input" kindref="compound">Input</ref> line potentially containing comments or spaces. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Cleaned line without trailing/leading whitespace or comments. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Parser.hpp" line="24" column="25" bodyfile="src/Parser.cpp" bodystart="24" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_parser_1a6f97eb8259632c9254fe344132098a35" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void nts::Parser::parseChipset</definition>
+        <argsstring>(const std::string &amp;line)</argsstring>
+        <name>parseChipset</name>
+        <qualifiedname>nts::Parser::parseChipset</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+<para>Parse a chipset definition line and create the component. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Line containing type and name of the component. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_parser_exception" kindref="compound">ParserException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>on malformed definitions or duplicates. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Parser.hpp" line="25" column="18" bodyfile="src/Parser.cpp" bodystart="46" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_parser_1ae4eaa34b264a393886f2f8e773cd9dc0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void nts::Parser::parseLink</definition>
+        <argsstring>(const std::string &amp;line)</argsstring>
+        <name>parseLink</name>
+        <qualifiedname>nts::Parser::parseLink</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+<para>Parse a link definition and connect two component pins. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Line describing a link in the format &quot;name:pin name:pin&quot;. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_parser_exception" kindref="compound">ParserException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>on malformed links or unknown components. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Parser.hpp" line="26" column="18" bodyfile="src/Parser.cpp" bodystart="72" bodyend="117"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnts_1_1_parser_1a683ace9845bb0e55d84636181d603312" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nts::Parser::Parser</definition>
+        <argsstring>()=default</argsstring>
+        <name>Parser</name>
+        <qualifiedname>nts::Parser::Parser</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Parser.hpp" line="28" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_parser_1a4be701b25651a53d054bee2f115337d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nts::Parser::~Parser</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Parser</name>
+        <qualifiedname>nts::Parser::~Parser</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Parser.hpp" line="29" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_parser_1a59610ff4344308046d64197331321d43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void nts::Parser::parse</definition>
+        <argsstring>(const std::string &amp;filename)</argsstring>
+        <name>parse</name>
+        <qualifiedname>nts::Parser::parse</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Parse an .nts file and populate components and links. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to the .nts file to parse. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_parser_exception" kindref="compound">ParserException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>on file/format errors or missing sections. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Parser.hpp" line="30" column="18" bodyfile="src/Parser.cpp" bodystart="125" bodyend="165"/>
+        <referencedby refid="classnts_1_1_shell_1ab7cfae05decd3148de246e9af040b5a1" compoundref="_shell_8cpp" startline="33" endline="51">nts::Shell::init</referencedby>
+        <referencedby refid="main__gui_8cpp_1a0c99d968a34e803d378692bde2e3f18f" compoundref="main__gui_8cpp" startline="13" endline="35">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_parser_1ada88f50985b567d40c355514ce5d8493" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::map&lt; std::string, std::unique_ptr&lt; <ref refid="classnts_1_1_i_component" kindref="compound">nts::IComponent</ref> &gt; &gt;</type>
+        <definition>std::map&lt; std::string, std::unique_ptr&lt; nts::IComponent &gt; &gt; nts::Parser::getComponents</definition>
+        <argsstring>()</argsstring>
+        <name>getComponents</name>
+        <qualifiedname>nts::Parser::getComponents</qualifiedname>
+        <briefdescription>
+<para>Retrieve the parsed components map (transfers ownership). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Map of component name to unique_ptr of <ref refid="classnts_1_1_i_component" kindref="compound">IComponent</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Parser.hpp" line="31" column="22" bodyfile="src/Parser.cpp" bodystart="172" bodyend="175"/>
+        <referencedby refid="classnts_1_1_shell_1ab7cfae05decd3148de246e9af040b5a1" compoundref="_shell_8cpp" startline="33" endline="51">nts::Shell::init</referencedby>
+        <referencedby refid="main__gui_8cpp_1a0c99d968a34e803d378692bde2e3f18f" compoundref="main__gui_8cpp" startline="13" endline="35">main</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Parser.hpp" line="19" column="5" bodyfile="include/Parser.hpp" bodystart="19" bodyend="32"/>
+    <listofallmembers>
+      <member refid="classnts_1_1_parser_1a7a82515db6863159d92dc6989aa01730" prot="private" virt="non-virtual"><scope>nts::Parser</scope><name>_components</name></member>
+      <member refid="classnts_1_1_parser_1a02e1d7a844dc53c2880dc1e4c04507cf" prot="private" virt="non-virtual"><scope>nts::Parser</scope><name>_connectedPins</name></member>
+      <member refid="classnts_1_1_parser_1aae481790d3119fdc93da8428fffa8208" prot="private" virt="non-virtual"><scope>nts::Parser</scope><name>_factory</name></member>
+      <member refid="classnts_1_1_parser_1ada88f50985b567d40c355514ce5d8493" prot="public" virt="non-virtual"><scope>nts::Parser</scope><name>getComponents</name></member>
+      <member refid="classnts_1_1_parser_1a59610ff4344308046d64197331321d43" prot="public" virt="non-virtual"><scope>nts::Parser</scope><name>parse</name></member>
+      <member refid="classnts_1_1_parser_1a6f97eb8259632c9254fe344132098a35" prot="private" virt="non-virtual"><scope>nts::Parser</scope><name>parseChipset</name></member>
+      <member refid="classnts_1_1_parser_1ae4eaa34b264a393886f2f8e773cd9dc0" prot="private" virt="non-virtual"><scope>nts::Parser</scope><name>parseLink</name></member>
+      <member refid="classnts_1_1_parser_1a683ace9845bb0e55d84636181d603312" prot="public" virt="non-virtual"><scope>nts::Parser</scope><name>Parser</name></member>
+      <member refid="classnts_1_1_parser_1aaa47b938766b77e926a3a794049eeeb1" prot="private" virt="non-virtual"><scope>nts::Parser</scope><name>trimLine</name></member>
+      <member refid="classnts_1_1_parser_1a4be701b25651a53d054bee2f115337d5" prot="public" virt="non-virtual"><scope>nts::Parser</scope><name>~Parser</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

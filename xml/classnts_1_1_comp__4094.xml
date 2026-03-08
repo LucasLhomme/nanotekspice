@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classnts_1_1_comp__4094" kind="class" language="C++" prot="public">
+    <compoundname>nts::Comp_4094</compoundname>
+    <basecompoundref refid="classnts_1_1_advanced_component" prot="public" virt="non-virtual">nts::AdvancedComponent</basecompoundref>
+    <includes refid="comp__4094_8hpp" local="no">comp_4094.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classnts_1_1_comp__4094_1acadff7e7619e8f56bc1aaef8ad563fa3" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int nts::Comp_4094::_count</definition>
+        <argsstring></argsstring>
+        <name>_count</name>
+        <qualifiedname>nts::Comp_4094::_count</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/advanced_components/comp_4094.hpp" line="18" column="13" bodyfile="include/components/advanced_components/comp_4094.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnts_1_1_comp__4094_1a70d1e2157e15215c311038a4e2724998" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">nts::Tristate</ref></type>
+        <definition>nts::Tristate nts::Comp_4094::_prevClock</definition>
+        <argsstring></argsstring>
+        <name>_prevClock</name>
+        <qualifiedname>nts::Comp_4094::_prevClock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/advanced_components/comp_4094.hpp" line="19" column="23" bodyfile="include/components/advanced_components/comp_4094.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnts_1_1_comp__4094_1a996c6a44c887adea704050f5d3cb3da9" prot="private" static="no" mutable="no">
+        <type>std::array&lt; <ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">nts::Tristate</ref>, 8 &gt;</type>
+        <definition>std::array&lt;nts::Tristate, 8&gt; nts::Comp_4094::_shift</definition>
+        <argsstring></argsstring>
+        <name>_shift</name>
+        <qualifiedname>nts::Comp_4094::_shift</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/advanced_components/comp_4094.hpp" line="20" column="20" bodyfile="include/components/advanced_components/comp_4094.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnts_1_1_comp__4094_1a91e1d45e0cfc89a54f7f293ae1d6fbdb" prot="private" static="no" mutable="no">
+        <type>std::array&lt; <ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">nts::Tristate</ref>, 8 &gt;</type>
+        <definition>std::array&lt;nts::Tristate, 8&gt; nts::Comp_4094::_outputBuffer</definition>
+        <argsstring></argsstring>
+        <name>_outputBuffer</name>
+        <qualifiedname>nts::Comp_4094::_outputBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/advanced_components/comp_4094.hpp" line="21" column="20" bodyfile="include/components/advanced_components/comp_4094.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnts_1_1_comp__4094_1aa509b25949730123d5f143aab3f7dcf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nts::Comp_4094::Comp_4094</definition>
+        <argsstring>()</argsstring>
+        <name>Comp_4094</name>
+        <qualifiedname>nts::Comp_4094::Comp_4094</qualifiedname>
+        <briefdescription>
+<para>Initialize 4094 shift register internal buffers and state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/advanced_components/comp_4094.hpp" line="23" column="9" bodyfile="src/components/advanced_components/comp_4094.cpp" bodystart="15" bodyend="21"/>
+        <references refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67a50cab1b9db2634fdfe6c66e7fc075b7a" compoundref="_i_component_8hpp" startline="17">nts::False</references>
+        <references refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67acd3798312faf84cc906f348914affe32" compoundref="_i_component_8hpp" startline="15">nts::Undefined</references>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_comp__4094_1aeb69792af4fc4eab9fe59755bce3a1e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nts::Comp_4094::~Comp_4094</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~Comp_4094</name>
+        <qualifiedname>nts::Comp_4094::~Comp_4094</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/advanced_components/comp_4094.hpp" line="24" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_comp__4094_1ad631bf3ea45215e7589632a9b30fedde" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">nts::Tristate</ref></type>
+        <definition>nts::Tristate nts::Comp_4094::compute</definition>
+        <argsstring>(std::size_t pin) override</argsstring>
+        <name>compute</name>
+        <qualifiedname>nts::Comp_4094::compute</qualifiedname>
+        <reimplements refid="classnts_1_1_i_component_1ab257e0216765341e4ed0e717422700e4">compute</reimplements>
+        <param>
+          <type>std::size_t</type>
+          <declname>pin</declname>
+        </param>
+        <briefdescription>
+<para>Compute outputs for shift register pins or status pins. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin number to query. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">Tristate</ref> value for the requested output or Undefined. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/advanced_components/comp_4094.hpp" line="26" column="23" bodyfile="src/components/advanced_components/comp_4094.cpp" bodystart="29" bodyend="55"/>
+        <references refid="classnts_1_1_a_component_1a2c7251830c7baee64a5f55bedf9d66a1" compoundref="_a_component_8cpp" startline="97" endline="104">nts::AComponent::getLinkValue</references>
+        <references refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67ab1180fbbc1ff889aadf69a5af5e6321d" compoundref="_i_component_8hpp" startline="16">nts::True</references>
+        <references refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67acd3798312faf84cc906f348914affe32" compoundref="_i_component_8hpp" startline="15">nts::Undefined</references>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_comp__4094_1a1f37fe17eaa27308c5a4ca3592e04c26" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void nts::Comp_4094::simulate</definition>
+        <argsstring>(std::size_t tick) override</argsstring>
+        <name>simulate</name>
+        <qualifiedname>nts::Comp_4094::simulate</qualifiedname>
+        <reimplements refid="classnts_1_1_a_component_1a8f88c3be92b4e7ee67a23a698bfd5e27">simulate</reimplements>
+        <param>
+          <type>std::size_t</type>
+          <declname>tick</declname>
+        </param>
+        <briefdescription>
+<para>Shift data on clock edges and latch to outputs on strobe. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tick</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Simulation tick (unused). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/advanced_components/comp_4094.hpp" line="27" column="14" bodyfile="src/components/advanced_components/comp_4094.cpp" bodystart="62" bodyend="83"/>
+        <references refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67a50cab1b9db2634fdfe6c66e7fc075b7a" compoundref="_i_component_8hpp" startline="17">nts::False</references>
+        <references refid="classnts_1_1_a_component_1a2c7251830c7baee64a5f55bedf9d66a1" compoundref="_a_component_8cpp" startline="97" endline="104">nts::AComponent::getLinkValue</references>
+        <references refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67ab1180fbbc1ff889aadf69a5af5e6321d" compoundref="_i_component_8hpp" startline="16">nts::True</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>nts::AComponent</label>
+        <link refid="classnts_1_1_a_component"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>nts::AdvancedComponent</label>
+        <link refid="classnts_1_1_advanced_component"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>nts::Comp_4094</label>
+        <link refid="classnts_1_1_comp__4094"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>nts::IComponent</label>
+        <link refid="classnts_1_1_i_component"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>nts::AComponent</label>
+        <link refid="classnts_1_1_a_component"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>nts::AdvancedComponent</label>
+        <link refid="classnts_1_1_advanced_component"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>nts::Comp_4094</label>
+        <link refid="classnts_1_1_comp__4094"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>nts::IComponent</label>
+        <link refid="classnts_1_1_i_component"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/components/advanced_components/comp_4094.hpp" line="16" column="5" bodyfile="include/components/advanced_components/comp_4094.hpp" bodystart="16" bodyend="28"/>
+    <listofallmembers>
+      <member refid="classnts_1_1_comp__4094_1acadff7e7619e8f56bc1aaef8ad563fa3" prot="private" virt="non-virtual"><scope>nts::Comp_4094</scope><name>_count</name></member>
+      <member refid="classnts_1_1_a_component_1ae63889bb8bbc33c44724ca240d88f5c8" prot="protected" virt="non-virtual"><scope>nts::Comp_4094</scope><name>_links</name></member>
+      <member refid="classnts_1_1_comp__4094_1a91e1d45e0cfc89a54f7f293ae1d6fbdb" prot="private" virt="non-virtual"><scope>nts::Comp_4094</scope><name>_outputBuffer</name></member>
+      <member refid="classnts_1_1_comp__4094_1a70d1e2157e15215c311038a4e2724998" prot="private" virt="non-virtual"><scope>nts::Comp_4094</scope><name>_prevClock</name></member>
+      <member refid="classnts_1_1_comp__4094_1a996c6a44c887adea704050f5d3cb3da9" prot="private" virt="non-virtual"><scope>nts::Comp_4094</scope><name>_shift</name></member>
+      <member refid="classnts_1_1_comp__4094_1aa509b25949730123d5f143aab3f7dcf6" prot="public" virt="non-virtual"><scope>nts::Comp_4094</scope><name>Comp_4094</name></member>
+      <member refid="classnts_1_1_comp__4094_1ad631bf3ea45215e7589632a9b30fedde" prot="public" virt="virtual"><scope>nts::Comp_4094</scope><name>compute</name></member>
+      <member refid="classnts_1_1_a_component_1a43181d6bfd6eef21662546e21249755d" prot="protected" virt="non-virtual"><scope>nts::Comp_4094</scope><name>computeSafe</name></member>
+      <member refid="classnts_1_1_a_component_1ac774f24806b049715e2286b7a129e2f1" prot="protected" virt="non-virtual"><scope>nts::Comp_4094</scope><name>getLink</name></member>
+      <member refid="classnts_1_1_a_component_1a2c7251830c7baee64a5f55bedf9d66a1" prot="protected" virt="non-virtual"><scope>nts::Comp_4094</scope><name>getLinkValue</name></member>
+      <member refid="classnts_1_1_a_component_1ae84b45160f256985cba8f7594b478279" prot="public" virt="virtual"><scope>nts::Comp_4094</scope><name>setLink</name></member>
+      <member refid="classnts_1_1_comp__4094_1a1f37fe17eaa27308c5a4ca3592e04c26" prot="public" virt="virtual"><scope>nts::Comp_4094</scope><name>simulate</name></member>
+      <member refid="classnts_1_1_a_component_1afc72ea1a3c5dd5b9573a4c8723a78fb8" prot="public" virt="virtual"><scope>nts::Comp_4094</scope><name>~AComponent</name></member>
+      <member refid="classnts_1_1_advanced_component_1a8d070a9db49f49df4c3a7c88563a561d" prot="public" virt="virtual"><scope>nts::Comp_4094</scope><name>~AdvancedComponent</name></member>
+      <member refid="classnts_1_1_comp__4094_1aeb69792af4fc4eab9fe59755bce3a1e3" prot="public" virt="non-virtual"><scope>nts::Comp_4094</scope><name>~Comp_4094</name></member>
+      <member refid="classnts_1_1_i_component_1a06c557f1d5b9668b15de6ea789779abd" prot="public" virt="virtual"><scope>nts::Comp_4094</scope><name>~IComponent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

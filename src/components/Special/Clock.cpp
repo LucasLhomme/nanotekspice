@@ -9,11 +9,19 @@
 
 namespace nts {
 
+    /**
+     * \brief Initialize a Clock with undefined state.
+     */
     Clock::Clock() {
         _value = nts::Undefined;
         _nextValue = nts::Undefined;
     }
 
+    /**
+     * \brief Toggle or advance the clock state on simulation.
+     *
+     * @param tick Current simulation tick (unused).
+     */
     void Clock::simulate(std::size_t tick)
     {
         (void)tick;
@@ -27,6 +35,12 @@ namespace nts {
         }
     }
 
+    /**
+     * \brief Return the current clock value on pin 1.
+     *
+     * @param pin Pin number to read (only 1 is valid).
+     * @return Current clock Tristate value or Undefined for invalid pins.
+     */
     nts::Tristate Clock::compute(std::size_t pin)
     {
         if (pin != 1)
@@ -34,6 +48,11 @@ namespace nts {
         return _value;
     }
 
+    /**
+     * \brief Schedule a value for the clock to take on next simulate().
+     *
+     * @param value Tristate value to set as next state.
+     */
     void Clock::setValue(nts::Tristate value)
     {
         _nextValue = value;

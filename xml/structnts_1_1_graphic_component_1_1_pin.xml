@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="structnts_1_1_graphic_component_1_1_pin" kind="struct" language="C++" prot="private">
+    <compoundname>nts::GraphicComponent::Pin</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnts_1_1_graphic_component_1_1_pin_1aeecc1d608d3d51354e7e730f2ed95d3a" prot="public" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t nts::GraphicComponent::Pin::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <qualifiedname>nts::GraphicComponent::Pin::id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bonus/GraphicComponent.hpp" line="37" column="25" bodyfile="bonus/GraphicComponent.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnts_1_1_graphic_component_1_1_pin_1a98877bf74a6a3ba1e7b819e08b930947" prot="public" static="no" mutable="no">
+        <type>sf::CircleShape</type>
+        <definition>sf::CircleShape nts::GraphicComponent::Pin::shape</definition>
+        <argsstring></argsstring>
+        <name>shape</name>
+        <qualifiedname>nts::GraphicComponent::Pin::shape</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bonus/GraphicComponent.hpp" line="38" column="29" bodyfile="bonus/GraphicComponent.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnts_1_1_graphic_component_1_1_pin_1ac260cfe39c9c81e824dfa274279531a6" prot="public" static="no" mutable="no">
+        <type>sf::Text</type>
+        <definition>sf::Text nts::GraphicComponent::Pin::label</definition>
+        <argsstring></argsstring>
+        <name>label</name>
+        <qualifiedname>nts::GraphicComponent::Pin::label</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bonus/GraphicComponent.hpp" line="39" column="22" bodyfile="bonus/GraphicComponent.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnts_1_1_graphic_component_1_1_pin_1afb1d045daa41036166f744c9cf3d07d5" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">nts::Tristate</ref></type>
+        <definition>nts::Tristate nts::GraphicComponent::Pin::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <qualifiedname>nts::GraphicComponent::Pin::state</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bonus/GraphicComponent.hpp" line="40" column="27" bodyfile="bonus/GraphicComponent.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnts_1_1_graphic_component_1_1_pin_1ac0187963c935d9d91a4978b6a3df3c5d" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool nts::GraphicComponent::Pin::isOutput</definition>
+        <argsstring></argsstring>
+        <name>isOutput</name>
+        <qualifiedname>nts::GraphicComponent::Pin::isOutput</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bonus/GraphicComponent.hpp" line="41" column="18" bodyfile="bonus/GraphicComponent.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="bonus/GraphicComponent.hpp" line="36" column="9" bodyfile="bonus/GraphicComponent.hpp" bodystart="36" bodyend="42"/>
+    <listofallmembers>
+      <member refid="structnts_1_1_graphic_component_1_1_pin_1aeecc1d608d3d51354e7e730f2ed95d3a" prot="public" virt="non-virtual"><scope>nts::GraphicComponent::Pin</scope><name>id</name></member>
+      <member refid="structnts_1_1_graphic_component_1_1_pin_1ac0187963c935d9d91a4978b6a3df3c5d" prot="public" virt="non-virtual"><scope>nts::GraphicComponent::Pin</scope><name>isOutput</name></member>
+      <member refid="structnts_1_1_graphic_component_1_1_pin_1ac260cfe39c9c81e824dfa274279531a6" prot="public" virt="non-virtual"><scope>nts::GraphicComponent::Pin</scope><name>label</name></member>
+      <member refid="structnts_1_1_graphic_component_1_1_pin_1a98877bf74a6a3ba1e7b819e08b930947" prot="public" virt="non-virtual"><scope>nts::GraphicComponent::Pin</scope><name>shape</name></member>
+      <member refid="structnts_1_1_graphic_component_1_1_pin_1afb1d045daa41036166f744c9cf3d07d5" prot="public" virt="non-virtual"><scope>nts::GraphicComponent::Pin</scope><name>state</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

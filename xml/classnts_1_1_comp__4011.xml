@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classnts_1_1_comp__4011" kind="class" language="C++" prot="public">
+    <compoundname>nts::Comp_4011</compoundname>
+    <basecompoundref refid="classnts_1_1_igates" prot="public" virt="non-virtual">nts::Igates</basecompoundref>
+    <includes refid="comp__4011_8hpp" local="no">comp_4011.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classnts_1_1_comp__4011_1ad13fe8ad532abd8e1eb3b09492bb8bf6" prot="private" static="no" mutable="no">
+        <type>const std::vector&lt; <ref refid="structnts_1_1_igates_1_1_gate" kindref="compound">Gate</ref> &gt;</type>
+        <definition>const std::vector&lt;Gate&gt; nts::Comp_4011::_gates</definition>
+        <argsstring></argsstring>
+        <name>_gates</name>
+        <qualifiedname>nts::Comp_4011::_gates</qualifiedname>
+        <initializer>                         = {
+    {1, 2, 3},
+    {5, 6, 4},
+    {8, 9, 10},
+    {12, 13, 11}
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/gates_components/comp_4011.hpp" line="14" column="27" bodyfile="include/components/gates_components/comp_4011.hpp" bodystart="14" bodyend="19"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnts_1_1_comp__4011_1a7220039329fc7fe26c0d94f9cf5375d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nts::Comp_4011::Comp_4011</definition>
+        <argsstring>()=default</argsstring>
+        <name>Comp_4011</name>
+        <qualifiedname>nts::Comp_4011::Comp_4011</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/gates_components/comp_4011.hpp" line="21" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_comp__4011_1aa8d3143d27ad5a0b3b3a45b662db4924" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nts::Comp_4011::~Comp_4011</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~Comp_4011</name>
+        <qualifiedname>nts::Comp_4011::~Comp_4011</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/gates_components/comp_4011.hpp" line="22" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_comp__4011_1a17f1799b77be544cec395a6ba6c8b69f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">nts::Tristate</ref></type>
+        <definition>nts::Tristate nts::Comp_4011::compute</definition>
+        <argsstring>(std::size_t pin) override</argsstring>
+        <name>compute</name>
+        <qualifiedname>nts::Comp_4011::compute</qualifiedname>
+        <reimplements refid="classnts_1_1_igates_1a566f8254f65d4aff78e7e3bafa6ae3cc">compute</reimplements>
+        <param>
+          <type>std::size_t</type>
+          <declname>pin</declname>
+        </param>
+        <briefdescription>
+<para>Compute values for the 4011 quad NAND gates. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin to compute; returns NAND of inputs when matching an output. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Computed <ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">Tristate</ref> or forwarded link value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/gates_components/comp_4011.hpp" line="23" column="23" bodyfile="src/components/gates_components/comp_4011.cpp" bodystart="18" bodyend="24"/>
+        <references refid="classnts_1_1_a_component_1a2c7251830c7baee64a5f55bedf9d66a1" compoundref="_a_component_8cpp" startline="97" endline="104">nts::AComponent::getLinkValue</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>nts::AComponent</label>
+        <link refid="classnts_1_1_a_component"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>nts::Comp_4011</label>
+        <link refid="classnts_1_1_comp__4011"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>nts::IComponent</label>
+        <link refid="classnts_1_1_i_component"/>
+      </node>
+      <node id="2">
+        <label>nts::Igates</label>
+        <link refid="classnts_1_1_igates"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>nts::AComponent</label>
+        <link refid="classnts_1_1_a_component"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>nts::Comp_4011</label>
+        <link refid="classnts_1_1_comp__4011"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>nts::IComponent</label>
+        <link refid="classnts_1_1_i_component"/>
+      </node>
+      <node id="2">
+        <label>nts::Igates</label>
+        <link refid="classnts_1_1_igates"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/components/gates_components/comp_4011.hpp" line="12" column="5" bodyfile="include/components/gates_components/comp_4011.hpp" bodystart="12" bodyend="24"/>
+    <listofallmembers>
+      <member refid="classnts_1_1_comp__4011_1ad13fe8ad532abd8e1eb3b09492bb8bf6" prot="private" virt="non-virtual"><scope>nts::Comp_4011</scope><name>_gates</name></member>
+      <member refid="classnts_1_1_a_component_1ae63889bb8bbc33c44724ca240d88f5c8" prot="protected" virt="non-virtual"><scope>nts::Comp_4011</scope><name>_links</name></member>
+      <member refid="classnts_1_1_comp__4011_1a7220039329fc7fe26c0d94f9cf5375d2" prot="public" virt="non-virtual"><scope>nts::Comp_4011</scope><name>Comp_4011</name></member>
+      <member refid="classnts_1_1_comp__4011_1a17f1799b77be544cec395a6ba6c8b69f" prot="public" virt="virtual"><scope>nts::Comp_4011</scope><name>compute</name></member>
+      <member refid="classnts_1_1_a_component_1a43181d6bfd6eef21662546e21249755d" prot="protected" virt="non-virtual"><scope>nts::Comp_4011</scope><name>computeSafe</name></member>
+      <member refid="classnts_1_1_a_component_1ac774f24806b049715e2286b7a129e2f1" prot="protected" virt="non-virtual"><scope>nts::Comp_4011</scope><name>getLink</name></member>
+      <member refid="classnts_1_1_a_component_1a2c7251830c7baee64a5f55bedf9d66a1" prot="protected" virt="non-virtual"><scope>nts::Comp_4011</scope><name>getLinkValue</name></member>
+      <member refid="classnts_1_1_a_component_1ae84b45160f256985cba8f7594b478279" prot="public" virt="virtual"><scope>nts::Comp_4011</scope><name>setLink</name></member>
+      <member refid="classnts_1_1_a_component_1a8f88c3be92b4e7ee67a23a698bfd5e27" prot="public" virt="virtual"><scope>nts::Comp_4011</scope><name>simulate</name></member>
+      <member refid="classnts_1_1_a_component_1afc72ea1a3c5dd5b9573a4c8723a78fb8" prot="public" virt="virtual"><scope>nts::Comp_4011</scope><name>~AComponent</name></member>
+      <member refid="classnts_1_1_comp__4011_1aa8d3143d27ad5a0b3b3a45b662db4924" prot="public" virt="non-virtual"><scope>nts::Comp_4011</scope><name>~Comp_4011</name></member>
+      <member refid="classnts_1_1_i_component_1a06c557f1d5b9668b15de6ea789779abd" prot="public" virt="virtual"><scope>nts::Comp_4011</scope><name>~IComponent</name></member>
+      <member refid="classnts_1_1_igates_1aba2981e59a3d9ab4e08116d0d1d2cfca" prot="public" virt="non-virtual"><scope>nts::Comp_4011</scope><name>~Igates</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

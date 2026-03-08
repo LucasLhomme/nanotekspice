@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classnts_1_1_false_component" kind="class" language="C++" prot="public">
+    <compoundname>nts::FalseComponent</compoundname>
+    <basecompoundref refid="classnts_1_1_a_component" prot="public" virt="non-virtual">nts::AComponent</basecompoundref>
+    <includes refid="_false_8hpp" local="no">False.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnts_1_1_false_component_1a9dfab37f22925cbeef9bf7e637ed1e7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nts::FalseComponent::FalseComponent</definition>
+        <argsstring>()=default</argsstring>
+        <name>FalseComponent</name>
+        <qualifiedname>nts::FalseComponent::FalseComponent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/Special/False.hpp" line="18" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_false_component_1a94fc47c1e0171049bdafb121ce6e31e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nts::FalseComponent::~FalseComponent</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~FalseComponent</name>
+        <qualifiedname>nts::FalseComponent::~FalseComponent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/Special/False.hpp" line="19" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_false_component_1afa3d4a3644746111125241bdd0641958" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">Tristate</ref></type>
+        <definition>nts::Tristate nts::FalseComponent::compute</definition>
+        <argsstring>(std::size_t pin) override</argsstring>
+        <name>compute</name>
+        <qualifiedname>nts::FalseComponent::compute</qualifiedname>
+        <reimplements refid="classnts_1_1_i_component_1ab257e0216765341e4ed0e717422700e4">compute</reimplements>
+        <param>
+          <type>std::size_t</type>
+          <declname>pin</declname>
+        </param>
+        <briefdescription>
+<para>Always return logical False for any queried pin. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin number (ignored). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67a50cab1b9db2634fdfe6c66e7fc075b7a" kindref="member">Tristate::False</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/Special/False.hpp" line="20" column="18" bodyfile="src/components/Special/False.cpp" bodystart="18" bodyend="21"/>
+        <references refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67a50cab1b9db2634fdfe6c66e7fc075b7a" compoundref="_i_component_8hpp" startline="17">nts::False</references>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_false_component_1a31b994757432cb3724d83e5f8f15da8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void nts::FalseComponent::setValue</definition>
+        <argsstring>(nts::Tristate value)</argsstring>
+        <name>setValue</name>
+        <qualifiedname>nts::FalseComponent::setValue</qualifiedname>
+        <param>
+          <type><ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">nts::Tristate</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>No-op: False component does not accept external value changes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to set (ignored). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/Special/False.hpp" line="21" column="14" bodyfile="src/components/Special/False.cpp" bodystart="28" bodyend="30"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>nts::AComponent</label>
+        <link refid="classnts_1_1_a_component"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>nts::FalseComponent</label>
+        <link refid="classnts_1_1_false_component"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>nts::IComponent</label>
+        <link refid="classnts_1_1_i_component"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>nts::AComponent</label>
+        <link refid="classnts_1_1_a_component"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>nts::FalseComponent</label>
+        <link refid="classnts_1_1_false_component"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>nts::IComponent</label>
+        <link refid="classnts_1_1_i_component"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/components/Special/False.hpp" line="16" column="5" bodyfile="include/components/Special/False.hpp" bodystart="16" bodyend="22"/>
+    <listofallmembers>
+      <member refid="classnts_1_1_a_component_1ae63889bb8bbc33c44724ca240d88f5c8" prot="protected" virt="non-virtual"><scope>nts::FalseComponent</scope><name>_links</name></member>
+      <member refid="classnts_1_1_false_component_1afa3d4a3644746111125241bdd0641958" prot="public" virt="virtual"><scope>nts::FalseComponent</scope><name>compute</name></member>
+      <member refid="classnts_1_1_a_component_1a43181d6bfd6eef21662546e21249755d" prot="protected" virt="non-virtual"><scope>nts::FalseComponent</scope><name>computeSafe</name></member>
+      <member refid="classnts_1_1_false_component_1a9dfab37f22925cbeef9bf7e637ed1e7d" prot="public" virt="non-virtual"><scope>nts::FalseComponent</scope><name>FalseComponent</name></member>
+      <member refid="classnts_1_1_a_component_1ac774f24806b049715e2286b7a129e2f1" prot="protected" virt="non-virtual"><scope>nts::FalseComponent</scope><name>getLink</name></member>
+      <member refid="classnts_1_1_a_component_1a2c7251830c7baee64a5f55bedf9d66a1" prot="protected" virt="non-virtual"><scope>nts::FalseComponent</scope><name>getLinkValue</name></member>
+      <member refid="classnts_1_1_a_component_1ae84b45160f256985cba8f7594b478279" prot="public" virt="virtual"><scope>nts::FalseComponent</scope><name>setLink</name></member>
+      <member refid="classnts_1_1_false_component_1a31b994757432cb3724d83e5f8f15da8a" prot="public" virt="non-virtual"><scope>nts::FalseComponent</scope><name>setValue</name></member>
+      <member refid="classnts_1_1_a_component_1a8f88c3be92b4e7ee67a23a698bfd5e27" prot="public" virt="virtual"><scope>nts::FalseComponent</scope><name>simulate</name></member>
+      <member refid="classnts_1_1_a_component_1afc72ea1a3c5dd5b9573a4c8723a78fb8" prot="public" virt="virtual"><scope>nts::FalseComponent</scope><name>~AComponent</name></member>
+      <member refid="classnts_1_1_false_component_1a94fc47c1e0171049bdafb121ce6e31e1" prot="public" virt="non-virtual"><scope>nts::FalseComponent</scope><name>~FalseComponent</name></member>
+      <member refid="classnts_1_1_i_component_1a06c557f1d5b9668b15de6ea789779abd" prot="public" virt="virtual"><scope>nts::FalseComponent</scope><name>~IComponent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

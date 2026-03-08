@@ -6,6 +6,12 @@
 
 namespace nts {
 
+    /**
+     * \brief Map 4-bit input to one-hot outputs for the 4514 decoder.
+     *
+     * @param pin Pin number to query.
+     * @return True for the active output, False/Undefined otherwise.
+     */
     nts::Tristate Comp_4514::compute(std::size_t pin)
     {
         nts::Tristate inhibit = getLinkValue(23);

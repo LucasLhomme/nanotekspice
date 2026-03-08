@@ -9,6 +9,9 @@
 
 namespace nts {
 
+    /**
+     * \brief Initialize 4094 shift register internal buffers and state.
+     */
     Comp_4094::Comp_4094()
     {
         _count = 0;
@@ -17,6 +20,12 @@ namespace nts {
         _outputBuffer.fill(nts::False);
     }
 
+    /**
+     * \brief Compute outputs for shift register pins or status pins.
+     *
+     * @param pin Pin number to query.
+     * @return Tristate value for the requested output or Undefined.
+     */
     nts::Tristate Comp_4094::compute(std::size_t pin)
     {
         nts::Tristate oe = getLinkValue(15);
@@ -45,6 +54,11 @@ namespace nts {
         return nts::Undefined;
     }
 
+    /**
+     * \brief Shift data on clock edges and latch to outputs on strobe.
+     *
+     * @param tick Simulation tick (unused).
+     */
     void Comp_4094::simulate(std::size_t tick)
     {
         (void)tick;

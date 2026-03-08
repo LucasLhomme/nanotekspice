@@ -9,8 +9,17 @@
 
 namespace nts {
 
+    /**
+     * \brief Default constructor for XOR gate.
+     */
     Xor::Xor() {}
 
+    /**
+     * \brief Compute XOR of two inputs, available on pin 3.
+     *
+     * @param pin Pin number to compute (expects 3).
+     * @return Logical XOR of pin 1 and pin 2, or Undefined for invalid pin.
+     */
     nts::Tristate Xor::compute(std::size_t pin)
     {
         if (pin != 3)

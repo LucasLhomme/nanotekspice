@@ -7,6 +7,12 @@
 #include "../../../include/IComponent.hpp"
 
 namespace nts {
+    /**
+     * \brief Compute the 4-bit adder outputs and carry for the 4008 component.
+     *
+     * @param pin Pin number to compute (sum pins or carry out).
+     * @return Computed Tristate value or Undefined.
+     */
     nts::Tristate Comp_4008::compute(std::size_t pin)
     {
         nts::Tristate carryIn = getLinkValue(9);

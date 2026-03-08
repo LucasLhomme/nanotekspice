@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="_advanced_component_8hpp" kind="file" language="C++">
+    <compoundname>AdvancedComponent.hpp</compoundname>
+    <includes refid="_a_component_8hpp" local="yes">components/AComponent.hpp</includes>
+    <includedby refid="comp__2716_8hpp" local="yes">include/components/advanced_components/comp_2716.hpp</includedby>
+    <includedby refid="comp__4008_8hpp" local="yes">include/components/advanced_components/comp_4008.hpp</includedby>
+    <includedby refid="comp__4017_8hpp" local="yes">include/components/advanced_components/comp_4017.hpp</includedby>
+    <includedby refid="comp__4094_8hpp" local="yes">include/components/advanced_components/comp_4094.hpp</includedby>
+    <includedby refid="comp__4512_8hpp" local="yes">include/components/advanced_components/comp_4512.hpp</includedby>
+    <includedby refid="comp__4514_8hpp" local="yes">include/components/advanced_components/comp_4514.hpp</includedby>
+    <includedby refid="comp__4801_8hpp" local="yes">include/components/advanced_components/comp_4801.hpp</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>IComponent.hpp</label>
+        <link refid="_i_component_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>components/AComponent.hpp</label>
+        <link refid="_a_component_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/components/advanced_components/AdvancedComponent.hpp</label>
+        <link refid="_advanced_component_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>cstddef</label>
+      </node>
+      <node id="5">
+        <label>map</label>
+      </node>
+      <node id="6">
+        <label>utility</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/components/advanced_components/AdvancedComponent.hpp</label>
+        <link refid="_advanced_component_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/components/advanced_components/comp_2716.hpp</label>
+        <link refid="comp__2716_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>include/components/advanced_components/comp_4008.hpp</label>
+        <link refid="comp__4008_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>include/components/advanced_components/comp_4017.hpp</label>
+        <link refid="comp__4017_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>include/components/advanced_components/comp_4094.hpp</label>
+        <link refid="comp__4094_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>include/components/advanced_components/comp_4512.hpp</label>
+        <link refid="comp__4512_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>include/components/advanced_components/comp_4514.hpp</label>
+        <link refid="comp__4514_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>include/components/advanced_components/comp_4801.hpp</label>
+        <link refid="comp__4801_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/Factory.cpp</label>
+        <link refid="_factory_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/components/advanced_components/comp_2716.cpp</label>
+        <link refid="comp__2716_8cpp"/>
+      </node>
+      <node id="6">
+        <label>src/components/advanced_components/comp_4008.cpp</label>
+        <link refid="comp__4008_8cpp"/>
+      </node>
+      <node id="8">
+        <label>src/components/advanced_components/comp_4017.cpp</label>
+        <link refid="comp__4017_8cpp"/>
+      </node>
+      <node id="10">
+        <label>src/components/advanced_components/comp_4094.cpp</label>
+        <link refid="comp__4094_8cpp"/>
+      </node>
+      <node id="12">
+        <label>src/components/advanced_components/comp_4512.cpp</label>
+        <link refid="comp__4512_8cpp"/>
+      </node>
+      <node id="14">
+        <label>src/components/advanced_components/comp_4514.cpp</label>
+        <link refid="comp__4514_8cpp"/>
+      </node>
+      <node id="16">
+        <label>src/components/advanced_components/comp_4801.cpp</label>
+        <link refid="comp__4801_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classnts_1_1_advanced_component" prot="public">nts::AdvancedComponent</innerclass>
+    <innernamespace refid="namespacents">nts</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>NANO_1_ADVANCED_COMPONENT_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NANO_1_ADVANCED_COMPONENT_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_a_component_8hpp" kindref="compound">components/AComponent.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacents" kindref="compound">nts</ref><sp/>{</highlight></codeline>
+<codeline lineno="7" refid="classnts_1_1_advanced_component" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classnts_1_1_advanced_component" kindref="compound">AdvancedComponent</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classnts_1_1_a_component" kindref="compound">AComponent</ref><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="9" refid="classnts_1_1_advanced_component_1a8d070a9db49f49df4c3a7c88563a561d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classnts_1_1_advanced_component_1a8d070a9db49f49df4c3a7c88563a561d" kindref="member">~AdvancedComponent</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>NANO_1_ADVANCED_COMPONENT_HPP</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/components/advanced_components/AdvancedComponent.hpp"/>
+  </compounddef>
+</doxygen>

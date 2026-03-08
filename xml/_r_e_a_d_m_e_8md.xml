@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>NanoTekSpice</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Overview</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**NanoTekSpice**<sp/>is<sp/>a<sp/>digital<sp/>logic<sp/>simulator<sp/>built<sp/>in<sp/>**C++**^^.<sp/>**It<sp/>constructs<sp/>a<sp/>graph<sp/>of<sp/>simulated<sp/>digital<sp/>electronic<sp/>components<sp/>(chipsets)<sp/>based<sp/>on<sp/>a<sp/>configuration<sp/>file<sp/>and<sp/>simulates<sp/>their<sp/>behavior<sp/>using<sp/>boolean<sp/>logic**^^.<sp/>**Unlike<sp/>pure<sp/>boolean<sp/>algebra,<sp/>this<sp/>simulator<sp/>incorporates<sp/>a<sp/>****tristate<sp/>logic**<sp/>system,<sp/>accounting<sp/>for<sp/>`&lt;span<sp/>class=&quot;citation-47&quot;&gt;true&lt;/span&gt;`,<sp/>`&lt;span<sp/>class=&quot;citation-47&quot;&gt;false&lt;/span&gt;`,<sp/>and<sp/>`&lt;span<sp/>class=&quot;citation-47&quot;&gt;undefined&lt;/span&gt;`<sp/>states^^.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**The<sp/>project<sp/>simulates<sp/>various<sp/>components<sp/>ranging<sp/>from<sp/>simple<sp/>elementary<sp/>gates<sp/>(AND,<sp/>OR,<sp/>NOT)<sp/>to<sp/>complex<sp/>chipsets<sp/>like<sp/>the<sp/>4008<sp/>4-bit<sp/>adder<sp/>or<sp/>the<sp/>4514<sp/>4-bit<sp/>decoder**.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Features</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>**Tristate<sp/>Logic:**<sp/>Handles<sp/>`&lt;span<sp/>class=&quot;citation-45&quot;&gt;0&lt;/span&gt;`<sp/>(false),<sp/>`&lt;span<sp/>class=&quot;citation-45&quot;&gt;1&lt;/span&gt;`<sp/>(true),<sp/>and<sp/>`&lt;span<sp/>class=&quot;citation-45&quot;&gt;U&lt;/span&gt;`<sp/>(undefined)<sp/>values.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>**Component<sp/>Factory:**<sp/>Implements<sp/>a<sp/>generic<sp/>component<sp/>creation<sp/>system<sp/>using<sp/>a<sp/>factory<sp/>pattern.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>**Interactive<sp/>Shell:**<sp/>Includes<sp/>a<sp/>command-line<sp/>interface<sp/>to<sp/>manipulate<sp/>input<sp/>values,<sp/>simulate<sp/>clock<sp/>ticks,<sp/>and<sp/>display<sp/>the<sp/>state<sp/>of<sp/>the<sp/>circuit.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>**Modular<sp/>Architecture:**<sp/>All<sp/>components<sp/>inherit<sp/>from<sp/>the<sp/>`&lt;span<sp/>class=&quot;citation-42&quot;&gt;nts::IComponent&lt;/span&gt;`<sp/>interface,<sp/>ensuring<sp/>high<sp/>extensibility.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Getting<sp/>Started</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Prerequisites</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>**A<sp/>C++<sp/>compiler<sp/>(supporting<sp/>C++<sp/>standards<sp/>used<sp/>in<sp/>the<sp/>project)**^^.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>**Make**<sp/>or<sp/>**CMake**<sp/>for<sp/>the<sp/>build<sp/>process^^.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Compilation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>compile<sp/>the<sp/>project<sp/>using<sp/>the<sp/>provided<sp/><sp/>**Makefile**<sp/>,<sp/>run<sp/>the<sp/>following<sp/>commands<sp/>in<sp/>your<sp/>terminal:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Bash**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>To<sp/>compile<sp/>the<sp/>nanotekspice<sp/>binary</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>To<sp/>remove<sp/>object<sp/>files</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>clean</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>To<sp/>remove<sp/>object<sp/>files<sp/>and<sp/>the<sp/>binary</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>fclean</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>To<sp/>re-compile<sp/>the<sp/>entire<sp/>project</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>re</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Usage</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Run<sp/>the<sp/>simulator<sp/>by<sp/>passing<sp/>a<sp/>circuit<sp/>configuration<sp/>file<sp/>(`.nts`)<sp/>as<sp/>an<sp/>argument:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Bash**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">./nanotekspice<sp/>[circuit_file.nts]</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Available<sp/>Commands</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Once<sp/>the<sp/>program<sp/>is<sp/>running,<sp/>you<sp/>can<sp/>use<sp/>the<sp/>following<sp/>commands<sp/>in<sp/>the<sp/>interactive<sp/>prompt:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>**`&lt;span<sp/>class=&quot;citation-37&quot;&gt;display&lt;/span&gt;`**<sp/>**:<sp/>Prints<sp/>the<sp/>current<sp/>tick<sp/>and<sp/>the<sp/>values<sp/>of<sp/>all<sp/>inputs<sp/>and<sp/>outputs**.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>**`&lt;span<sp/>class=&quot;citation-36&quot;&gt;simulate&lt;/span&gt;`**<sp/>**:<sp/>Simulates<sp/>one<sp/>tick<sp/>of<sp/>the<sp/>circuit**.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>**`&lt;span<sp/>class=&quot;citation-35&quot;&gt;loop&lt;/span&gt;`**<sp/>**:<sp/>Continuously<sp/>runs<sp/>the<sp/>simulation<sp/>until<sp/>a<sp/>**`&lt;span<sp/>class=&quot;citation-35&quot;&gt;SIGINT&lt;/span&gt;`<sp/>(CTRL+C)<sp/>is<sp/>received^^.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>**`&lt;span<sp/>class=&quot;citation-34&quot;&gt;[input_name]=[value]&lt;/span&gt;`**<sp/>**:<sp/>Changes<sp/>the<sp/>value<sp/>of<sp/>an<sp/>input<sp/>(values:<sp/>**`&lt;span<sp/>class=&quot;citation-34&quot;&gt;0&lt;/span&gt;`,<sp/>`&lt;span<sp/>class=&quot;citation-34&quot;&gt;1&lt;/span&gt;`,<sp/>or<sp/>`&lt;span<sp/>class=&quot;citation-34&quot;&gt;u&lt;/span&gt;`).</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>**`&lt;span<sp/>class=&quot;citation-33&quot;&gt;exit&lt;/span&gt;`**<sp/>**:<sp/>Closes<sp/>the<sp/>program**.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>**CTRL+D**<sp/>**:<sp/>Stops<sp/>the<sp/>program<sp/>with<sp/>status<sp/>0**.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Configuration<sp/>File<sp/>Format</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>`.nts`<sp/>files<sp/>are<sp/>divided<sp/>into<sp/>two<sp/>main<sp/>sections:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>**`&lt;span<sp/>class=&quot;citation-31&quot;&gt;.chipsets&lt;/span&gt;`**<sp/>**:<sp/>Declares<sp/>and<sp/>names<sp/>the<sp/>components<sp/>used<sp/>in<sp/>the<sp/>circuit**.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>**`&lt;span<sp/>class=&quot;citation-30&quot;&gt;.links&lt;/span&gt;`**<sp/>**:<sp/>Defines<sp/>the<sp/>bidirectional<sp/>links<sp/>between<sp/>specific<sp/>pins<sp/>of<sp/>the<sp/>components**.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Example:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Plaintext**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">.chipsets:</highlight></codeline>
+<codeline><highlight class="normal">input<sp/>a</highlight></codeline>
+<codeline><highlight class="normal">input<sp/>b</highlight></codeline>
+<codeline><highlight class="normal">4071<sp/>my_or_gate</highlight></codeline>
+<codeline><highlight class="normal">output<sp/>s</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">.links:</highlight></codeline>
+<codeline><highlight class="normal">a:1<sp/>my_or_gate:1</highlight></codeline>
+<codeline><highlight class="normal">b:1<sp/>my_or_gate:2</highlight></codeline>
+<codeline><highlight class="normal">my_or_gate:3<sp/>s:1</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Documentation<sp/>(Doxygen)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>project<sp/>contains<sp/>brief<sp/>Doxygen<sp/>comments<sp/>added<sp/>above<sp/>function<sp/>definitions<sp/>in<sp/>`src/`<sp/>to<sp/>help<sp/>generate<sp/>API<sp/>documentation.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>generate<sp/>documentation<sp/>(if<sp/>you<sp/>have<sp/>Doxygen<sp/>installed):</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">doxygen<sp/>Doxyfile</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>no<sp/>`Doxyfile`<sp/>is<sp/>present<sp/>you<sp/>can<sp/>create<sp/>a<sp/>minimal<sp/>one<sp/>with:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">doxygen<sp/>-g<sp/>Doxyfile</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Then<sp/>edit<sp/>`Doxyfile`<sp/>(set<sp/>`PROJECT_NAME`,<sp/>`INPUT<sp/>=<sp/>src<sp/>include`,<sp/>and<sp/>`RECURSIVE<sp/>=<sp/>YES`)<sp/>and<sp/>run<sp/>`doxygen<sp/>Doxyfile`.</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

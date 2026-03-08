@@ -1,0 +1,275 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classnts_1_1_comp__4801" kind="class" language="C++" prot="public">
+    <compoundname>nts::Comp_4801</compoundname>
+    <basecompoundref refid="classnts_1_1_advanced_component" prot="public" virt="non-virtual">nts::AdvancedComponent</basecompoundref>
+    <includes refid="comp__4801_8hpp" local="no">comp_4801.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classnts_1_1_comp__4801_1a86c13f371f22c25de6a4728765583068" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::array&lt; <ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">nts::Tristate</ref>, 8 &gt; &gt;</type>
+        <definition>std::vector&lt;std::array&lt;nts::Tristate, 8&gt; &gt; nts::Comp_4801::_memory</definition>
+        <argsstring></argsstring>
+        <name>_memory</name>
+        <qualifiedname>nts::Comp_4801::_memory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/advanced_components/comp_4801.hpp" line="17" column="25" bodyfile="include/components/advanced_components/comp_4801.hpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnts_1_1_comp__4801_1a18aa85089dd81a5c8815a0a57c7235f2" prot="private" static="no" mutable="no">
+        <type>std::array&lt; <ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">nts::Tristate</ref>, 8 &gt;</type>
+        <definition>std::array&lt;nts::Tristate, 8&gt; nts::Comp_4801::_outputBuffer</definition>
+        <argsstring></argsstring>
+        <name>_outputBuffer</name>
+        <qualifiedname>nts::Comp_4801::_outputBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/advanced_components/comp_4801.hpp" line="18" column="24" bodyfile="include/components/advanced_components/comp_4801.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classnts_1_1_comp__4801_1a13a3cd62aec75a128c15c0ef58c86148" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int nts::Comp_4801::getAddress</definition>
+        <argsstring>()</argsstring>
+        <name>getAddress</name>
+        <qualifiedname>nts::Comp_4801::getAddress</qualifiedname>
+        <briefdescription>
+<para>Compute address from address pins; returns -1 if undefined. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Integer address or -1 on undefined bits. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/advanced_components/comp_4801.hpp" line="16" column="17" bodyfile="src/components/advanced_components/comp_4801.cpp" bodystart="40" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_comp__4801_1a616cf2c565c5db6ed3e8b7deca07c11c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">nts::Tristate</ref></type>
+        <definition>nts::Tristate nts::Comp_4801::getLinkValue</definition>
+        <argsstring>(std::size_t pin)</argsstring>
+        <name>getLinkValue</name>
+        <qualifiedname>nts::Comp_4801::getLinkValue</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>pin</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/advanced_components/comp_4801.hpp" line="19" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_comp__4801_1a955ea64c3f92b216e7ca35e6a7c5134b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">nts::Tristate</ref></type>
+        <definition>nts::Tristate nts::Comp_4801::getVal</definition>
+        <argsstring>(std::size_t pin)</argsstring>
+        <name>getVal</name>
+        <qualifiedname>nts::Comp_4801::getVal</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>pin</declname>
+        </param>
+        <briefdescription>
+<para>Helper to read the connected value for a given local pin. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin number whose linked value is requested. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">Tristate</ref> value from linked component or Undefined. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/advanced_components/comp_4801.hpp" line="20" column="27" bodyfile="src/components/advanced_components/comp_4801.cpp" bodystart="17" bodyend="22"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnts_1_1_comp__4801_1a07f8f499d0e424ccd40c0ccb73232614" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nts::Comp_4801::Comp_4801</definition>
+        <argsstring>()</argsstring>
+        <name>Comp_4801</name>
+        <qualifiedname>nts::Comp_4801::Comp_4801</qualifiedname>
+        <briefdescription>
+<para>Initialize 4801 memory arrays and buffers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/advanced_components/comp_4801.hpp" line="22" column="13" bodyfile="src/components/advanced_components/comp_4801.cpp" bodystart="27" bodyend="33"/>
+        <references refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67acd3798312faf84cc906f348914affe32" compoundref="_i_component_8hpp" startline="15">nts::Undefined</references>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_comp__4801_1ac6a2d649093db5575004428352e034e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nts::Comp_4801::~Comp_4801</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~Comp_4801</name>
+        <qualifiedname>nts::Comp_4801::~Comp_4801</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/advanced_components/comp_4801.hpp" line="23" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_comp__4801_1afba7fdfd3e6db86323d434afb7ca92d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">nts::Tristate</ref></type>
+        <definition>nts::Tristate nts::Comp_4801::compute</definition>
+        <argsstring>(std::size_t pin) override</argsstring>
+        <name>compute</name>
+        <qualifiedname>nts::Comp_4801::compute</qualifiedname>
+        <reimplements refid="classnts_1_1_i_component_1ab257e0216765341e4ed0e717422700e4">compute</reimplements>
+        <param>
+          <type>std::size_t</type>
+          <declname>pin</declname>
+        </param>
+        <briefdescription>
+<para>Return the data bit present on the requested data pin. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin number to query (data pins only). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">Tristate</ref> value or Undefined. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/advanced_components/comp_4801.hpp" line="24" column="27" bodyfile="src/components/advanced_components/comp_4801.cpp" bodystart="94" bodyend="102"/>
+        <references refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67acd3798312faf84cc906f348914affe32" compoundref="_i_component_8hpp" startline="15">nts::Undefined</references>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_comp__4801_1ae34a1afee83221099f1e844e7dd477f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void nts::Comp_4801::simulate</definition>
+        <argsstring>(std::size_t tick) override</argsstring>
+        <name>simulate</name>
+        <qualifiedname>nts::Comp_4801::simulate</qualifiedname>
+        <reimplements refid="classnts_1_1_a_component_1a8f88c3be92b4e7ee67a23a698bfd5e27">simulate</reimplements>
+        <param>
+          <type>std::size_t</type>
+          <declname>tick</declname>
+        </param>
+        <briefdescription>
+<para>Handle read/write cycles and update output buffer accordingly. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tick</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Simulation tick (unused). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/advanced_components/comp_4801.hpp" line="25" column="18" bodyfile="src/components/advanced_components/comp_4801.cpp" bodystart="60" bodyend="86"/>
+        <references refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67a50cab1b9db2634fdfe6c66e7fc075b7a" compoundref="_i_component_8hpp" startline="17">nts::False</references>
+        <references refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67acd3798312faf84cc906f348914affe32" compoundref="_i_component_8hpp" startline="15">nts::Undefined</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>nts::AComponent</label>
+        <link refid="classnts_1_1_a_component"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>nts::AdvancedComponent</label>
+        <link refid="classnts_1_1_advanced_component"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>nts::Comp_4801</label>
+        <link refid="classnts_1_1_comp__4801"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>nts::IComponent</label>
+        <link refid="classnts_1_1_i_component"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>nts::AComponent</label>
+        <link refid="classnts_1_1_a_component"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>nts::AdvancedComponent</label>
+        <link refid="classnts_1_1_advanced_component"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>nts::Comp_4801</label>
+        <link refid="classnts_1_1_comp__4801"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>nts::IComponent</label>
+        <link refid="classnts_1_1_i_component"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/components/advanced_components/comp_4801.hpp" line="14" column="9" bodyfile="include/components/advanced_components/comp_4801.hpp" bodystart="14" bodyend="26"/>
+    <listofallmembers>
+      <member refid="classnts_1_1_a_component_1ae63889bb8bbc33c44724ca240d88f5c8" prot="protected" virt="non-virtual"><scope>nts::Comp_4801</scope><name>_links</name></member>
+      <member refid="classnts_1_1_comp__4801_1a86c13f371f22c25de6a4728765583068" prot="private" virt="non-virtual"><scope>nts::Comp_4801</scope><name>_memory</name></member>
+      <member refid="classnts_1_1_comp__4801_1a18aa85089dd81a5c8815a0a57c7235f2" prot="private" virt="non-virtual"><scope>nts::Comp_4801</scope><name>_outputBuffer</name></member>
+      <member refid="classnts_1_1_comp__4801_1a07f8f499d0e424ccd40c0ccb73232614" prot="public" virt="non-virtual"><scope>nts::Comp_4801</scope><name>Comp_4801</name></member>
+      <member refid="classnts_1_1_comp__4801_1afba7fdfd3e6db86323d434afb7ca92d5" prot="public" virt="virtual"><scope>nts::Comp_4801</scope><name>compute</name></member>
+      <member refid="classnts_1_1_a_component_1a43181d6bfd6eef21662546e21249755d" prot="protected" virt="non-virtual"><scope>nts::Comp_4801</scope><name>computeSafe</name></member>
+      <member refid="classnts_1_1_comp__4801_1a13a3cd62aec75a128c15c0ef58c86148" prot="private" virt="non-virtual"><scope>nts::Comp_4801</scope><name>getAddress</name></member>
+      <member refid="classnts_1_1_a_component_1ac774f24806b049715e2286b7a129e2f1" prot="protected" virt="non-virtual"><scope>nts::Comp_4801</scope><name>getLink</name></member>
+      <member refid="classnts_1_1_comp__4801_1a616cf2c565c5db6ed3e8b7deca07c11c" prot="private" virt="non-virtual"><scope>nts::Comp_4801</scope><name>getLinkValue</name></member>
+      <member refid="classnts_1_1_comp__4801_1a955ea64c3f92b216e7ca35e6a7c5134b" prot="private" virt="non-virtual"><scope>nts::Comp_4801</scope><name>getVal</name></member>
+      <member refid="classnts_1_1_a_component_1ae84b45160f256985cba8f7594b478279" prot="public" virt="virtual"><scope>nts::Comp_4801</scope><name>setLink</name></member>
+      <member refid="classnts_1_1_comp__4801_1ae34a1afee83221099f1e844e7dd477f1" prot="public" virt="virtual"><scope>nts::Comp_4801</scope><name>simulate</name></member>
+      <member refid="classnts_1_1_a_component_1afc72ea1a3c5dd5b9573a4c8723a78fb8" prot="public" virt="virtual"><scope>nts::Comp_4801</scope><name>~AComponent</name></member>
+      <member refid="classnts_1_1_advanced_component_1a8d070a9db49f49df4c3a7c88563a561d" prot="public" virt="virtual"><scope>nts::Comp_4801</scope><name>~AdvancedComponent</name></member>
+      <member refid="classnts_1_1_comp__4801_1ac6a2d649093db5575004428352e034e1" prot="public" virt="non-virtual"><scope>nts::Comp_4801</scope><name>~Comp_4801</name></member>
+      <member refid="classnts_1_1_i_component_1a06c557f1d5b9668b15de6ea789779abd" prot="public" virt="virtual"><scope>nts::Comp_4801</scope><name>~IComponent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

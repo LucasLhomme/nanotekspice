@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classnts_1_1_comp__4514" kind="class" language="C++" prot="public">
+    <compoundname>nts::Comp_4514</compoundname>
+    <basecompoundref refid="classnts_1_1_advanced_component" prot="public" virt="non-virtual">nts::AdvancedComponent</basecompoundref>
+    <includes refid="comp__4514_8hpp" local="no">comp_4514.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classnts_1_1_comp__4514_1a918e71a84bc49a191020a6934fb5867d" prot="private" static="no" mutable="no">
+        <type>const std::vector&lt; <ref refid="structnts_1_1_igates_1_1_gate" kindref="compound">Igates::Gate</ref> &gt;</type>
+        <definition>const std::vector&lt;Igates::Gate&gt; nts::Comp_4514::_gates</definition>
+        <argsstring></argsstring>
+        <name>_gates</name>
+        <qualifiedname>nts::Comp_4514::_gates</qualifiedname>
+        <initializer>                         = {
+    {1, 2, 3},
+    {5, 6, 4},
+    {8, 9, 10},
+    {12, 13, 11}
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/advanced_components/comp_4514.hpp" line="17" column="27" bodyfile="include/components/advanced_components/comp_4514.hpp" bodystart="17" bodyend="22"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnts_1_1_comp__4514_1ac214077eeeeeab95f414c458f225acee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nts::Comp_4514::Comp_4514</definition>
+        <argsstring>()=default</argsstring>
+        <name>Comp_4514</name>
+        <qualifiedname>nts::Comp_4514::Comp_4514</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/advanced_components/comp_4514.hpp" line="24" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_comp__4514_1a15d89286e2f42c748b38ab94e809a220" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nts::Comp_4514::~Comp_4514</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~Comp_4514</name>
+        <qualifiedname>nts::Comp_4514::~Comp_4514</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/advanced_components/comp_4514.hpp" line="25" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classnts_1_1_comp__4514_1a7eccc2b3c404281d041711379b1979db" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67" kindref="member">nts::Tristate</ref></type>
+        <definition>nts::Tristate nts::Comp_4514::compute</definition>
+        <argsstring>(std::size_t pin) override</argsstring>
+        <name>compute</name>
+        <qualifiedname>nts::Comp_4514::compute</qualifiedname>
+        <reimplements refid="classnts_1_1_i_component_1ab257e0216765341e4ed0e717422700e4">compute</reimplements>
+        <param>
+          <type>std::size_t</type>
+          <declname>pin</declname>
+        </param>
+        <briefdescription>
+<para>Map 4-bit input to one-hot outputs for the 4514 decoder. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin number to query. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True for the active output, False/Undefined otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/advanced_components/comp_4514.hpp" line="27" column="23" bodyfile="src/components/advanced_components/comp_4514.cpp" bodystart="15" bodyend="43"/>
+        <references refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67a50cab1b9db2634fdfe6c66e7fc075b7a" compoundref="_i_component_8hpp" startline="17">nts::False</references>
+        <references refid="classnts_1_1_a_component_1a2c7251830c7baee64a5f55bedf9d66a1" compoundref="_a_component_8cpp" startline="97" endline="104">nts::AComponent::getLinkValue</references>
+        <references refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67ab1180fbbc1ff889aadf69a5af5e6321d" compoundref="_i_component_8hpp" startline="16">nts::True</references>
+        <references refid="namespacents_1a6a39a4991e0296dc1d562e9c91f95c67acd3798312faf84cc906f348914affe32" compoundref="_i_component_8hpp" startline="15">nts::Undefined</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>nts::AComponent</label>
+        <link refid="classnts_1_1_a_component"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>nts::AdvancedComponent</label>
+        <link refid="classnts_1_1_advanced_component"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>nts::Comp_4514</label>
+        <link refid="classnts_1_1_comp__4514"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>nts::IComponent</label>
+        <link refid="classnts_1_1_i_component"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>nts::AComponent</label>
+        <link refid="classnts_1_1_a_component"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>nts::AdvancedComponent</label>
+        <link refid="classnts_1_1_advanced_component"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>nts::Comp_4514</label>
+        <link refid="classnts_1_1_comp__4514"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>nts::IComponent</label>
+        <link refid="classnts_1_1_i_component"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/components/advanced_components/comp_4514.hpp" line="15" column="5" bodyfile="include/components/advanced_components/comp_4514.hpp" bodystart="15" bodyend="28"/>
+    <listofallmembers>
+      <member refid="classnts_1_1_comp__4514_1a918e71a84bc49a191020a6934fb5867d" prot="private" virt="non-virtual"><scope>nts::Comp_4514</scope><name>_gates</name></member>
+      <member refid="classnts_1_1_a_component_1ae63889bb8bbc33c44724ca240d88f5c8" prot="protected" virt="non-virtual"><scope>nts::Comp_4514</scope><name>_links</name></member>
+      <member refid="classnts_1_1_comp__4514_1ac214077eeeeeab95f414c458f225acee" prot="public" virt="non-virtual"><scope>nts::Comp_4514</scope><name>Comp_4514</name></member>
+      <member refid="classnts_1_1_comp__4514_1a7eccc2b3c404281d041711379b1979db" prot="public" virt="virtual"><scope>nts::Comp_4514</scope><name>compute</name></member>
+      <member refid="classnts_1_1_a_component_1a43181d6bfd6eef21662546e21249755d" prot="protected" virt="non-virtual"><scope>nts::Comp_4514</scope><name>computeSafe</name></member>
+      <member refid="classnts_1_1_a_component_1ac774f24806b049715e2286b7a129e2f1" prot="protected" virt="non-virtual"><scope>nts::Comp_4514</scope><name>getLink</name></member>
+      <member refid="classnts_1_1_a_component_1a2c7251830c7baee64a5f55bedf9d66a1" prot="protected" virt="non-virtual"><scope>nts::Comp_4514</scope><name>getLinkValue</name></member>
+      <member refid="classnts_1_1_a_component_1ae84b45160f256985cba8f7594b478279" prot="public" virt="virtual"><scope>nts::Comp_4514</scope><name>setLink</name></member>
+      <member refid="classnts_1_1_a_component_1a8f88c3be92b4e7ee67a23a698bfd5e27" prot="public" virt="virtual"><scope>nts::Comp_4514</scope><name>simulate</name></member>
+      <member refid="classnts_1_1_a_component_1afc72ea1a3c5dd5b9573a4c8723a78fb8" prot="public" virt="virtual"><scope>nts::Comp_4514</scope><name>~AComponent</name></member>
+      <member refid="classnts_1_1_advanced_component_1a8d070a9db49f49df4c3a7c88563a561d" prot="public" virt="virtual"><scope>nts::Comp_4514</scope><name>~AdvancedComponent</name></member>
+      <member refid="classnts_1_1_comp__4514_1a15d89286e2f42c748b38ab94e809a220" prot="public" virt="non-virtual"><scope>nts::Comp_4514</scope><name>~Comp_4514</name></member>
+      <member refid="classnts_1_1_i_component_1a06c557f1d5b9668b15de6ea789779abd" prot="public" virt="virtual"><scope>nts::Comp_4514</scope><name>~IComponent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -8,6 +8,13 @@
 #include <iostream>
 #include "../include/Shell.hpp"
 
+/**
+ * \brief Program entry point for the nanotekspice application.
+ *
+ * @param argc Argument count.
+ * @param argv Argument vector (expects the .nts filename at argv[1]).
+ * @return Exit code (0 on success, 84 on error).
+ */
 int main(int argc, char **argv)
 {
     if (argc != 2) {

@@ -8,6 +8,12 @@
 
 namespace nts {
 
+    /**
+     * \brief Helper to read the connected value for a given local pin.
+     *
+     * @param pin Pin number whose linked value is requested.
+     * @return Tristate value from linked component or Undefined.
+     */
     nts::Tristate Comp_4801::getVal(std::size_t pin)
     {
         if (_links.find(pin) == _links.end())
@@ -15,6 +21,9 @@ namespace nts {
         return _links[pin].first->compute(_links[pin].second);
     }
 
+    /**
+     * \brief Initialize 4801 memory arrays and buffers.
+     */
     Comp_4801::Comp_4801() {
         _memory.resize(1024);
         for (auto& byte : _memory) {
@@ -23,6 +32,11 @@ namespace nts {
         _outputBuffer.fill(nts::Undefined);
     }
 
+    /**
+     * \brief Compute address from address pins; returns -1 if undefined.
+     *
+     * @return Integer address or -1 on undefined bits.
+     */
     int Comp_4801::getAddress() {
         int address = 0;
 
@@ -38,6 +52,11 @@ namespace nts {
         return address;
     }
 
+    /**
+     * \brief Handle read/write cycles and update output buffer accordingly.
+     *
+     * @param tick Simulation tick (unused).
+     */
     void Comp_4801::simulate(std::size_t tick) {
         (void)tick;
         nts::Tristate ce = getVal(18); // Chip Enable
@@ -66,6 +85,12 @@ namespace nts {
         }
     }
 
+    /**
+     * \brief Return the data bit present on the requested data pin.
+     *
+     * @param pin Pin number to query (data pins only).
+     * @return Tristate value or Undefined.
+     */
     nts::Tristate Comp_4801::compute(std::size_t pin) {
         static const std::vector<size_t> dataPins = {9, 10, 11, 13, 14, 15, 16, 17};
 

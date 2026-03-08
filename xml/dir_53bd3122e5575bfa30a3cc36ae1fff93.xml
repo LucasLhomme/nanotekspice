@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="dir_53bd3122e5575bfa30a3cc36ae1fff93" kind="dir">
+    <compoundname>src/components/gates_components</compoundname>
+    <innerfile refid="comp__4001_8cpp">comp_4001.cpp</innerfile>
+    <innerfile refid="comp__4011_8cpp">comp_4011.cpp</innerfile>
+    <innerfile refid="comp__4030_8cpp">comp_4030.cpp</innerfile>
+    <innerfile refid="comp__4069_8cpp">comp_4069.cpp</innerfile>
+    <innerfile refid="comp__4071_8cpp">comp_4071.cpp</innerfile>
+    <innerfile refid="comp__4081_8cpp">comp_4081.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/components/gates_components/"/>
+  </compounddef>
+</doxygen>

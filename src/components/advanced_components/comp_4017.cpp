@@ -10,11 +10,19 @@
 
 namespace nts {
 
+    /**
+     * \brief Initialize Johnson counter (4017) internal state.
+     */
     Comp_4017::Comp_4017() {
         _count = 0;
         _prevClock = nts::Undefined;
     }
 
+    /**
+     * \brief Advance the counter on clock edges when not inhibited.
+     *
+     * @param tick Simulation tick (unused).
+     */
     void Comp_4017::simulate(std::size_t tick) {
         (void)tick;
         nts::Tristate clock = getLinkValue(14);
@@ -41,6 +49,12 @@ namespace nts {
         _prevClock = currentGate;
     }
 
+    /**
+     * \brief Return which output pin is active for the current count.
+     *
+     * @param pin Pin number to query.
+     * @return True on the active output pin, False/Undefined otherwise.
+     */
     nts::Tristate Comp_4017::compute(std::size_t pin) {
         static const std::array<int, 16> pinToCount = { -1, 5, 1, 0, 2, 6, 7, 3, -1, 8, 4, 9, -2, -1, -1, -1 };
 

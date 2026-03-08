@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="dir_82b81bfe937d55976cda9a73297f4fc9" kind="dir">
+    <compoundname>src/components/Special</compoundname>
+    <innerfile refid="_clock_8cpp">Clock.cpp</innerfile>
+    <innerfile refid="_false_8cpp">False.cpp</innerfile>
+    <innerfile refid="_input_8cpp">Input.cpp</innerfile>
+    <innerfile refid="_logger_8cpp">Logger.cpp</innerfile>
+    <innerfile refid="_output_8cpp">Output.cpp</innerfile>
+    <innerfile refid="_true_8cpp">True.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/components/Special/"/>
+  </compounddef>
+</doxygen>

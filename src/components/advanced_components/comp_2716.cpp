@@ -11,6 +11,9 @@
 
 namespace nts {
 
+    /**
+     * \brief Construct a 2716 memory component and load ROM if available.
+     */
     Comp_2716::Comp_2716() {
         _memory.resize(2048);
         for (auto& byte : _memory) {
@@ -32,6 +35,11 @@ namespace nts {
         }
     }
 
+    /**
+     * \brief Compute the current address from address pins.
+     *
+     * @return Integer address derived from address pin states.
+     */
     int Comp_2716::getAddress() {
         int address = 0;
         static const std::vector<size_t> addrPins = {8, 7, 6, 5, 4, 3, 2, 1, 23, 22, 19};
@@ -47,6 +55,11 @@ namespace nts {
         return address;
     }
 
+    /**
+     * \brief Update output buffer based on chip enable and output enable.
+     *
+     * @param tick Simulation tick (unused).
+     */
     void Comp_2716::simulate(std::size_t tick) {
         (void)tick;
         nts::Tristate ce = getLinkValue(18);
@@ -64,6 +77,12 @@ namespace nts {
         }
     }
 
+    /**
+     * \brief Return the data bit for the requested data pin.
+     *
+     * @param pin Pin number to read (one of data pins).
+     * @return Tristate value of the data bit or Undefined.
+     */
     nts::Tristate Comp_2716::compute(std::size_t pin) {
         static const std::vector<size_t> dataPins = {9, 10, 11, 13, 14, 15, 16, 17};
 

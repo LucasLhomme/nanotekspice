@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="class_circuit_exception" kind="class" language="C++" prot="public">
+    <compoundname>CircuitException</compoundname>
+    <basecompoundref refid="class_exception" prot="public" virt="non-virtual">Exception</basecompoundref>
+    <includes refid="_exception_8hpp" local="no">Exception.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_circuit_exception_1ace70d050bc0cfa9b56c225c1a18089a3" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>CircuitException::CircuitException</definition>
+        <argsstring>(const std::string &amp;message)</argsstring>
+        <name>CircuitException</name>
+        <qualifiedname>CircuitException::CircuitException</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Exception.hpp" line="36" column="18" bodyfile="include/Exception.hpp" bodystart="36" bodyend="36"/>
+        <references refid="class_exception_1a472b7904dadf1047ba48c23741888456" compoundref="_exception_8hpp" startline="18" endline="18">Exception::Exception</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>CircuitException</label>
+        <link refid="class_circuit_exception"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Exception</label>
+        <link refid="class_exception"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::exception</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>CircuitException</label>
+        <link refid="class_circuit_exception"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Exception</label>
+        <link refid="class_exception"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::exception</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/Exception.hpp" line="34" column="1" bodyfile="include/Exception.hpp" bodystart="34" bodyend="37"/>
+    <listofallmembers>
+      <member refid="class_circuit_exception_1ace70d050bc0cfa9b56c225c1a18089a3" prot="public" virt="non-virtual"><scope>CircuitException</scope><name>CircuitException</name></member>
+      <member refid="class_exception_1a472b7904dadf1047ba48c23741888456" prot="public" virt="non-virtual"><scope>CircuitException</scope><name>Exception</name></member>
+      <member refid="class_exception_1a91eace2bc486fa18d3f913a28f3921f8" prot="public" virt="non-virtual"><scope>CircuitException</scope><name>what</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="dir_d6a5918a8d4b10c1622eebf4d1385f75" kind="dir">
+    <compoundname>src/components/advanced_components</compoundname>
+    <innerfile refid="comp__2716_8cpp">comp_2716.cpp</innerfile>
+    <innerfile refid="comp__4008_8cpp">comp_4008.cpp</innerfile>
+    <innerfile refid="comp__4013_8cpp">comp_4013.cpp</innerfile>
+    <innerfile refid="comp__4017_8cpp">comp_4017.cpp</innerfile>
+    <innerfile refid="comp__4040_8cpp">comp_4040.cpp</innerfile>
+    <innerfile refid="comp__4094_8cpp">comp_4094.cpp</innerfile>
+    <innerfile refid="comp__4512_8cpp">comp_4512.cpp</innerfile>
+    <innerfile refid="comp__4514_8cpp">comp_4514.cpp</innerfile>
+    <innerfile refid="comp__4801_8cpp">comp_4801.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/components/advanced_components/"/>
+  </compounddef>
+</doxygen>

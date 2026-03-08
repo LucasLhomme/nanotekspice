@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="dir_f79ddc7dfdb3412a8546e36dfd6fa134" kind="dir">
+    <compoundname>include/components/elementary_components</compoundname>
+    <innerfile refid="and_8hpp">and.hpp</innerfile>
+    <innerfile refid="not_8hpp">not.hpp</innerfile>
+    <innerfile refid="or_8hpp">or.hpp</innerfile>
+    <innerfile refid="xor_8hpp">xor.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/components/elementary_components/"/>
+  </compounddef>
+</doxygen>

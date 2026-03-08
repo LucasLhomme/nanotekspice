@@ -6,6 +6,12 @@
 
 namespace nts {
 
+    /**
+     * \brief Compute the multiplexer/demultiplexer output for the 4512 component.
+     *
+     * @param pin Pin number to query (expects 14 for output).
+     * @return Selected data pin value or Undefined/False depending on control pins.
+     */
     nts::Tristate Comp_4512::compute(std::size_t pin)
     {
         if (pin != 14)

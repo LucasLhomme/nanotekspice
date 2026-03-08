@@ -12,3 +12,5 @@ tester.sh
 *result*
 *.in
 *.log
+html/
+latex/

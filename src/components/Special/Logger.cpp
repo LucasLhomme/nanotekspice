@@ -10,17 +10,28 @@
 
 namespace nts {
 
+    /**
+     * \brief Initialize the Logger and open the log file for appending.
+     */
     Logger::Logger() : _previousClock(nts::Undefined)
     {
         _file.open("./log.bin", std::ios::out | std::ios::app | std::ios::binary);
     }
 
+    /**
+     * \brief Destructor closes the log file if it is open.
+     */
     Logger::~Logger()
     {
         if (_file.is_open())
             _file.close();
     }
 
+    /**
+     * \brief On clock rising edge, write the 8-bit value to the log file when enabled.
+     *
+     * @param tick Simulation tick (unused).
+     */
     void Logger::simulate(std::size_t tick)
     {
         (void)tick;
@@ -47,6 +58,12 @@ namespace nts {
         _previousClock = clock;
     }
 
+    /**
+     * \brief Logger does not provide readable outputs; always returns Undefined.
+     *
+     * @param pin Pin number (ignored).
+     * @return Undefined
+     */
     nts::Tristate Logger::compute(std::size_t pin)
     {
         (void)pin;

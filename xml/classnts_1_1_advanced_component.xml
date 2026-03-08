@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classnts_1_1_advanced_component" kind="class" language="C++" prot="public">
+    <compoundname>nts::AdvancedComponent</compoundname>
+    <basecompoundref refid="classnts_1_1_a_component" prot="public" virt="non-virtual">nts::AComponent</basecompoundref>
+    <derivedcompoundref refid="classnts_1_1_comp__2716" prot="public" virt="non-virtual">nts::Comp_2716</derivedcompoundref>
+    <derivedcompoundref refid="classnts_1_1_comp__4008" prot="public" virt="non-virtual">nts::Comp_4008</derivedcompoundref>
+    <derivedcompoundref refid="classnts_1_1_comp__4017" prot="public" virt="non-virtual">nts::Comp_4017</derivedcompoundref>
+    <derivedcompoundref refid="classnts_1_1_comp__4094" prot="public" virt="non-virtual">nts::Comp_4094</derivedcompoundref>
+    <derivedcompoundref refid="classnts_1_1_comp__4512" prot="public" virt="non-virtual">nts::Comp_4512</derivedcompoundref>
+    <derivedcompoundref refid="classnts_1_1_comp__4514" prot="public" virt="non-virtual">nts::Comp_4514</derivedcompoundref>
+    <derivedcompoundref refid="classnts_1_1_comp__4801" prot="public" virt="non-virtual">nts::Comp_4801</derivedcompoundref>
+    <includes refid="_advanced_component_8hpp" local="no">AdvancedComponent.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnts_1_1_advanced_component_1a8d070a9db49f49df4c3a7c88563a561d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual nts::AdvancedComponent::~AdvancedComponent</definition>
+        <argsstring>()=default</argsstring>
+        <name>~AdvancedComponent</name>
+        <qualifiedname>nts::AdvancedComponent::~AdvancedComponent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/components/advanced_components/AdvancedComponent.hpp" line="9" column="21"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>nts::AComponent</label>
+        <link refid="classnts_1_1_a_component"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>nts::AdvancedComponent</label>
+        <link refid="classnts_1_1_advanced_component"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>nts::Comp_2716</label>
+        <link refid="classnts_1_1_comp__2716"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>nts::Comp_4008</label>
+        <link refid="classnts_1_1_comp__4008"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>nts::Comp_4017</label>
+        <link refid="classnts_1_1_comp__4017"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>nts::Comp_4094</label>
+        <link refid="classnts_1_1_comp__4094"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>nts::Comp_4512</label>
+        <link refid="classnts_1_1_comp__4512"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>nts::Comp_4514</label>
+        <link refid="classnts_1_1_comp__4514"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>nts::Comp_4801</label>
+        <link refid="classnts_1_1_comp__4801"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>nts::IComponent</label>
+        <link refid="classnts_1_1_i_component"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>nts::AComponent</label>
+        <link refid="classnts_1_1_a_component"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>nts::AdvancedComponent</label>
+        <link refid="classnts_1_1_advanced_component"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>nts::IComponent</label>
+        <link refid="classnts_1_1_i_component"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/components/advanced_components/AdvancedComponent.hpp" line="7" column="5" bodyfile="include/components/advanced_components/AdvancedComponent.hpp" bodystart="7" bodyend="10"/>
+    <listofallmembers>
+      <member refid="classnts_1_1_a_component_1ae63889bb8bbc33c44724ca240d88f5c8" prot="protected" virt="non-virtual"><scope>nts::AdvancedComponent</scope><name>_links</name></member>
+      <member refid="classnts_1_1_i_component_1ab257e0216765341e4ed0e717422700e4" prot="public" virt="pure-virtual"><scope>nts::AdvancedComponent</scope><name>compute</name></member>
+      <member refid="classnts_1_1_a_component_1a43181d6bfd6eef21662546e21249755d" prot="protected" virt="non-virtual"><scope>nts::AdvancedComponent</scope><name>computeSafe</name></member>
+      <member refid="classnts_1_1_a_component_1ac774f24806b049715e2286b7a129e2f1" prot="protected" virt="non-virtual"><scope>nts::AdvancedComponent</scope><name>getLink</name></member>
+      <member refid="classnts_1_1_a_component_1a2c7251830c7baee64a5f55bedf9d66a1" prot="protected" virt="non-virtual"><scope>nts::AdvancedComponent</scope><name>getLinkValue</name></member>
+      <member refid="classnts_1_1_a_component_1ae84b45160f256985cba8f7594b478279" prot="public" virt="virtual"><scope>nts::AdvancedComponent</scope><name>setLink</name></member>
+      <member refid="classnts_1_1_a_component_1a8f88c3be92b4e7ee67a23a698bfd5e27" prot="public" virt="virtual"><scope>nts::AdvancedComponent</scope><name>simulate</name></member>
+      <member refid="classnts_1_1_a_component_1afc72ea1a3c5dd5b9573a4c8723a78fb8" prot="public" virt="virtual"><scope>nts::AdvancedComponent</scope><name>~AComponent</name></member>
+      <member refid="classnts_1_1_advanced_component_1a8d070a9db49f49df4c3a7c88563a561d" prot="public" virt="virtual"><scope>nts::AdvancedComponent</scope><name>~AdvancedComponent</name></member>
+      <member refid="classnts_1_1_i_component_1a06c557f1d5b9668b15de6ea789779abd" prot="public" virt="virtual"><scope>nts::AdvancedComponent</scope><name>~IComponent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

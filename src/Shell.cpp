@@ -13,12 +13,23 @@
 
 volatile std::sig_atomic_t g_loopRunning = false;
 
+/**
+ * \brief Signal handler used to stop the loop mode on SIGINT.
+ *
+ * @param signum Signal number (ignored).
+ */
 static void signalHandler(int signum) {
     (void)signum;
     g_loopRunning = false;
 }
 
 namespace nts {
+    /**
+     * \brief Initialize the shell by parsing the .nts file and building the circuit.
+     *
+     * @param filename Path to the .nts file to load.
+     * @return 0 on success, 84 on error.
+     */
     int Shell::init(const std::string &filename) {
         nts::Parser parser;
         try {
@@ -39,6 +50,11 @@ namespace nts {
         return 84;
     }
 
+    /**
+     * \brief Handle a single shell command (display, simulate, loop, set value).
+     *
+     * @param input Command string entered by the user.
+     */
     void Shell::handleCommand(const std::string &input) {
         if (input == "display")
             _circuit.display();
@@ -63,6 +79,9 @@ namespace nts {
         }
     }
 
+    /**
+     * \brief Run the interactive shell loop, reading commands from stdin.
+     */
     void Shell::run() {
         std::string input;
         std::cout << "> ";
