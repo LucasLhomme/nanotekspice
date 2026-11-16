@@ -1,7 +1,6 @@
 # NanoTekSpice
 
-[![School: Epitech](https://img.shields.io/badge/School-Epitech-005696.svg)](https://www.epitech.eu/)
-[![Academic Year: 2025-2026](https://img.shields.io/badge/Academic%20Year-2025--2026%20(Tek2)-blueviolet.svg)](#)
+[![Epitech: Tek2](https://img.shields.io/badge/Epitech-Tek2-005696.svg)](https://www.epitech.eu/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 
