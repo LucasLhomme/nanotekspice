@@ -1,5 +1,10 @@
 # NanoTekSpice
 
+[![School: Epitech](https://img.shields.io/badge/School-Epitech-005696.svg)](https://www.epitech.eu/)
+[![Academic Year: 2025-2026](https://img.shields.io/badge/Academic%20Year-2025--2026%20(Tek2)-blueviolet.svg)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+
 A digital logic and electronics simulator built in **C++20** as part of the Epitech curriculum.  
 **NanoTekSpice** constructs a directed graph of digital electronic components (elementary gates, CMOS 4000 series, RAM/ROM chipsets) from configuration files (`.nts`) and simulates their behavior using **tristate boolean logic**.
 
